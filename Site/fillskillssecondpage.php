@@ -63,9 +63,11 @@ $widgetJobs->init();
 						<div class="btn-holder">
 							<div class="holder">
 								<?php
+								echo 'step1';
 								$resultsusersskills = $widgetJobs->get_users_skills('1');
 								foreach($resultsusersskills as $result)
 								{
+									echo 'step2';
 									echo '<a href="#" class="button">' . $result[skillname] . '</a>';
 								}
 								?>
