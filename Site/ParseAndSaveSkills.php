@@ -2,10 +2,10 @@
 try{
 	try {
 
-		$host = 'localhost';
-		$dbname = 'FillSkils';
-		$user = 'root';
-		$pass = 'root';
+		$host = 'tunnel.pagodabox.com:3306';
+		$dbname = 'DB1';
+		$user = 'tambra';
+		$pass = 'bg4oBEMO';
 
 
   			# MySQL with PDO_MYSQL CREATE DATABASE CONNECTION
