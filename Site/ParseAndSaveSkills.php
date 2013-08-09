@@ -11,11 +11,14 @@ try{
   			# MySQL with PDO_MYSQL CREATE DATABASE CONNECTION
 		$DBH = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
 		$DBH->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );  
+
+		echo 'connected';
 	}
 	catch (PDOException $e) {
 		echo 'Connection failed: ' . $e->getMessage();
 	}
 
+	print_r($_POST);
 	$text = $_POST[skillstring];
 	$splitresults = preg_split('/((^\p{P}+)|(\p{P}*\s+\p{P}*)|(\p{P}+$))/', $text, -1, PREG_SPLIT_NO_EMPTY);
 	$splitresults = array_unique($splitresults);
@@ -34,6 +37,7 @@ try{
 	$STHInsertUserSkillRelation->bindParam(':usersid', $usersid);
 	$STHInsertUserSkillRelation->bindParam(':skillid', $skillid);
 	
+	echo 'got here';
 	$usersid = 1;
 	foreach($splitresults as $splititem)
 	{
