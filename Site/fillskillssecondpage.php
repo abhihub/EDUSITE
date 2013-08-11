@@ -411,9 +411,9 @@ $('.btndetails').toggle(
 	);
 
 $('.jobs-list li').click(function () {
-	console.log($(this).find('.jobid').text());
-	$('.jobs-list li').removeClass( "green" );
-	$(this).addClass( "green" );
+	// console.log($(this).find('.jobid').text());
+	// $('.jobs-list li').removeClass( "green" );
+	// $(this).addClass( "green" );
         // $.ajax({ url: 'get_missingskills_job.php',
         //  // data: {action: 'get_missingskills_job'},
         //  data: { jobID_missingskills_perjob: $(this).find('.jobid').text() },
