@@ -217,7 +217,7 @@ $widgetJobs->init();
 						<p>' . $result[location] . '</p>
 						<div class="progress">
 						<span class="progress-bar">
-						<span class="progress-in" style="width:' . $result[numberofskills]*30 . '%;"></span>
+						<span class="progress-in" style="width:' . $result[numberofskills]*20 . '%;"></span>
 						</span>
 						</div>
 						<div>
