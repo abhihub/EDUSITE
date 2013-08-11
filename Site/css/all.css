@@ -462,7 +462,7 @@ background-position:-927px -79px;
 	background:url(../images/sprite.png) no-repeat -100px -210px;
 }
 .info-columns .box{
-	padding:28px 61px 88px;
+	padding:28px 61px 28px;
 	background:url(../images/bg-gray.png);
 	-webkit-box-shadow:0 0 8px 2px rgba(23, 23, 23, 0.75);
 	box-shadow:0 0 8px 2px rgba(23, 23, 23, 0.75);
@@ -705,10 +705,10 @@ background-position:-927px -79px;
 .info-columns .jobs-list .delete:before{
 	float:left;
 	content:'';
-	background:url(../images/sprite.png) no-repeat -155px -210px;
+	-- background:url(../images/sprite.png) no-repeat -138px -210px;
 	width:10px;
 	height:13px;
-	margin:3px 6px 0 2px;
+	margin:3px 1px 0 2px;
 }
 .info-columns .jobs-list .green{background:url(../images/bg-green.png);}
 .blue .items-block{

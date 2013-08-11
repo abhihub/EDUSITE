@@ -6,6 +6,8 @@ CALL fillskils.get_top_missing_skills('1');
 
 CALL fillskils.get_users_skills('1');
 
+CALL fillskils.get_top_courses('1');
+
 
 
 

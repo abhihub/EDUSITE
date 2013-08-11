@@ -7,6 +7,10 @@ try{
 		$user = 'tambra';
 		$pass = 'bg4oBEMO';
 
+		// $host = 'localhost';
+		// $dbname = 'FillSkils';
+		// $user = 'root';
+		// $pass = 'root';
 
   			# MySQL with PDO_MYSQL CREATE DATABASE CONNECTION
 		$DBH = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
@@ -21,7 +25,7 @@ try{
 	$splitresults = array_unique($splitresults);
 
 	// echo count($splitresults);
-	echo json_encode($splitresults);
+	//echo json_encode($splitresults);
 
 	$TruncateSkills = $DBH->exec('Truncate table usersskills');
 

@@ -10,14 +10,19 @@ class ProcedureToJson{
 	function init() {
 		try {
 
-			$host = 'tunnel.pagodabox.com:3306';
+			$host = 'tunnel.pagodabox.com';
 			$dbname = 'DB1';
 			$user = 'tambra';
 			$pass = 'bg4oBEMO';
 
+			// $host = 'localhost';
+			// $dbname = 'FillSkils';
+			// $user = 'root';
+			// $pass = 'root';
+
 
   			# MySQL with PDO_MYSQL CREATE DATABASE CONNECTION
-  			$this->DBH = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+			$this->DBH = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
 			$this->DBH->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );  
 			
 			//echo $this->DBH;
@@ -30,14 +35,14 @@ class ProcedureToJson{
 
 	function get_bestmatch_jobs( $userID_bestmatch) {
 		try{
-		$sql = "call DB1.get_bestmatch_jobs (:userID_bestmatch)";
-		$stmt_bestmatch = $this->DBH->prepare($sql);
-		$stmt_bestmatch->bindParam(':userID_bestmatch', $userID_bestmatch, PDO::PARAM_INT);
-		$stmt_bestmatch->execute();
-		$results_bestmatch = $stmt_bestmatch->fetchAll();
-		$stmt_bestmatch->closeCursor();
-		unset($stmt_bestmatch);	
-		return $results_bestmatch;
+			$sql = "call fillskils.get_bestmatch_jobs (:userID_bestmatch)";
+			$stmt_bestmatch = $this->DBH->prepare($sql);
+			$stmt_bestmatch->bindParam(':userID_bestmatch', $userID_bestmatch, PDO::PARAM_INT);
+			$stmt_bestmatch->execute();
+			$results_bestmatch = $stmt_bestmatch->fetchAll();
+			$stmt_bestmatch->closeCursor();
+			unset($stmt_bestmatch);	
+			return $results_bestmatch;
 		}
 		catch(PDOException $e) {
 			echo '<br><b>ah an ERROR: </b>';
@@ -47,7 +52,7 @@ class ProcedureToJson{
 
 	function get_top_missing_skills( $userID_missingskills) {
 		echo 'dead3 userid:' . $userID_missingskills;
-		$sql = "call DB1.get_top_missing_skills (:userID_missingskills)";
+		$sql = "call fillskils.get_top_missing_skills (:userID_missingskills)";
 		$stmt_missingskills = $this->DBH->prepare($sql);
 		$stmt_missingskills->bindParam(':userID_missingskills', $userID_missingskills, PDO::PARAM_INT);
 		$stmt_missingskills->execute();
@@ -63,7 +68,7 @@ class ProcedureToJson{
 	function get_missingskills_job($jobID_missingskills_perjob, $userID_missingskills_perjob) {
 		
 		
-		$sql = "call DB1.get_missingskills_job (:userID_missingskills_perjob, :jobID_missingskills_perjob)";
+		$sql = "call fillskils.get_missingskills_job (:userID_missingskills_perjob, :jobID_missingskills_perjob)";
 		$stmt_missingskills_perjob = $this->DBH->prepare($sql);
 		$stmt_missingskills_perjob->bindParam(':userID_missingskills_perjob', $userID_missingskills_perjob, PDO::PARAM_INT);
 		$stmt_missingskills_perjob->bindParam(':jobID_missingskills_perjob', $jobID_missingskills_perjob, PDO::PARAM_INT);
@@ -77,17 +82,44 @@ class ProcedureToJson{
 	}
 
 	function get_users_skills($userID_userskills) {
-		$sql = "call DB1.get_users_skills (:userID_userskills)";
+		$sql = "call fillskils.get_users_skills (:userID_userskills)";
 		$stmt_usersskills = $this->DBH->prepare($sql);
 		$stmt_usersskills->bindParam(':userID_userskills', $userID_userskills, PDO::PARAM_INT);
 		$stmt_usersskills->execute();
 		$results_userskills = $stmt_usersskills->fetchAll();
 		//print_r($results_userskills);echo "\n"; // all record sets
-		print_r(json_encode($results_userskills)); echo "\n";
+		//print_r(json_encode($results_userskills)); echo "\n";
 		$stmt_usersskills->closeCursor();
 		unset($stmt_usersskills);	
 		return $results_userskills;
 	}
+
+	function get_top_courses($userID_topCourses) {
+		$sql = "call fillskils.get_top_courses (:userID_topCourses)";
+		$stmt_topCourses = $this->DBH->prepare($sql);
+		$stmt_topCourses->bindParam(':userID_topCourses', $userID_topCourses, PDO::PARAM_INT);
+		$stmt_topCourses->execute();
+		$results_topCourses = $stmt_topCourses->fetchAll();
+		//print_r($results_topCourses);echo "\n"; // all record sets
+		//print_r(json_encode($results_topCourses)); echo "\n";
+		$stmt_topCourses->closeCursor();
+		unset($stmt_topCourses);	
+		return $results_topCourses;
+	}
+
+	function get_top_courses_more($userID_topCoursesMore) {
+		$sql = "call fillskils.get_top_courses_more (:userID_topCoursesMore)";
+		$stmt_topCoursesMore = $this->DBH->prepare($sql);
+		$stmt_topCoursesMore->bindParam(':userID_topCoursesMore', $userID_topCoursesMore, PDO::PARAM_INT);
+		$stmt_topCoursesMore->execute();
+		$results_topCoursesMore = $stmt_topCoursesMore->fetchAll();
+		//print_r($results_topCoursesMore);echo "\n"; // all record sets
+		//print_r(json_encode($results_topCoursesMore)); echo "\n";
+		$stmt_topCoursesMore->closeCursor();
+		unset($stmt_topCoursesMore);	
+		return $results_topCoursesMore;
+	}
+
 }
 
 

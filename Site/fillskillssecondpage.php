@@ -59,7 +59,7 @@ $widgetJobs->init();
 					<header class="title">
 						<h1>Personal Skills</h1>
 					</header>
-					<div class="box column">
+					<div class="box column" style="max-height:900px">
 						<div class="btn-holder">
 							<div class="holder">
 								<?php
@@ -96,7 +96,7 @@ $widgetJobs->init();
 				<header class="title">
 					<h1>Missing Skills</h1>
 				</header>
-				<div class="box column">
+				<div class="box column" style="max-height:900px">
 					<div class="btn-holder">
 						<div class="holder">
 							<?php
@@ -117,9 +117,27 @@ $widgetJobs->init();
 						</div>
 					</div>
 					<div class="courses-block">
-						<h2>Available Courses</h2>
+						<h2>Recommended Courses</h2>
 						<ul class="list columns-holder">
-							<li>
+							<?php
+							$results_topCourses = $widgetJobs->get_top_courses('1');
+							foreach($results_topCourses as $result)
+							{
+								echo '
+								<li>
+								<div class="holder column">
+								<h3>' . $result[coursename] . '</h3>
+								<p>' . $result[description] . '</p>
+								<div class="btn-row">
+								<a href="' . $result[url] . '" class="details">Details</a>
+								<a href="#" class="delete">Delete</a>
+								</div>
+								</li>
+								';
+							}
+							?>
+
+							<!-- <li>
 								<div class="holder column">
 									<h3>TableKit Class</h3>
 									<p>The civil Emperor, before the Mikado, the spiritual Emperor, absorbed his office in his own.  The Carnatic anchored att the quay near the custom-house, in the midst of a crowd of ships</p>
@@ -178,7 +196,7 @@ $widgetJobs->init();
 										<a href="#" class="delete">Delete</a>
 									</div>
 								</div>
-							</li>
+							</li> -->
 						</ul>
 					</div>
 				</div>
@@ -194,28 +212,28 @@ $widgetJobs->init();
 					{
 						echo '
 						<li style="position:relative;">
-						<div style="z-index: 5; position: relative; background-color: white; ">
+						<div style="z-index: 5; position: relative; background-color: #EBEBEB; ">
 						<p class="jobtitle">' . $result[jobtitle] . '</p>
 						<p>' . $result[location] . '</p>
 						<div class="progress">
 						<span class="progress-bar">
-						<span class="progress-in" style="width:' . $result[numberofskills]*10 . '%;"></span>
+						<span class="progress-in" style="width:' . $result[numberofskills]*30 . '%;"></span>
 						</span>
 						</div>
 						<div>
 						<div class="btndetails details">Details</div>
-						<a href="" class="delete">Delete</a>
+						<a href="' . $result[url] . '" class="delete">Apply</a>
 						</div>
 						<div class="floatclear"></div>
 						<p style="display:none;" class="jobid">' . $result[jobid] . '</p>
 						</div>
-						<div class="jobdetails" style="z-index: 0; position: absolute; top: 26; background-color:white; width:311px;">
-										<a href="#" class="button">IOS</a>
-										<a href="#" class="button">RUBI</a>
-										<a href="#" class="button">Dojo</a>
-										<a href="#" class="button">Yahoo</a>
-										<a href="#" class="button">Prototype</a>
-										<a href="#" class="button">Adobe</a>
+						<div class="jobdetails" style="z-index: 0; position: absolute; top: 26px; background-color:white; width:311px;">
+						<a href="#" class="button">IOS</a>
+						<a href="#" class="button">RUBY</a>
+						<a href="#" class="button">Dojo</a>
+						<a href="#" class="button">Yahoo</a>
+						<a href="#" class="button">Prototype</a>
+						<a href="#" class="button">Adobe</a>
 						</div>
 						</li>
 						';
@@ -282,8 +300,23 @@ $widgetJobs->init();
 		</section>
 		<section class="section blue">
 			<div class="items-block columns-holder">
+
 				<div class="holder">
-					<article class="item course">
+				
+					<?php
+					$results_topCoursesMore = $widgetJobs->get_top_courses_more('1');
+					foreach($results_topCoursesMore as $result)
+					{
+						echo '
+						<article class="item course">
+						<div class="holder column">
+						<header><h1>'. $result[coursename] . '</h1></header>
+						<p>' . $result[description] . '</p>
+						<a href="' . $result[url] . '" class="all">Check out this course</a>
+						</article>';
+					}
+					?>
+					<!-- <article class="item course">
 						<div class="holder column">
 							<header><h1>IOS Advanced Class</h1></header>
 							<p>The civil Emperor, before the Mikado, the spiritual Emperor, absorbed his office in his own.  The Carnatic anchored at the quay near the custom-house, in the</p>
@@ -310,7 +343,7 @@ $widgetJobs->init();
 							<p>The civil Emperor, before the Mikado, the spiritual Emperor, absorbed his office in his own.  The Carnatic anchored at the quay near the custom-house, in the</p>
 							<a href="#" class="all">Check out this career</a>
 						</div>
-					</article>
+					</article> -->
 				</div>
 			</div>
 		</section>
@@ -359,23 +392,23 @@ $widgetJobs->init();
 </div>
 <script type="text/javascript">
 $('.btndetails').toggle( 
-    function() {
-    	$(this).html("Close");
-        event.stopImmediatePropagation();
+	function() {
+		$(this).html("Close");
+		event.stopImmediatePropagation();
 		$(this).closest('li').find('.jobdetails').animate({ top: 126 }, 'slow', function() {
-        });
-        $(this).closest('li').animate({ height: 180 }, 'slow', function() {
-        });
-    }, 
-    function() {
-    	$(this).html("Details");
-        event.stopImmediatePropagation();
+		});
+		$(this).closest('li').animate({ height: 180 }, 'slow', function() {
+		});
+	}, 
+	function() {
+		$(this).html("Details");
+		event.stopImmediatePropagation();
 		$(this).closest('li').find('.jobdetails').animate({ top: 26 }, 'slow', function() {
-        });
-        $(this).closest('li').animate({ height: 106 }, 'slow', function() {
-        });
-    }
-);
+		});
+		$(this).closest('li').animate({ height: 106 }, 'slow', function() {
+		});
+	}
+	);
 
 $('.jobs-list li').click(function () {
 	console.log($(this).find('.jobid').text());
