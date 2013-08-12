@@ -120,21 +120,25 @@ $widgetJobs->init();
 						<h2>Recommended Courses</h2>
 						<ul class="list columns-holder">
 							<?php
-							$results_topCourses = $widgetJobs->get_top_courses('1');
-							foreach($results_topCourses as $result)
+							foreach($resultsallmissingskills as $result)
 							{
-								echo '
-								<li>
-								<div class="holder column">
-								<h3>' . $result[coursename] . '</h3>
-								<p>' . $result[description] . '</p>
-								<div class="btn-row">
-								<a href="' . $result[url] . '" class="details">Details</a>
-								<a href="#" class="delete">Delete</a>
-								</div>
-								</li>
-								';
+								$results_top3Courses = $widgetJobs->get_top3_courses_skill($result[skillname]);
+								foreach($results_top3Courses as $results_top3Course)
+								{
+									echo '
+									<li>
+									<div class="holder column">
+									<h3>' . $results_top3Course[coursename] . '</h3>
+									<p>' . $results_top3Course[description] . '</p>
+									<div class="btn-row">
+									<a href="' . $results_top3Course[url] . '" class="details">Details</a>
+									<a href="#" class="delete">Delete</a>
+									</div>
+									</li>
+									';
+								}
 							}
+							
 							?>
 
 							<!-- <li>
@@ -302,7 +306,7 @@ $widgetJobs->init();
 			<div class="items-block columns-holder">
 
 				<div class="holder">
-				
+
 					<?php
 					$results_topCoursesMore = $widgetJobs->get_top_courses_more('1');
 					foreach($results_topCoursesMore as $result)
