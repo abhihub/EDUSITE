@@ -87,8 +87,8 @@ $widgetJobs->init();
 						</div>
 					</div>
 					<div class="text-holder">
-						<p>Strong understanding of object oriented JavaScript Designed and documented front-end projects of various scope. Developed and maintained the presentation layer of company's site. Participated in code reviews of other developers' work. Provided technical assistance to engineers, designers, managers. </p>
-						<p>Coordinated with 3rd parties on technical designs and issues. Presented technical issues and their business impact to management. Coordinated projects, and communicated technical issues using non-technical language.  </p>
+						<p>If the user enters their resume, this is where the users resume will be shown. </p>
+						<p>Inside the resume, the skills will be highlighted. Users can click on a skill to unhighlight or rehighlight them. The highlighted skills will be used as the basis to run our algorithms.  </p>
 					</div>
 				</div>
 			</article>
