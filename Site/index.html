@@ -5,7 +5,9 @@
 	<meta name = "format-detection" content = "telephone=no" />
 	<title>FillSkills</title>
 	<link media="all" rel="stylesheet" href="css/all.css">
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<link media="all" rel="stylesheet" href="css/jackedup.css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/humane.min.js"></script>
 	<script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.8.3.min.js"><\/script>')</script>
 	<script type="text/javascript" src="js/jquery.main.js"></script>
 	<!--[if IE]><script type="text/javascript" src="js/ie.js"></script><![endif]-->
@@ -141,9 +143,12 @@
 		</footer>
 	</div>
 	<script type="text/javascript">
-    $('#btnupload').click(function () {
-        console.log($('#txtskill').val());
-        $.ajax({ url: 'ParseAndSaveSkills.php',
+	$( document ).ready(function() {
+		humane.log("Start by entering your skills into the text box. Then press Submit", {waitForMove=true})
+	});
+	$('#btnupload').click(function () {
+		console.log($('#txtskill').val());
+		$.ajax({ url: 'ParseAndSaveSkills.php',
          // data: {action: 'get_missingskills_job'},
          data: { skillstring: $('#txtskill').val() },
          type: 'POST',
@@ -153,8 +158,8 @@
                       window.location.replace("fillskillssecondpage.php");
                       //$('#naslov b').html(output);
                   }
-        });
-    });
-    </script>
+              });
+	});
+	</script>
 </body>
 </html>
