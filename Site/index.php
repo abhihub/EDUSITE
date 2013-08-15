@@ -1,3 +1,8 @@
+<?php
+require 'ProceduresToJson.php';
+$widgetJobs = new ProcedureToJson();
+$widgetJobs->init();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +11,12 @@
 	<title>FillSkills</title>
 	<link media="all" rel="stylesheet" href="css/all.css">
 	<link media="all" rel="stylesheet" href="css/jackedup.css">
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script type="text/javascript" src="js/humane.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.8.3.min.js"><\/script>')</script>
-	<script type="text/javascript" src="js/jquery.main.js"></script>
+	<script type="text/javascript" src="js/humane.min.js"></script>
+	<script type="text/javascript" src="js/jquery.a-tools-1.4.1.js"></script>
+	<script type="text/javascript" src="js/jquery.asuggest.js"></script>
+	<!-- <script type="text/javascript" src="js/jquery.main.js"></script> -->
 	<!--[if IE]><script type="text/javascript" src="js/ie.js"></script><![endif]-->
 </head>
 <body>
@@ -38,11 +45,16 @@
 				<div class="block">
 					<h1>Add your skills here</h1>
 					<div class="drag-box">
-						<!-- <textarea style="margin: 2px; min-width:527; min-height:243;" ></textarea> -->
 						<textarea id="txtskill" style="margin: 2px; min-height: 235px; min-width: 517px; resize: none;"></textarea>
 					</div>
 				</div>
 				
+				<?php
+				$resultsallmissingskills = $widgetJobs->get_all_skillnames();
+				echo '<script type="text/javascript">',
+				'var suggests =' . $resultsallmissingskills . ';',
+				'</script>';
+				?>
 			</div>
 			<section class="section gray greenbg">
 				<article class="holder">
@@ -140,11 +152,16 @@
 					<li><a href="#">privacY</a></li>
 				</ul>
 			</div>
+			
 		</footer>
 	</div>
+
 	<script type="text/javascript">
 	$( document ).ready(function() {
-		humane.log("Hi, welcome. <br> You can start by entering your skills (comma seperated) into the text box below.<br> <br>Then press Submit", {waitForMove:true, timeout:2500})
+		humane.log("Hi, welcome. <br> You can start by entering your skills (comma seperated) into the text box below.<br> <br>Then press Submit", {waitForMove:true, timeout:2500});
+		$("#txtskill").asuggest(suggests, {
+        'endingSymbols': ', '
+    });
 	});
 	$('#btnupload').click(function () {
 		console.log($('#txtskill').val());
@@ -160,6 +177,9 @@
                   }
               });
 	});
+
+
+
 	</script>
 </body>
 </html>

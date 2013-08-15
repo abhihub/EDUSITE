@@ -59,7 +59,7 @@ $widgetJobs->init();
 					<header class="title">
 						<h1>Personal Skills</h1>
 					</header>
-					<div class="box column" style="max-height:900px">
+					<div class="box column">
 						<div class="btn-holder">
 							<div class="holder">
 								<?php
@@ -96,7 +96,7 @@ $widgetJobs->init();
 				<header class="title">
 					<h1>Missing Skills</h1>
 				</header>
-				<div class="box column" style="max-height:900px">
+				<div class="box column">
 					<div class="btn-holder">
 						<div class="holder">
 							<?php
