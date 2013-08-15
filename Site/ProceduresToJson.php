@@ -121,16 +121,21 @@ class ProcedureToJson{
 	}
 
 	function get_top3_courses_skill($skillName_top3Courses) {
-		$sql = "call DB1.get_top3_courses_skill (:skillName_top3Courses)";
-		$stmt_top3CoursesSkillName = $this->DBH->prepare($sql);
-		$stmt_top3CoursesSkillName->bindParam(':skillName_top3Courses', $skillName_top3Courses, PDO::PARAM_INT);
-		$stmt_top3CoursesSkillName->execute();
-		$results_top3CoursesSkillName = $stmt_top3CoursesSkillName->fetchAll();
-		//print_r($results_top3CoursesSkillName);echo "\n"; // all record sets
-		//print_r(json_encode($results_top3CoursesSkillName)); echo "\n";
-		$stmt_top3CoursesSkillName->closeCursor();
-		unset($stmt_top3CoursesSkillName);	
-		return $results_top3CoursesSkillName;
+		try{
+			$sql = "call DB1.get_top3_courses_skill (:skillName_top3Courses)";
+			$stmt_top3CoursesSkillName = $this->DBH->prepare($sql);
+			$stmt_top3CoursesSkillName->bindParam(':skillName_top3Courses', $skillName_top3Courses, PDO::PARAM_INT);
+			$stmt_top3CoursesSkillName->execute();
+			$results_top3CoursesSkillName = $stmt_top3CoursesSkillName->fetchAll();
+			//print_r($results_top3CoursesSkillName);echo "\n"; // all record sets
+			//print_r(json_encode($results_top3CoursesSkillName)); echo "\n";
+			$stmt_top3CoursesSkillName->closeCursor();
+			unset($stmt_top3CoursesSkillName);	
+			return $results_top3CoursesSkillName;
+		}
+		catch(PDOException $e) {
+			echo $e->getMessage();
+		}
 	}
 	
 	function get_all_skillnames() {

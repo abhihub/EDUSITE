@@ -120,11 +120,27 @@ $widgetJobs->init();
 						<h2>Recommended Courses</h2>
 						<ul class="list columns-holder">
 							<?php
-							foreach(array_slice($resultsallmissingskills, 0, 3) as $result)
+							// $counter1 = 0;
+							// $counter2 = 0;
+							// foreach(array_slice($resultsallmissingskills, 0,3) as $result)
+							foreach($resultsallmissingskills as $result)
 							{
+								// if ($counter1 >= 2) 
+								// 	{
+								// 		echo '<br>counter1 = ' . $counter1 . '<br>';
+								// 		break;
+								// 	}
+
+							 //    $counter2 = 0;
 								$results_top3Courses = $widgetJobs->get_top3_courses_skill($result[skillname]);
-								foreach(array_slice($results_top3Courses, 0, 2) as $results_top3Course)
+								foreach($results_top3Courses as $results_top3Course)
 								{
+									// if ($counter2 >= 2) 
+									// 	{
+									// 		echo '<br>counter2 = ' . $counter2 . '<br>';
+									// 		break;
+									// 	}
+									//  $counter2++;
 									echo '
 									<li>
 									<div class="holder column">
@@ -136,7 +152,9 @@ $widgetJobs->init();
 									</div>
 									</li>
 									';
+								
 								}
+								// $counter1++;
 							}
 							?>
 
