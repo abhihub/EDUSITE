@@ -120,10 +120,10 @@ $widgetJobs->init();
 						<h2>Recommended Courses</h2>
 						<ul class="list columns-holder">
 							<?php
-							foreach($resultsallmissingskills as $result)
+							foreach(array_slice($resultsallmissingskills, 0, 3) as $result)
 							{
 								$results_top3Courses = $widgetJobs->get_top3_courses_skill($result[skillname]);
-								foreach($results_top3Courses as $results_top3Course)
+								foreach(array_slice($results_top3Courses, 0, 2) as $results_top3Course)
 								{
 									echo '
 									<li>
@@ -138,59 +138,9 @@ $widgetJobs->init();
 									';
 								}
 							}
-							
 							?>
 
-							<!-- <li>
-								<div class="holder column">
-									<h3>TableKit Class</h3>
-									<p>The civil Emperor, before the Mikado, the spiritual Emperor, absorbed his office in his own.  The Carnatic anchored att the quay near the custom-house, in the midst of a crowd of ships</p>
-									<div class="btn-row">
-										<a href="#" class="details">Details</a>
-										<a href="#" class="delete">Delete</a>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="holder column">
-									<h3>RUBI Class</h3>
-									<p>The civil Emperor, before the Mikado, the spiritual Emperor, absorbed his office in his own.  The Carnatic anchored att the quay near the custom-house, in the midst of a crowd of ships</p>
-									<div class="btn-row">
-										<a href="#" class="details">Details</a>
-										<a href="#" class="delete">Delete</a>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="holder column">
-									<h3>Mastering IOS</h3>
-									<p>The civil Emperor, before the Mikado, the spiritual Emperor, absorbed his office in his own.  The Carnatic anchored att the quay near the custom-house, in the midst of a crowd of ships</p>
-									<div class="btn-row">
-										<a href="#" class="details">Details</a>
-										<a href="#" class="delete">Delete</a>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="holder column">
-									<h3>Adobe Suite</h3>
-									<p>The civil Emperor, before the Mikado, the spiritual Emperor, absorbed his office in his own.  The Carnatic anchored att the quay near the custom-house, in the midst of a crowd of ships</p>
-									<div class="btn-row">
-										<a href="#" class="details">Details</a>
-										<a href="#" class="delete">Delete</a>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="holder column">
-									<h3>Mootool Class</h3>
-									<p>The civil Emperor, before the Mikado, the spiritual Emperor, absorbed his office in his own.  The Carnatic anchored att the quay near the custom-house, in the midst of a crowd of ships</p>
-									<div class="btn-row">
-										<a href="#" class="details">Details</a>
-										<a href="#" class="delete">Delete</a>
-									</div>
-								</div>
-							</li>
+							<!-- 
 							<li>
 								<div class="holder column">
 									<h3>TableKit Class</h3>
@@ -244,50 +194,7 @@ $widgetJobs->init();
 					}
 					?>
 
-					<!-- <li>
-						<p>Javascript Developer </p>
-						<p>Long Beach, CA </p>
-						<div class="progress">
-							<span class="progress-bar">
-								<span class="progress-in" style="width:260px;"></span>
-							</span>
-						</div>
-						<a href="#" class="details">Details</a>
-						<a href="#" class="delete">Delete</a>
-					</li>
-					<li>
-						<p>Javascript Developer </p>
-						<p>Long Beach, CA </p>
-						<div class="progress">
-							<span class="progress-bar">
-								<span class="progress-in" style="width:214px;"></span>
-							</span>
-						</div>
-						<a href="#" class="details">Details</a>
-						<a href="#" class="delete">Delete</a>
-					</li>
-					<li>
-						<p>Javascript Developer </p>
-						<p>Long Beach, CA </p>
-						<div class="progress">
-							<span class="progress-bar">
-								<span class="progress-in" style="width:144px;"></span>
-							</span>
-						</div>
-						<a href="#" class="details">Details</a>
-						<a href="#" class="delete">Delete</a>
-					</li>
-					<li>
-						<p>Javascript Developer </p>
-						<p>Long Beach, CA </p>
-						<div class="progress">
-							<span class="progress-bar">
-								<span class="progress-in" style="width:260px;"></span>
-							</span>
-						</div>
-						<a href="#" class="details">Details</a>
-						<a href="#" class="delete">Delete</a>
-					</li>
+					<!-- 
 					<li class="green">
 						<p>Javascript Developer </p>
 						<p>Long Beach, CA </p>
@@ -320,27 +227,7 @@ $widgetJobs->init();
 						</article>';
 					}
 					?>
-					<!-- <article class="item course">
-						<div class="holder column">
-							<header><h1>IOS Advanced Class</h1></header>
-							<p>The civil Emperor, before the Mikado, the spiritual Emperor, absorbed his office in his own.  The Carnatic anchored at the quay near the custom-house, in the</p>
-							<a href="#" class="all">Check out this course</a>
-						</div>
-					</article>
-					<article class="item course">
-						<div class="holder column">
-							<header><h1>Learning Dojo</h1></header>
-							<p>The civil Emperor, before the Mikado, the spiritual Emperor, absorbed his office in his own.  The Carnatic anchored at the quay near the custom-house, in the</p>
-							<a href="#" class="all">Check out this course</a>
-						</div>
-					</article>
-					<article class="item course">
-						<div class="holder column">
-							<header><h1>IOS Advanced Class</h1></header>
-							<p>The civil Emperor, before the Mikado, the spiritual Emperor, absorbed his office in his own.  The Carnatic anchored at the quay near the custom-house, in the</p>
-							<a href="#" class="all">Check out this course</a>
-						</div>
-					</article>
+					<!-- 
 					<article class="item career">
 						<div class="holder column">
 							<header><h1>Graphic Designer</h1></header>
