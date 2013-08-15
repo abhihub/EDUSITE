@@ -1,5 +1,7 @@
 <?php
-require 'indeed_API.php';
+echo 'beginning<br>';
+require 'API_indeed.php';
+echo 'loaded API<br>';
 
 print_r(PDO::getAvailableDrivers());
 try {

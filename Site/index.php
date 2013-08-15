@@ -172,7 +172,7 @@ $widgetJobs->init();
          success: function(output) {
                       //SWITCH TO OTHER PAGE
                       //alert(output);
-                      window.location.replace("fillskillssecondpage.php");
+                      window.location.replace("results.php");
                       //$('#naslov b').html(output);
                   }
               });
