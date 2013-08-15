@@ -132,7 +132,18 @@ class ProcedureToJson{
 		unset($stmt_top3CoursesSkillName);	
 		return $results_top3CoursesSkillName;
 	}
-		// 
+	
+	function get_all_skillnames() {
+		$sql = "SELECT name from skills";
+		$stmt_getSkillsAll = $this->DBH->prepare($sql);
+		$stmt_getSkillsAll->execute();
+		$results_SkillsAll = $stmt_getSkillsAll->fetchAll(PDO::FETCH_COLUMN);
+		//print_r($results_SkillsAll);echo "\n"; // all record sets
+		//print_r(json_encode($results_SkillsAll)); echo "\n";
+		$stmt_getSkillsAll->closeCursor();
+		unset($stmt_getSkillsAll);
+		return json_encode($results_SkillsAll);
+	}	
 
 }
 
@@ -146,7 +157,7 @@ class ProcedureToJson{
 
 // 	//BEST MATCH JOBS
 // 	$userID_bestmatch = 1;
-// 	$sql = "call DB1.get_bestmatch_jobs (:userID_bestmatch)";
+// 	$sql = "call fillskils.get_bestmatch_jobs (:userID_bestmatch)";
 // 	$stmt_bestmatch = $DBH->prepare($sql);
 // 	$stmt_bestmatch->bindParam(':userID_bestmatch', $userID_bestmatch, PDO::PARAM_INT);
 // 	$stmt_bestmatch->execute();
