@@ -1,9 +1,3 @@
-<?php
-require 'ProceduresToJson.php';
-$widgetJobs = new ProcedureToJson();
-$widgetJobs->init();
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,16 +40,12 @@ $widgetJobs->init();
 				<div class="block">
 					<h1>Add your skills here</h1>
 					<div class="drag-box">
+						<!-- <textarea style="margin: 2px; min-width:527; min-height:243;" ></textarea> -->
 						<textarea id="txtskill" style="margin: 2px; min-height: 235px; min-width: 517px; resize: none;"></textarea>
+						
+						
 					</div>
 				</div>
-				
-				<?php
-				$resultsallmissingskills = $widgetJobs->get_all_skillnames();
-				echo '<script type="text/javascript">',
-				'var suggests =' . $resultsallmissingskills . ';',
-				'</script>';
-				?>
 			</div>
 			<section class="section gray greenbg">
 				<article class="holder">
@@ -160,9 +150,9 @@ $widgetJobs->init();
 	<script type="text/javascript">
 	$( document ).ready(function() {
 		humane.log("Hi, welcome. <br> You can start by entering your skills (comma seperated) into the text box below.<br> <br>Then press Submit", {waitForMove:true, timeout:2500});
-		$("#txtskill").asuggest(suggests, {
-        'endingSymbols': ', '
-    });
+		
+		
+		$("#txtskill").asuggest(suggests);
 	});
 	$('#btnupload').click(function () {
 		console.log($('#txtskill').val());
@@ -173,7 +163,7 @@ $widgetJobs->init();
          success: function(output) {
                       //SWITCH TO OTHER PAGE
                       //alert(output);
-                      window.location.replace("results.php");
+                      window.location.replace("fillskillssecondpage.php");
                       //$('#naslov b').html(output);
                   }
               });

@@ -92,6 +92,59 @@ $widgetJobs->init();
 					</div>
 				</div>
 			</article>
+			<div class="col available">
+				<header class="title">
+					<h1>Available Jobs</h1>
+				</header>
+				<ul class="jobs-list">
+					<?php
+					$results = $widgetJobs->get_bestmatch_jobs('1');
+					foreach($results as $result)
+					{
+						echo '
+						<li style="position:relative;">
+						<div style="z-index: 5; position: relative; background-color: #EBEBEB; ">
+						<p class="jobtitle">' . $result[jobtitle] . '</p>
+						<p>' . $result[location] . '</p>
+						<div class="progress">
+						<span class="progress-bar">
+						<span class="progress-in" style="width:' . $result[numberofskills]*20 . '%;"></span>
+						</span>
+						</div>
+						<div>
+						<div class="btndetails details">Details</div>
+						<a href="' . $result[url] . '" class="delete">Apply</a>
+						</div>
+						<div class="floatclear"></div>
+						<p style="display:none;" class="jobid">' . $result[jobid] . '</p>
+						</div>
+						<div class="jobdetails" style="z-index: 0; position: absolute; top: 26px; background-color:white; width:311px;">
+						<a href="#" class="button">IOS</a>
+						<a href="#" class="button">RUBY</a>
+						<a href="#" class="button">Dojo</a>
+						<a href="#" class="button">Yahoo</a>
+						<a href="#" class="button">Prototype</a>
+						<a href="#" class="button">Adobe</a>
+						</div>
+						</li>
+						';
+					}
+					?>
+
+					<!-- 
+					<li class="green">
+						<p>Javascript Developer </p>
+						<p>Long Beach, CA </p>
+						<div class="progress">
+							<span class="progress-bar">
+								<span class="progress-in" style="width:277px;"></span>
+							</span>
+						</div>
+						<a href="#" class="details">Details</a>
+						<a href="#" class="delete">Delete</a>
+					</li> -->
+				</ul>
+			</div>
 			<article class="col missing">
 				<header class="title">
 					<h1>Missing Skills</h1>
@@ -173,59 +226,6 @@ $widgetJobs->init();
 					</div>
 				</div>
 			</article>
-			<div class="col available">
-				<header class="title">
-					<h1>Available Jobs</h1>
-				</header>
-				<ul class="jobs-list">
-					<?php
-					$results = $widgetJobs->get_bestmatch_jobs('1');
-					foreach($results as $result)
-					{
-						echo '
-						<li style="position:relative;">
-						<div style="z-index: 5; position: relative; background-color: #EBEBEB; ">
-						<p class="jobtitle">' . $result[jobtitle] . '</p>
-						<p>' . $result[location] . '</p>
-						<div class="progress">
-						<span class="progress-bar">
-						<span class="progress-in" style="width:' . $result[numberofskills]*20 . '%;"></span>
-						</span>
-						</div>
-						<div>
-						<div class="btndetails details">Details</div>
-						<a href="' . $result[url] . '" class="delete">Apply</a>
-						</div>
-						<div class="floatclear"></div>
-						<p style="display:none;" class="jobid">' . $result[jobid] . '</p>
-						</div>
-						<div class="jobdetails" style="z-index: 0; position: absolute; top: 26px; background-color:white; width:311px;">
-						<a href="#" class="button">IOS</a>
-						<a href="#" class="button">RUBY</a>
-						<a href="#" class="button">Dojo</a>
-						<a href="#" class="button">Yahoo</a>
-						<a href="#" class="button">Prototype</a>
-						<a href="#" class="button">Adobe</a>
-						</div>
-						</li>
-						';
-					}
-					?>
-
-					<!-- 
-					<li class="green">
-						<p>Javascript Developer </p>
-						<p>Long Beach, CA </p>
-						<div class="progress">
-							<span class="progress-bar">
-								<span class="progress-in" style="width:277px;"></span>
-							</span>
-						</div>
-						<a href="#" class="details">Details</a>
-						<a href="#" class="delete">Delete</a>
-					</li> -->
-				</ul>
-			</div>
 		</section>
 		<section class="section blue">
 			<div class="items-block columns-holder">
