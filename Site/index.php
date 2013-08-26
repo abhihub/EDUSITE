@@ -161,11 +161,11 @@ $widgetJobs->init();
 	$( document ).ready(function() {
 		humane.log("Hi, welcome. <br> You can start by entering your skills (comma seperated) into the text box below.<br> <br>Then press Submit", {waitForMove:true, timeout:2500});
 		$("#txtskill").asuggest(suggests, {
-        'endingSymbols': ', '
-    });
+			'endingSymbols': ', '
+		});
 	});
 	$('#btnupload').click(function () {
-		console.log($('#txtskill').val());
+		//console.log($('#txtskill').val());
 		$.ajax({ url: 'ParseAndSaveSkills.php',
          // data: {action: 'get_missingskills_job'},
          data: { skillstring: $('#txtskill').val() },

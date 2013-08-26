@@ -51,13 +51,13 @@ class ProcedureToJson{
 	}
 
 	function get_top_missing_skills( $userID_missingskills) {
-		echo 'dead3 userid:' . $userID_missingskills;
+		
 		$sql = "call fillskils.get_top_missing_skills (:userID_missingskills)";
 		$stmt_missingskills = $this->DBH->prepare($sql);
 		$stmt_missingskills->bindParam(':userID_missingskills', $userID_missingskills, PDO::PARAM_INT);
 		$stmt_missingskills->execute();
 		$results_missingskills = $stmt_missingskills->fetchAll();
-		echo 'dead4';
+		
 		//print_r($results_missingskills);echo "\n"; // all record sets
 		//print_r(json_encode($results_missingskills)); echo "\n";
 		$stmt_missingskills->closeCursor();
@@ -66,8 +66,6 @@ class ProcedureToJson{
 	}
 
 	function get_missingskills_job($jobID_missingskills_perjob, $userID_missingskills_perjob) {
-		
-		
 		$sql = "call fillskils.get_missingskills_job (:userID_missingskills_perjob, :jobID_missingskills_perjob)";
 		$stmt_missingskills_perjob = $this->DBH->prepare($sql);
 		$stmt_missingskills_perjob->bindParam(':userID_missingskills_perjob', $userID_missingskills_perjob, PDO::PARAM_INT);

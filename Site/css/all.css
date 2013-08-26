@@ -429,11 +429,19 @@ figure{
 	width:387px;
 	margin:0 0 0 18px;
 }
-.info-columns .col.available{width:389px;}
+.info-columns .col.available{width:320px;}
+.info-columns .col.missing{
+	min-width: 550px;
+	max-width: 550px;
+	width:100%;
+}
 .info-columns .title{
 	padding:0 10px 9px 47px;
 	background:url(../images/sprite.png) no-repeat -9999px 0;
 	text-transform:capitalize;
+}
+.info-columns .col.personal{
+	width:250px;
 }
 .info-columns .personal .title{background-position:-1002px 0;}
 .info-columns .missing .title{background-position:-968px -40px;}
@@ -441,8 +449,8 @@ figure{
 	/*
 background-position:-927px -79px;
 */
-	padding-left:59px;
-	background:url(../images/ico05.png) no-repeat 14px 0;
+padding-left:59px;
+background:url(../images/ico05.png) no-repeat 14px 0;
 }
 .info-columns h1{
 	position:relative;
@@ -462,7 +470,7 @@ background-position:-927px -79px;
 	background:url(../images/sprite.png) no-repeat -100px -210px;
 }
 .info-columns .box{
-	padding:28px 61px 28px;
+	padding:28px 21px 28px;
 	background:url(../images/bg-gray.png);
 	-webkit-box-shadow:0 0 8px 2px rgba(23, 23, 23, 0.75);
 	box-shadow:0 0 8px 2px rgba(23, 23, 23, 0.75);
@@ -483,7 +491,7 @@ background-position:-927px -79px;
 	text-align:justify;
 	margin:0 0 26px;
 }
-.info-columns .btn-holder .holder{margin:0 0 0 -14px;}
+.info-columns .btn-holder .holder{margin:0 0 0 -6px;}
 .info-columns .button{
 	display:inline-block;
 	vertical-align:top;
@@ -506,7 +514,7 @@ background-position:-927px -79px;
 	font:bold 11px/22px Arial, Helvetica, sans-serif;
 	text-shadow:0 -1px 0 #0d8b6f;
 	text-align:center;
-	margin:0 0 14px 14px;
+	margin:0 0 8px 8px;
 }
 .info-columns .missing .button{
 	background:#ca6446 url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2NhNjQ0NiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNiOTQ2MmUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
@@ -529,8 +537,8 @@ background-position:-927px -79px;
 }
 .courses-block h2{
 	position:relative;
-	margin:0 0 25px;
-	padding:0 0 14px 9px;
+	margin:0 0 0 0;
+	padding:0 0 4px 9px;
 	font:16px/18px Arial, Helvetica, sans-serif;
 	color:#818181;
 	text-transform:capitalize;
@@ -543,7 +551,8 @@ background-position:-927px -79px;
 	top:0;
 	width:55px;
 	height:34px;
-	background:url(../images/sprite.png) no-repeat -880px -120px;
+	-- background:url(../images/sprite.png) no-repeat -880px -120px;
+	-- background:url(../images/sprite.png) no-repeat -9999px 0;
 }
 .courses-block h2:after{
 	width:29px;
@@ -560,13 +569,13 @@ background-position:-927px -79px;
 }
 .courses-block .list{
 	padding:0;
-	margin:0 -10px 0 4px;
+	margin:10px -10px 0 4px;
 	list-style:none;
 	font-size:0;
 	letter-spacing:-4px;
 }
 .courses-block .list li{
-	width:122px;
+	width:242px;
 	vertical-align:top;
 	padding:0 13px 13px 0;
 	float:left;
@@ -594,14 +603,21 @@ background-position:-927px -79px;
 	font:bold 12px/14px Arial, Helvetica, sans-serif;
 	color:#2b2b2b;
 }
-.courses-block .list p{margin:0 0 15px;}
+.courses-block .list p{
+	margin:0 0 15px;
+	text-overflow: ellipsis;
+	max-height: 110px;
+	min-height: 110px;
+	display: block;
+	overflow: hidden;
+}
 .courses-block .list .btn-row{
 	float:left;
 	width:100%;
 }
 .courses-block .list .details,
 .courses-block .list .delete{
-	float:left;
+	float:right;
 	font:10px/13px Arial, Helvetica, sans-serif;
 	text-transform:capitalize;
 	color:#fff;
@@ -644,19 +660,19 @@ background-position:-927px -79px;
 .info-columns .jobs-list li{
 	overflow:hidden;
 	background:url(../images/bg-gray.png);
-	padding:17px 39px 15px;
+	padding:12px 10px 12px;
 	margin:16px 0 0;
 	-webkit-box-shadow:0 0 6px 3px rgba(23, 23, 23, 0.47);
 	box-shadow:0 0 6px 3px rgba(23, 23, 23, 0.47);
 }
 .info-columns .jobs-list p:first-child{margin:0;}
 .info-columns .jobs-list p{
-	margin:0 0 16px;
+	margin:0 0 6px;
 	text-indent:6px;
 }
 .info-columns .jobs-list .progress{
 	overflow:hidden;
-	margin:0 0 22px;
+	margin:0 0 12px;
 }
 .info-columns .jobs-list .progress-bar{
 	overflow:hidden;
@@ -779,7 +795,12 @@ background-position:-927px -79px;
 	border-radius:3px;
 	background-clip:padding-box;
 }
-.blue .items-block p{margin:0;}
+.blue .items-block p{
+	margin:0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-height: 120px;
+}
 .progress-block{
 	overflow:hidden;
 	width:1170px;
