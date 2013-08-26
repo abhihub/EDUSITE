@@ -10,15 +10,15 @@ class ProcedureToJson{
 	function init() {
 		try {
 
-			// $host = 'tunnel.pagodabox.com';
-			// $dbname = 'DB1';
-			// $user = 'tambra';
-			// $pass = 'bg4oBEMO';
+			$host = 'tunnel.pagodabox.com';
+			$dbname = 'DB1';
+			$user = 'tambra';
+			$pass = 'bg4oBEMO';
 
-			$host = 'localhost';
-			$dbname = 'FillSkils';
-			$user = 'root';
-			$pass = 'root';
+			// $host = 'localhost';
+			// $dbname = 'FillSkils';
+			// $user = 'root';
+			// $pass = 'root';
 
 
   			# MySQL with PDO_MYSQL CREATE DATABASE CONNECTION
