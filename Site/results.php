@@ -57,7 +57,7 @@ $widgetJobs->init();
 			<section class="info-columns columns-holder">
 				<article class="col personal">
 					<header class="title">
-						<h1>A</h1>
+						<h1>You</h1>
 					</header>
 					<div class="box column">
 						<div class="courses-block"><h2>My Skills</h2></div>
@@ -95,7 +95,7 @@ $widgetJobs->init();
 			</article>
 			<article class="col available">
 				<header class="title">
-					<h1>B</h1>
+					<h1>Search results</h1>
 				</header>
 				<div class="box column missing">
 					<div class="courses-block"><h2>Top missing skills</h2></div>
@@ -180,7 +180,7 @@ $widgetJobs->init();
 		</article>
 		<article class="col missing">
 			<header class="title">
-				<h1>C</h1>
+				<h1>Suggestions</h1>
 			</header>
 			<div class="box column">
 
