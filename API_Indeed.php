@@ -15,6 +15,7 @@ class Indeed{
     }
 
     public function search($args){
+        echo "INDEED : entered search <br>";
         return $this->process_request(self::API_SEARCH_ENDPOINT, $this->validate_args(self::$API_SEARCH_REQUIRED, $args));
     }
 
@@ -25,6 +26,8 @@ class Indeed{
     }
 
     private function process_request($endpoint, $args){
+        echo "INDEED : entered process request <br>";
+
         $format = (array_key_exists("format", $args) ? $args["format"] : self::DEFAULT_FORMAT);
         $raw = ($format == "xml" ? true : (array_key_exists("raw", $args) ? $args["raw"] : false));
         $args["publisher"] = $this->publisher;
@@ -36,7 +39,7 @@ class Indeed{
         curl_close($c);
         $r = (!$raw ? json_decode($result, $assoc = true) : $result);
         echo $endpoint . "?" . http_build_query($args);
-       
+        
         return $r;
     }
 
