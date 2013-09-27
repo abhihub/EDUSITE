@@ -1,7 +1,7 @@
 <?php
 require 'common.php';
 echo 'BEGIN JOB LOADER<br/>';
-require 'API_indeed.php';
+// require 'API_indeed.php';
 
 echo(PDO::getAvailableDrivers());
 try {
