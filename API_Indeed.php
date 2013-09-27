@@ -33,10 +33,18 @@ class Indeed{
         $args["publisher"] = $this->publisher;
         $args["v"] = $this->version;
         $args["format"] = $format;
+        echo "INDEED : Before Curl init<br>";
         $c = curl_init(sprintf("%s?%s", $endpoint, http_build_query($args)));
         curl_setopt($c, CURLOPT_RETURNTRANSFER, TRUE);
+        echo "INDEED : Before Curl <br>";
+
         $result = curl_exec($c);
+        echo "INDEED : after Curl <br>";
+
         curl_close($c);
+
+        echo "INDEED : Close Curl <br>";
+
         $r = (!$raw ? json_decode($result, $assoc = true) : $result);
         echo $endpoint . "?" . http_build_query($args);
         
