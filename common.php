@@ -34,10 +34,10 @@ class Databasesetup {
 
 	private function setupdatabase(){
 
-			$host = 'tunnel.pagodabox.com';
-			$dbname = 'DB1';
-			$user = 'tambra';
-			$pass = 'bg4oBEMO';
+		$host = 'tunnel.pagodabox.com';
+		$dbname = 'DB1';
+		$user = 'tambra';
+		$pass = 'bg4oBEMO';
 
 		// $host = 'localhost';
 		// $dbname = 'FillSkils';

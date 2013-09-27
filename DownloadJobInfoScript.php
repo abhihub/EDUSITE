@@ -66,8 +66,9 @@ try {
 					"q" => $fetchedskillname,
 					"l" => "irvine, ca",
 					"radius"=>"25",
-					"limit"=>"10",
-					"userip" => "173.197.64.177",
+					"limit"=>"25",
+					// "userip" => "173.197.64.177",
+					"userip"=> $_SERVER['REMOTE_ADDR'],
 					"useragent" => "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2)"
 					);
 			}
@@ -78,8 +79,8 @@ try {
 					"q" => $fetchedskillname,
 					"l" => "pasadena, ca",
 					"radius"=>"25",
-					"limit"=>"10",
-					"userip" => "173.197.64.177",
+					"limit"=>"25",
+					"userip" => $_SERVER['REMOTE_ADDR'],
 					"useragent" => "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2)"
 					);
 			}
@@ -90,8 +91,8 @@ try {
 					"q" => $fetchedskillname,
 					"l" => "santa monica, ca",
 					"radius"=>"25",
-					"limit"=>"10",
-					"userip" => "173.197.64.177",
+					"limit"=>"25",
+					"userip" => $_SERVER['REMOTE_ADDR'],
 					"useragent" => "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2)"
 					);
 			}
