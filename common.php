@@ -34,15 +34,16 @@ class Databasesetup {
 
 	private function setupdatabase(){
 
-			// $host = 'tunnel.pagodabox.com';
-			// $dbname = 'DB1';
-			// $user = 'tambra';
-			// $pass = 'bg4oBEMO';
+			$host = 'tunnel.pagodabox.com';
+			$dbname = 'DB1';
+			$user = 'tambra';
+			$pass = 'bg4oBEMO';
 
-		$host = 'localhost';
-		$dbname = 'FillSkils';
-		$user = 'root';
-		$pass = 'root';
+		// $host = 'localhost';
+		// $dbname = 'FillSkils';
+		// $user = 'root';
+		// $pass = 'root';
+		
 		$options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'); 
 
 		try {
