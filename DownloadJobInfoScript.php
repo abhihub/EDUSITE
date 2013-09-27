@@ -1,9 +1,9 @@
 <?php
 require 'common.php';
 echo 'BEGIN JOB LOADER<br/>';
-require 'API_indeed.php';
+require 'API_Indeed.php';
 
-echo(PDO::getAvailableDrivers());
+//echo(PDO::getAvailableDrivers());
 try {
 	# MySQL with PDO_MYSQL CREATE DATABASE CONNECTION
 	$DBH = common::getInstance()->getDatabase(); 
