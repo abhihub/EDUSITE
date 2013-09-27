@@ -1,25 +1,8 @@
 <?php
 try{
-	try {
-
-		$host = 'tunnel.pagodabox.com';
-		$dbname = 'DB1';
-		$user = 'tambra';
-		$pass = 'bg4oBEMO';
-
-		// $host = 'localhost';
-		// $dbname = 'FillSkils';
-		// $user = 'root';
-		// $pass = 'root';
-
-  			# MySQL with PDO_MYSQL CREATE DATABASE CONNECTION
-		$DBH = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
-		$DBH->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );  
-	}
-	catch (PDOException $e) {
-		echo 'Connection failed: ' . $e->getMessage();
-	}
-
+	require("common.php");
+	
+	$DBH = common::getInstance()->getDatabase();
 	$skillname = $_POST['skillstring'];
 	//echo "Skillstring: " . $skillname;
 	$STHGetCoursesBySkillName = $DBH->prepare('select cc.* from courses cc inner join coursesskills csk on cc.id = csk.courseid

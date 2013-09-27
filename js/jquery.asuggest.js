@@ -61,7 +61,7 @@
         'autoComplete': true,
         'endingSymbols': ' ',
         'stopSuggestionKeys': [$.asuggestKeys.RETURN, $.asuggestKeys.SPACE],
-        'ignoreCase': false
+        'ignoreCase': true
     };
 
     /* Make suggest:

@@ -2,6 +2,11 @@
 require 'ProceduresToJson.php';
 $widgetJobs = new ProcedureToJson();
 $widgetJobs->init();
+if(empty($_SESSION['user'])) 
+{ 
+	header("Location: index.php"); 
+	die("Redirecting to index.php"); 
+} 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,11 +18,17 @@ $widgetJobs->init();
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.8.3.min.js"><\/script>')</script>
 	<script type="text/javascript" src="js/jquery.main.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	<!--[if IE]><script type="text/javascript" src="js/ie.js"></script><![endif]-->
 	<script type="text/javascript">
-      var heap=heap||[];heap.load=function(a){window._heapid=a;var b=document.createElement("script");b.type="text/javascript",b.async=!0,b.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.heapanalytics.com/js/heap.js";var c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c);var d=function(a){return function(){heap.push([a].concat(Array.prototype.slice.call(arguments,0)))}},e=["identify","track"];for(var f=0;f<e.length;f++)heap[e[f]]=d(e[f])};
-      heap.load("812388706");
-    </script>
+	var heap=heap||[];heap.load=function(a){window._heapid=a;var b=document.createElement("script");b.type="text/javascript",b.async=!0,b.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.heapanalytics.com/js/heap.js";var c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c);var d=function(a){return function(){heap.push([a].concat(Array.prototype.slice.call(arguments,0)))}},e=["identify","track"];for(var f=0;f<e.length;f++)heap[e[f]]=d(e[f])};
+	heap.load("812388706");
+	</script>
 </head>
 <body>
 	<div id="wrapper">
@@ -26,7 +37,7 @@ $widgetJobs->init();
 				<div class="frame">
 					<strong class="logo"><a href="#">FillSkills Helping you for the perfect job</a></strong>
 					<nav id="nav">
-						<a class="home" href="index.php">Home</a>
+						<a class="home" href="index2.php">Home</a>
 						<a class="results active" href="#">Results</a>
 						<a class="courses" href="#">Courses</a>
 						<a class="skills" href="#">Skills</a>
@@ -71,7 +82,6 @@ $widgetJobs->init();
 								$resultsusersskills = $widgetJobs->get_users_skills('1');
 								foreach($resultsusersskills as $result)
 								{
-
 									echo '<a href="#" class="button">' . $result[skillname] . '</a>';
 								}
 								?>

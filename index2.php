@@ -1,3 +1,14 @@
+<?php
+//require 'common.php';
+require 'ProceduresToJson.php';
+$widgetJobs = new ProcedureToJson();
+$widgetJobs->init();
+if(empty($_SESSION['user'])) 
+{ 
+	header("Location: index.php"); 
+	die("Redirecting to index.php"); 
+} 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +22,7 @@
 	<script type="text/javascript" src="js/humane.min.js"></script>
 	<script type="text/javascript" src="js/jquery.a-tools-1.4.1.js"></script>
 	<script type="text/javascript" src="js/jquery.asuggest.js"></script>
+	<script type="text/javascript" src="js/dropzone.min.js"></script>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 	<!-- Optional theme -->
@@ -27,49 +39,12 @@
 </script> -->
 </head>
 <body>
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="flip-container">
-					<div class="front">
-						<!-- front content -->
-						<form action="BetaRequest.php" method="post" id="registerform"> 
-							<fieldset>
-								<legend>Request an invite</legend>	
-								<!-- <input placeholder="Username" type="text" name="username" value="" /> <br/> -->
-								<input placeholder="Your email" type="text" name="email" id="email" value="" /> <br/>
-								<!-- <input placeholder="Password" type="password" name="password" value="" />  -->
-								<input class="btn btn-large btn-info btn-block" type="submit" value="Request an invite" /> 
-							</fieldset>
-						</form>
-						<p class="text-center"><a class="edit-submit flipfrontlink" href="#">Login?</a></p>
-					</form>
-				</div>
-				<div class="back">
-					<!-- back content -->
-					<div>
-						<div>
-							<form accept-charset="utf-8" style="margin:0;" id="loginform" method="POST" action="login.php">
-								<fieldset>
-									<legend>Please sign in</legend>
-									<input placeholder="Username" class="input-block-level" id="username" type="text" name="username"> <br/> 				    
-									<input placeholder="Password" class="input-block-level" id="password" type="password" name="password">  				    <!--<a class="pull-right" href="">Forgot password?</a>-->
-									<label class="checkbox"><input name="remember" type="checkbox" value="Remember Me"> Remember Me</label>
-									<input class="btn btn-large btn-info btn-block" type="submit" value="Login">  				  	<br>
-									<p class="text-center flipbacklink"><a href="#" id="register-btn" class="cbutton">Request an Invite?</a></p>
-								</fieldset>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
+	
 	<div id="wrapper">
 		<header id="header">
 			<div class="holder">
 				<div class="frame">
-					<strong class="logo"><a href="#">FillSkills Helping you for the perfect job</a></strong>
+					<strong class="logo"><a href="#">FillSkills: Helping you land your dream job</a></strong>
 					<nav id="nav">
 						<a class="home active" href="#">Home</a>
 						<a class="results" href="#">Results</a>
@@ -85,7 +60,7 @@
 				<p>Upload your resume or skills and we will guide you to <br />the right course for you to find the perfect job!</p>
 				<div class="block">
 					<h1>Drop your resume here</h1>
-					<form class="drag-box"><img src="images/img01.gif" width="527" height="243" alt="image description" /></form>
+					<form class="drag-box" action=""><img src="images/img01.gif" width="527" height="243" alt="image description" /></form>
 				</div>
 				<div class="block">
 					<h1>Add your skills here</h1>
@@ -94,7 +69,12 @@
 					</div>
 				</div>
 				
-				
+				<?php
+				$resultsallmissingskills = $widgetJobs->get_all_skillnames();
+				echo '<script type="text/javascript">',
+				'var suggests =' . $resultsallmissingskills . ';',
+				'</script>';
+				?>
 			</div>
 			<section class="section gray greenbg">
 				<article class="holder">
@@ -198,25 +178,30 @@
 
 	<script type="text/javascript">
 	$( document ).ready(function() {
-		// humane.log("Hi, welcome. <br> You can start by entering your skills (comma seperated) into the text box below.<br> <br>Then press Submit"
-		// 	, {waitForMove:true, timeout:2500});
+		humane.log("Hi, welcome. <br> You can start by entering your skills (comma seperated) into the text box below.<br> <br>Then press Submit"
+			, {waitForMove:true, timeout:2500});
 
-	$('#myModal').modal({
-		backdrop: 'static',
-		keyboard: false
-	})
 	$("#txtskill").asuggest(suggests, {
 		'endingSymbols': ', '
 	});
 });
 
 
-	$('.flipfrontlink').click(function () {
-		$('.flip-container').addClass('flip');
+	$('#btnupload').click(function () {
+		//console.log($('#txtskill').val());
+		$.ajax({ url: 'ParseAndSaveSkills.php',
+         // data: {action: 'get_missingskills_job'},
+         data: { skillstring: $('#txtskill').val() },
+         type: 'POST',
+         success: function(output) {
+                      //SWITCH TO OTHER PAGE
+                      //alert(output);
+                      window.location.replace("results.php");
+                      //$('#naslov b').html(output);
+                  }
+              });
 	});
-	$('.flipbacklink').click(function () {
-		$('.flip-container').removeClass('flip');
-	});
+
 
 	</script>
 </body>

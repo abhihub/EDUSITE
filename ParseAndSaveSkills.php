@@ -1,30 +1,15 @@
 <?php
+require("common.php");
+
 try{
-	try {
-
-		$host = 'tunnel.pagodabox.com';
-		$dbname = 'DB1';
-		$user = 'tambra';
-		$pass = 'bg4oBEMO';
-
-		// $host = 'localhost';
-		// $dbname = 'FillSkils';
-		// $user = 'root';
-		// $pass = 'root';
-
-  			# MySQL with PDO_MYSQL CREATE DATABASE CONNECTION
-		$DBH = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
-		$DBH->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );  
-	}
-	catch (PDOException $e) {
-		echo 'Connection failed: ' . $e->getMessage();
-	}
-
+	
+	$DBH = common::getInstance()->getDatabase();
+	
 	$text = $_POST['skillstring'];
 	$splitresults = preg_split('/((^\p{P}+)|(\p{P}*\s+\p{P}*)|(\p{P}+$))/', $text, -1, PREG_SPLIT_NO_EMPTY);
 	$splitresults = array_unique($splitresults);
 
-	// echo count($splitresults);
+	echo $splitresults;
 	//echo json_encode($splitresults);
 
 	$TruncateSkills = $DBH->exec('Truncate table usersskills');
@@ -32,7 +17,7 @@ try{
 
 	$STHGetSkillIdFromSkills = $DBH->prepare('SELECT id FROM skills WHERE name = :skillname');
 	$STHGetSkillIdFromSkills->bindParam(':skillname', $skillname);
-
+	
 
 	$STHInsertUserSkillRelation = $DBH->prepare("INSERT INTO usersskills (userid, skillid) values (:usersid, :skillid)"); 
 	$STHInsertUserSkillRelation->bindParam(':usersid', $usersid);
@@ -51,6 +36,7 @@ try{
 		
 		$STHInsertUserSkillRelation->execute();	
 	}
+	
 }
 catch (Exception $e) {
 	echo 'Insert/Truncate failed: ' . $e->getMessage();
