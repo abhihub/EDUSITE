@@ -998,6 +998,19 @@ box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15);
 transition: width .6s ease;
 }
 
+*, *:before, *:after {
+-webkit-box-sizing: content-box;
+-moz-box-sizing: content-box;
+box-sizing: content-box;
+}
+
+.btn, .btn:active {
+padding: 0;
+}
+
+.progress {
+height: auto;
+}
 /* ==========================================================================
    FLIP
    ========================================================================== */
@@ -1089,3 +1102,4 @@ transition: width .6s ease;
    	-webkit-transform: rotateX(0deg);
    	-moz-transform: rotateX(0deg);
    }
+

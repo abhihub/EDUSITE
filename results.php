@@ -14,7 +14,7 @@ if(empty($_SESSION['user']))
 	<meta charset="utf-8">
 	<meta name = "format-detection" content = "telephone=no" />
 	<title>FillSkills</title>
-	<link media="all" rel="stylesheet" href="css/all.css">
+	
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.8.3.min.js"><\/script>')</script>
 	<script type="text/javascript" src="js/jquery.main.js"></script>
@@ -22,6 +22,7 @@ if(empty($_SESSION['user']))
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+	<link media="all" rel="stylesheet" href="css/all.css">
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	<!--[if IE]><script type="text/javascript" src="js/ie.js"></script><![endif]-->
