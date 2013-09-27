@@ -3,7 +3,7 @@ require 'common.php';
 echo 'BEGIN JOB LOADER<br/>';
 require 'API_indeed.php';
 
-print_r(PDO::getAvailableDrivers());
+echo(PDO::getAvailableDrivers());
 try {
 	# MySQL with PDO_MYSQL CREATE DATABASE CONNECTION
 	$DBH = common::getInstance()->getDatabase(); 
@@ -101,7 +101,7 @@ try {
 
 		echo 'Search INDEED.COM for '. $fetchedskillname . ' in ' . $location . '<br/>';
 		$results = $client->search($params); //Find out all jobs in LOCATION for that skill
-		print_r($results);
+		echo($results);
 
 		foreach($results['results'] as $item)
 		{
