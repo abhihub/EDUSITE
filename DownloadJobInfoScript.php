@@ -3,7 +3,7 @@ require 'common.php';
 echo 'BEGIN JOB LOADER<br/>';
 require 'API_Indeed.php';
 
-//echo(PDO::getAvailableDrivers());
+print_r(PDO::getAvailableDrivers());
 try {
 	# MySQL with PDO_MYSQL CREATE DATABASE CONNECTION
 	$DBH = common::getInstance()->getDatabase(); 

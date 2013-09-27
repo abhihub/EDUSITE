@@ -34,6 +34,12 @@ class Databasesetup {
 
 	private function setupdatabase(){
 
+		// $host = '127.0.0.1';
+		// $dbname = 'DB1';
+		// $user = 'tambra';
+		// $pass = 'bg4oBEMO';
+		// $port = '3307';
+
 		$host = 'tunnel.pagodabox.com';
 		$dbname = 'DB1';
 		$user = 'tambra';
@@ -43,12 +49,13 @@ class Databasesetup {
 		// $dbname = 'FillSkils';
 		// $user = 'root';
 		// $pass = 'root';
-		
+
 		$options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'); 
 
 		try {
 
 			# MySQL with PDO_MYSQL CREATE DATABASE CONNECTION
+			//$this->DBH = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $user, $pass);
 			$this->DBH = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
 		}
 		catch (PDOException $e) {

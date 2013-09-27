@@ -3,3 +3,4 @@ web1:
   php_display_errors: "0"
   php_extensions:
     - pdo_mysql
+    - curl
