@@ -43,6 +43,7 @@ if(empty($_SESSION['user']))
 						<a class="courses" href="#">Courses</a>
 						<a class="skills" href="#">Skills</a>
 						<a class="contact" href="#">Contact</a>
+						<a class="logout" href="logout.php">Logout</a>
 					</nav>
 				</div>
 			</div>
