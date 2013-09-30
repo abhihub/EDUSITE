@@ -121,8 +121,6 @@ class ProcedureToJson{
 			$stmt_getSkillsAll = $this->DBH->prepare($sql);
 			$stmt_getSkillsAll->execute();
 			$results_SkillsAll = $stmt_getSkillsAll->fetchAll(PDO::FETCH_COLUMN);
-		//print_r($results_SkillsAll);echo "\n"; // all record sets
-		//print_r(json_encode($results_SkillsAll)); echo "\n";
 			$stmt_getSkillsAll->closeCursor();
 			unset($stmt_getSkillsAll);
 			return json_encode($results_SkillsAll);
@@ -145,7 +143,7 @@ class ProcedureToJson{
 
 // 	//BEST MATCH JOBS
 // 	$userID_bestmatch = 1;
-// 	$sql = "call fillskils.get_bestmatch_jobs (:userID_bestmatch)";
+// 	$sql = "call DB1.get_bestmatch_jobs (:userID_bestmatch)";
 // 	$stmt_bestmatch = $DBH->prepare($sql);
 // 	$stmt_bestmatch->bindParam(':userID_bestmatch', $userID_bestmatch, PDO::PARAM_INT);
 // 	$stmt_bestmatch->execute();
@@ -157,7 +155,7 @@ class ProcedureToJson{
 
 // 	//TOP MISSING SKILLS
 // 	$userID_missingskills = 1;
-// 	$sql = "call fillskils.get_top_missing_skills (:userID_missingskills)";
+// 	$sql = "call DB1.get_top_missing_skills (:userID_missingskills)";
 // 	$stmt_missingskills = $DBH->prepare($sql);
 // 	$stmt_missingskills->bindParam(':userID_missingskills', $userID_missingskills, PDO::PARAM_INT);
 // 	$stmt_missingskills->execute();
@@ -173,7 +171,7 @@ class ProcedureToJson{
 // 		echo($selectedjob[jobid]);
 // 		$jobID_missingskills_perjob = $selectedjob[jobid];
 // 		$userID_missingskills_perjob = 1;
-// 		$sql = "call fillskils.get_missingskills_job (:userID_missingskills_perjob, :jobID_missingskills_perjob)";
+// 		$sql = "call DB1.get_missingskills_job (:userID_missingskills_perjob, :jobID_missingskills_perjob)";
 // 		$stmt_missingskills_perjob = $DBH->prepare($sql);
 // 		$stmt_missingskills_perjob->bindParam(':userID_missingskills_perjob', $userID_missingskills_perjob, PDO::PARAM_INT);
 // 		$stmt_missingskills_perjob->bindParam(':jobID_missingskills_perjob', $jobID_missingskills_perjob, PDO::PARAM_INT);
