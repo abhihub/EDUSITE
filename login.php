@@ -74,27 +74,27 @@ if(!empty($_POST))
     { 
 
             // Get the data
-        $data = file_get_contents('http://www.geoplugin.net/php.gp?ip='.$_SERVER['REMOTE_ADDR']);
+        // $data = file_get_contents('http://www.geoplugin.net/php.gp?ip='.$_SERVER['REMOTE_ADDR']);
 
-        // Decode the JSON result into an array
-        $data = json_decode($data);
+        // // Decode the JSON result into an array
+        // $data = json_decode($data);
 
-        // All data can now be accessed using the associative array $data
-        $country = $data['Country']; // Country
-        $city = $data['City']; // City
-        $username = $_POST['username'];
-        $nowdate = date('Y/m/d H:i:s');
-        $location = $country . ', ' . $city;
-        try{
-            $STHSaveUserLocation = $db->prepare("INSERT INTO userlogins (userid,logintime,location) values (:userid, :logintime, :location)"); 
-            $STHSaveUserLocation->bindParam(':userid', $username);
-            $STHSaveUserLocation->bindParam(':logintime', $nowdate);
-            $STHSaveUserLocation->bindParam(':location', $location);
-            $STHSaveUserLocation->execute();   
-        }
-        catch (Exception $e) {
-            // ('Insert Beta failed: ' . $e->getMessage());
-        }
+        // // All data can now be accessed using the associative array $data
+        // $country = $data['Country']; // Country
+        // $city = $data['City']; // City
+        // $username = $_POST['username'];
+        // $nowdate = date('Y/m/d H:i:s');
+        // $location = $country . ', ' . $city;
+        // try{
+        //     $STHSaveUserLocation = $db->prepare("INSERT INTO userlogins (userid,logintime,location) values (:userid, :logintime, :location)"); 
+        //     $STHSaveUserLocation->bindParam(':userid', $username);
+        //     $STHSaveUserLocation->bindParam(':logintime', $nowdate);
+        //     $STHSaveUserLocation->bindParam(':location', $location);
+        //     $STHSaveUserLocation->execute();   
+        // }
+        // catch (Exception $e) {
+        //     // ('Insert Beta failed: ' . $e->getMessage());
+        // }
 
             // Here I am preparing to store the $row array into the $_SESSION by 
             // removing the salt and password values from it.  Although $_SESSION is 
