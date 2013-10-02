@@ -61,7 +61,7 @@ if(empty($_SESSION['user']))
 				<p>Upload your resume or skills and we will guide you to <br />the right course for you to find the perfect job!</p>
 				<div class="block">
 					<h1>Drop your resume here</h1>
-					<form class="drag-box dropzone" action=""><img src="images/img01.gif" width="527" height="243" alt="image description" /></form>
+					<form class="drag-box" action=""><img src="images/img01.gif" width="527" height="243" alt="image description" /></form>
 				</div>
 				<div class="block">
 					<h1>Add your skills here</h1>
