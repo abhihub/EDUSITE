@@ -7,6 +7,10 @@ if(empty($_SESSION['user']))
 	header("Location: index.php"); 
 	die("Redirecting to index.php"); 
 } 
+else
+{
+	$userid = $_SESSION['user']['id'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,7 +85,8 @@ if(empty($_SESSION['user']))
 						<div class="btn-holder">
 							<div class="holder">
 								<?php
-								$resultsusersskills = $widgetJobs->get_users_skills('1');
+								
+								$resultsusersskills = $widgetJobs->get_users_skills($userid);
 								foreach($resultsusersskills as $result)
 								{
 									echo '<a href="#" class="button">' . $result[skillname] . '</a>';
@@ -118,7 +123,7 @@ if(empty($_SESSION['user']))
 					<div class="btn-holder">
 						<div class="holder">
 							<?php
-							$resultsallmissingskills = $widgetJobs->get_top_missing_skills('1');
+							$resultsallmissingskills = $widgetJobs->get_top_missing_skills($userid);
 							foreach($resultsallmissingskills as $result)
 							{
 								echo '<a href="#" class="button skillbtn">' . $result[skillname] . '</a>';
@@ -137,7 +142,7 @@ if(empty($_SESSION['user']))
 					<div class="courses-block"><h2>Best match jobs</h2></div>
 					<ul class="jobs-list">
 						<?php
-						$results = $widgetJobs->get_bestmatch_jobs('1');
+						$results = $widgetJobs->get_bestmatch_jobs($userid);
 						foreach($results as $result)
 						{
 							//$resultsSkillsPerJob = $widgetJobs->get_missingskills_job('1', $result[jobid]);
@@ -247,7 +252,7 @@ if(empty($_SESSION['user']))
 				<div class="holder">
 
 					<?php
-					$results_topCoursesMore = $widgetJobs->get_top_courses_more('1');
+					$results_topCoursesMore = $widgetJobs->get_top_courses_more($userid);
 					foreach($results_topCoursesMore as $result)
 					{
 						echo '
