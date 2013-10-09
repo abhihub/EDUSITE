@@ -131,7 +131,42 @@ class ProcedureToJson{
 		}
 	}	
 
+	function get_isbetalinkvalid($beta_loginid){
+		try{
+			$sql = "SELECT count(*) from betatestuniquekeys where unique_key = :beta_loginid and num_uses < 1";
+			$stmt_isValidBetaLink  = $this->DBH->prepare($sql);
+			$stmt_isValidBetaLink->bindParam(':beta_loginid', $beta_loginid, PDO::PARAM_STR);
+			$stmt_isValidBetaLink->execute();
+			$results_isValidBetaLink = $stmt_isValidBetaLink->fetchColumn();
+			$stmt_isValidBetaLink->closeCursor();
+			unset($stmt_isValidBetaLink);	
+			
+			return $results_isValidBetaLink == 1;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();
+		}
+	}
+
+	function update_betalink($beta_loginid){
+		try{
+			$sql = "UPDATE  betatestuniquekeys SET  num_uses =  '1' WHERE  unique_key = :beta_loginid";
+			$stmt_isValidBetaLink  = $this->DBH->prepare($sql);
+			$stmt_isValidBetaLink->bindParam(':beta_loginid', $beta_loginid, PDO::PARAM_STR);
+			$stmt_isValidBetaLink->execute();
+			$stmt_isValidBetaLink->closeCursor();
+			unset($stmt_isValidBetaLink);	
+		}
+		catch(PDOException $e)
+		{
+			echo 'Error in update' .$e->getMessage();
+		}
+	}
+	
+
 }
+
 
 
 
