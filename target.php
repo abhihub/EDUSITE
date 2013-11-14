@@ -53,64 +53,52 @@ else
 			</div>
 		</header>
 		<div id="main">
-			<div class="block">
-				<p>Choose your goal:</p>
+			<div class="upload-block">
+				<p>Set your goal</p>
 			</div>
 
 			<section class="section info-columns columns-holder">
+				<article class="col missing">
+					<header class="title">
+						<h1>Target all jobs (Default)</h1>
+					</header>
+					<div class="box column target-alljobs">
+						<div class="courses-block">
+							<h2>Analyse the entire software job market: </h2>
+							<br>
+							<p>90,000 software jobs </p>
+							<p>Across 50 states </p>
+							<p>50+ fields </p>
+							<p>Hundreds of skills</p>
+						</div>
+					</div>
+				</article>
 				<article class="col personal">
 					<div>
 						<header class="title">
-							<h1>We think you are</h1>
+							<h1>Continue on your current path</h1>
 						</header>
 						<div class="box column">
-							<div class="courses-block"><h2>Choose from current skills</h2></div>
+							<div class="courses-block"><h2>We think you know these fields:</h2></div>
 							<ul class="jobs-list target-list-current">
-								<li class="green">
+								<?php
+								$results_skillsetmatches = $widgetJobs->get_skillset_matches($userid);
+								foreach($results_skillsetmatches as $result)
+								{
+									echo '
+									<li class="green">
 									<div class="progress">
-										<span class="progress-bar">
-											<span class="progress-in" style="width:80%;">
-												<p>Javascript Developer </p>
-											</span>
-										</span>
+									<span class="progress-bar">
+									<span class="progress-in" style="width:100%;">
+									<p>' . $result[name] . '</p>
+									</span>
+									</span>
 									</div>
-								</li>
-								<li class="green">
-									<div class="progress">
-										<span class="progress-bar">
-											<span class="progress-in" style="width:80%;">
-												<p>PHP Developer </p>
-											</span>
-										</span>
-									</div>
-								</li>
-								<li class="green">
-									<div class="progress">
-										<span class="progress-bar">
-											<span class="progress-in" style="width:80%;">
-												<p>HTML Developer </p>
-											</span>
-										</span>
-									</div>
-								</li>
-								<li class="green">
-									<div class="progress">
-										<span class="progress-bar">
-											<span class="progress-in" style="width:80%;">
-												<p>C++ Developer </p>
-											</span>
-										</span>
-									</div>
-								</li>
-								<li class="green">
-									<div class="progress">
-										<span class="progress-bar">
-											<span class="progress-in" style="width:80%;">
-												<p>iOS Developer </p>
-											</span>
-										</span>
-									</div>
-								</li>
+									</li>
+									';
+								}
+								?>
+								<!-- 
 								<li class="green">
 									<div class="progress">
 										<span class="progress-bar">
@@ -119,7 +107,7 @@ else
 											</span>
 										</span>
 									</div>
-								</li>
+								</li> -->
 							</ul>
 						</div>
 					</div>
@@ -127,12 +115,29 @@ else
 				<article class="col available">
 					<div>
 						<header class="title">
-							<h1>Change your field</h1>
+							<h1>Or learn new software fields</h1>
 						</header>
 						<div class="box column missing">
-							<div class="courses-block"><h2>Top software fields by jobs</h2></div>
+							<div class="courses-block"><h2>Here are the ones with the most jobs: </h2></div>
 							<ul class="jobs-list target-list-current">
-								<li class="green">
+								<?php
+								$results_skillsetmatches = $widgetJobs->get_topjobs_skillsets($userid);
+								foreach($results_skillsetmatches as $result)
+								{
+									echo '
+									<li class="green">
+									<div class="progress">
+									<span class="progress-bar">
+									<span class="progress-in" style="width:100%;">
+									<p>' . $result[name] . '</p>
+									</span>
+									</span>
+									</div>
+									</li>
+									';
+								}
+								?>
+								<!-- <li class="green">
 									<div class="progress">
 										<span class="progress-bar">
 											<span class="progress-in" style="width:80%;">
@@ -185,26 +190,12 @@ else
 											</span>
 										</span>
 									</div>
-								</li>
+								</li> -->
 							</ul>
 						</div>
 					</div>
 				</article>
-				<article class="col missing">
-					<header class="title">
-						<h1>Target all jobs</h1>
-					</header>
-					<div class="box column target-alljobs">
-						<div class="courses-block">
-							<h2>You can also target the entire software job market</h2>
-							<br>
-								<p>90,000 software jobs </p>
-								<p>Across 50 states </p>
-								<p>50+ fields </p>
-								<p>Hundreds of skills</p>
-						</div>
-					</div>
-				</article>
+				
 			</section>
 
 			<section class="section gray greenbg">

@@ -14,7 +14,7 @@ try{
 
  	$TruncateSkills="DELETE FROM usersskills WHERE userid =" . $userid;
  	echo $TruncateSkills;
-	$numRows=$DBH->exec($TruncateSkills);
+	$numRows=$DBH->exec($TruncateSkills); 
 	echo($numRows);
 
 	$STHGetSkillIdFromSkills = $DBH->prepare('SELECT id FROM skills WHERE name = :skillname');

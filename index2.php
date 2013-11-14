@@ -75,7 +75,7 @@ UserVoice.push(['showTab', 'classic_widget', {
 		</header>
 		<div id="main">
 			<div class="upload-block">
-				<p>Upload your resume or skills and we will guide you to <br />the right course for you to find the perfect job!</p>
+				<p>Upload your resume or enter skills and we will guide you to <br />the right course for you to target your dream job!</p>
 				<div class="block">
 					<h1>Drop your resume here</h1>
 					<form class="drag-box" action=""><img src="images/img01.gif" width="527" height="243" alt="image description" /></form>
@@ -97,7 +97,7 @@ UserVoice.push(['showTab', 'classic_widget', {
 			<section class="section gray greenbg">
 				<article class="holder">
 					<div class="text-holder">
-						<a href="#" id="btnupload" class="btn">SUBMIT</a>
+						<a href="#" id="btnupload" class="btn">STEP 2 ></a>
 					</div>
 				</article>
 			</section>
@@ -196,8 +196,7 @@ UserVoice.push(['showTab', 'classic_widget', {
 
 	<script type="text/javascript">
 	$( document ).ready(function() {
-		humane.log("Hi, welcome. <br> You can start by entering your skills (comma seperated) into the text box below.<br> <br>Then press Submit"
-			, {waitForMove:true, timeout:2500});
+		//humane.log("Hey there, welcome. <br> Start by entering your skills.<br", {timeout:1500});
 
 	$("#txtskill").asuggest(suggests, {
 		'endingSymbols': ', '
@@ -214,7 +213,7 @@ UserVoice.push(['showTab', 'classic_widget', {
          success: function(output) {
                       //SWITCH TO OTHER PAGE
                       //alert(output);
-                      window.location.replace("results.php");
+                      window.location.replace("target.php");
                       //$('#naslov b').html(output);
                   }
               });

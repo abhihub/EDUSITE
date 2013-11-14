@@ -11,29 +11,45 @@ else
 {
 	$userid = $_SESSION['user']['id'];
 }
+
+$target = $_POST['targetstring'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name = "format-detection" content = "telephone=no" />
-	<title>FillSkills</title>
-	
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.8.3.min.js"><\/script>')</script>
-	<script type="text/javascript" src="js/jquery.main.js"></script>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
-	<link media="all" rel="stylesheet" href="css/all.css">
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<!--[if IE]><script type="text/javascript" src="js/ie.js"></script><![endif]-->
-	<script type="text/javascript">
-	var heap=heap||[];heap.load=function(a){window._heapid=a;var b=document.createElement("script");b.type="text/javascript",b.async=!0,b.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.heapanalytics.com/js/heap.js";var c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c);var d=function(a){return function(){heap.push([a].concat(Array.prototype.slice.call(arguments,0)))}},e=["identify","track"];for(var f=0;f<e.length;f++)heap[e[f]]=d(e[f])};
-	heap.load("812388706");
-	</script>
+<meta charset="utf-8">
+<meta name = "format-detection" content = "telephone=no" />
+<title>FillSkills</title>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.8.3.min.js"><\/script>')</script>
+<script type="text/javascript" src="js/jquery.main.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+<link media="all" rel="stylesheet" href="css/all.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<!--[if IE]><script type="text/javascript" src="js/ie.js"></script><![endif]-->
+<script type="text/javascript">
+var heap=heap||[];heap.load=function(a){window._heapid=a;var b=document.createElement("script");b.type="text/javascript",b.async=!0,b.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.heapanalytics.com/js/heap.js";var c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c);var d=function(a){return function(){heap.push([a].concat(Array.prototype.slice.call(arguments,0)))}},e=["identify","track"];for(var f=0;f<e.length;f++)heap[e[f]]=d(e[f])};
+heap.load("812388706");
+</script>
+<script>(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/nyMJniTehAhgN1jvDkD44g.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})()</script>
+<!-- A tab to launch the Classic Widget -->
+<script>
+UserVoice = window.UserVoice || [];
+UserVoice.push(['showTab', 'classic_widget', {
+  mode: 'feedback',
+  primary_color: '#cc6d00',
+  link_color: '#007dbf',
+  forum_id: 226405,
+  tab_label: 'Feedback',
+  tab_color: '#cc6d00',
+  tab_position: 'middle-right',
+  tab_inverted: false
+}]);
+</script>
 </head>
 <body>
 	<div id="wrapper">
@@ -119,14 +135,45 @@ else
 					<h1>Search results</h1>
 				</header>
 				<div class="box column missing">
+					<div class="courses-block"><h2>My Target</h2></div>
+					<div class="btn-holder">
+						<div class="holder">
+							<?php
+							
+							echo '<a href="#" class="button">' . $target . '</a>';
+							
+							?>
+							<!-- <a href="#" class="button">IOS</a>
+							<a href="#" class="button">RUBI</a>
+							<a href="#" class="button">Dojo</a>
+							<a href="#" class="button">Yahoo</a>
+							<a href="#" class="button">Prototype</a>
+							<a href="#" class="button">Adobe</a>
+							<a href="#" class="button">Mootool</a>
+							<a href="#" class="button">TableKit</a> -->
+						</div>
+					</div>
 					<div class="courses-block"><h2>Top missing skills</h2></div>
 					<div class="btn-holder">
 						<div class="holder">
 							<?php
-							$resultsallmissingskills = $widgetJobs->get_top_missing_skills($userid);
-							foreach($resultsallmissingskills as $result)
+							if($target == "")
 							{
-								echo '<a href="#" class="button skillbtn">' . $result[skillname] . '</a>';
+								$resultsallmissingskills = $widgetJobs->get_top_missing_skills($userid);
+								foreach($resultsallmissingskills as $result)
+								{
+									echo '<a href="#" class="button skillbtn">' . $result[skillname] . '</a>';
+								}
+							}
+							else
+							{
+								$targetid = $widgetJobs->get_skillsetid_byname($target);
+								//echo 'targetid = ' . $targetid;
+								$resultsallmissingskills = $widgetJobs->get_missingskills_skillset($userid, $targetid);
+								foreach($resultsallmissingskills as $result)
+								{
+									echo '<a href="#" class="button skillbtn">' . $result[skillname] . '</a>';
+								}
 							}
 							?>
 							<!-- <a href="#" class="button">IOS</a>
@@ -225,7 +272,6 @@ else
 								</div>
 								</li>
 								';
-
 							}
 						}
 						?>

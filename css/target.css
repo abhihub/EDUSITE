@@ -122,13 +122,13 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	}
 	.upload-block{
 		width:1170px;
-		padding:12px 15px 0;
-		margin:0 auto 110px;
+		padding-left: 15px;
+		margin:20px auto 0;
 		color:#fff;
 		font-size:36px;
-		line-height:48px;
+		-- line-height:48px;
 	}
-	.upload-block p{margin:0 0 79px;}
+	.upload-block p{margin:0 0 40px;}
 	.upload-block .block{
 		float:right;
 		width:535px;

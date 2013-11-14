@@ -1,0 +1,953 @@
+Related skills
+
+Software, Engineer, web designer, website, web, applications, graphic designer, database, data, data scientist, business analyst, development, 
+
+
+
+C++ Related Skills
+
+Boost C++
+OpenGL
+MFC
+Qt
+STL
+CMake
+Win32 API
+DirectX
+OpenCV
+GLSL
+Multithreading
+Valgrind
+CppUnit
+x86 Assembly
+Pthreads
+GNU Debugger
+ATL COM
+Managed C++
+HLSL
+Qt Creator
+
+Oracle Related Skills
+
+SQL Loader
+RMAN
+11gR2
+Data Guard
+Oracle Application Server
+Data Pump
+Oracle Forms
+10gR2
+Materialized Views
+SQL*Plus
+Oracle Designer
+Oracle Reports
+Toad
+Oracle Developer 2000
+Statspack
+Oracle Streams
+Explain Plan
+Exadata
+Oracle HR
+11gR1
+
+iOS development Related Skills
+
+iOS Related Skills
+
+UIKit
+Cocoa Touch
+Core Animation
+Core Graphics
+Cocos2d
+App Store
+Interface Builder
+Xcode
+CatOS
+Core Audio
+Core Foundation
+iPod Touch
+Apple Certified Technician
+iOS development
+Core Data
+iLife
+iOS Design
+iPhone Application Development
+Blackberry OS
+Cocoa
+Cocoa Touch
+UIKit
+Interface Builder
+Core Animation
+Cocos2d
+Core Graphics
+Xcode
+Core Foundation
+Core Audio
+iPhone Application Development
+Core Data
+iOS Design
+App Store
+Cocoa
+Box2D
+OpenGL ES
+Mobile Game Development
+Apple Developer
+Objective-C
+Corona SDK
+
+Android Development Related Skills
+
+Android SDK
+NDK
+J2ME Development
+iPhone Application Development
+Blackberry applications
+Titanium Mobile
+iOS development
+PhoneGap
+SQLite
+LWUIT
+Robotium
+Appcelerator
+Mobile Game Development
+Cocos2d
+Corona SDK
+OpenGL ES
+Java Application Development
+Qualcomm BREW
+Windows software development
+MonoDevelop
+NDK
+Android SDK
+Bada
+Robotium
+Blackberry OS
+LWUIT
+OpenCore
+Android Development
+DDMS
+Windows Mobile
+OpenMax
+Symbian
+WebOS
+Multimedia Framework
+Stagefright
+J2ME
+Blackberry applications
+iOS
+MIDP
+PhoneGap
+
+Javascript Related Skills
+
+JavaScript
+Backbone.js
+AJAX
+jQuery UI
+MVC
+Node.js
+DHTML
+CoffeeScript
+ASP.NET AJAX
+jQuery
+YUI
+Advanced CSS
+jQuery Mobile
+JavaScript Libraries
+Mootools
+CodeIgniter
+Prototype.js
+PhoneGap
+Cross-browser Compatibility
+Ext JS
+
+CSS Related Skills
+
+XHTML
+Cross-browser Compatibility
+Web Standards
+HTML 5
+W3C Standards
+Semantic HTML
+jQuery UI
+SASS
+W3C
+Semantic Markup
+Advanced CSS
+JSON
+jQuery Mobile
+PSD to Wordpress
+Bootstrap
+Backbone.js
+Mootools
+CodeIgniter
+JavaScript Libraries
+Unobtrusive Javascript
+Google Closure
+Chrome Extensions
+
+HTML5 Related Skills
+
+Advanced CSS
+jQuery Mobile
+SASS
+PhoneGap
+Semantic Markup
+Semantic HTML
+Backbone.js
+Cross-browser Compatibility
+Web Standards
+Unobtrusive Javascript
+Bootstrap
+jQuery UI
+960 Grid System
+PSD to Wordpress
+WebSockets
+JavaScript Libraries
+jQTouch
+JSONP
+CSS Sprites
+W3C Standards
+
+Cloud computing Related Skills
+
+IaaS
+PaaS
+Hybrid Cloud
+Sales Enablement
+Cloud Computing IaaS
+Cloud Security
+Storage Virtualization
+Private Cloud
+Private Clouds
+Cloud Applications
+Cloud Consulting
+OpenStack
+Cloud Storage
+Rackspace
+ITaaS
+XaaS
+SaaS
+vCloud
+VDI
+Hosted Services
+
+
+
+
+HADOOP Related Skills
+
+HBase
+Oozie
+Sqoop
+Flume
+Mahout
+MapReduce
+Hive
+Cascading
+Amazon Elastic MapReduce
+Cascalog
+Nutch
+Voldemort
+Apache Pig
+Katta
+Avro
+Cassandra
+Greenplum
+Vertica
+Collaborative Filtering
+CDH
+
+
+Data Science Related Skills
+
+Data Munging
+Data Products
+Mahout
+Collaborative Filtering
+Dimensionality Reduction
+Unsupervised Learning
+Unstructured Data
+SciPy
+NLTK
+NumPy
+Amazon Elastic MapReduce
+Association Rules
+Recommender Systems
+Scientific Data Management
+Classifiers
+Gephi
+Exploratory Data Analysis
+Feature Selection
+Cascalog
+d3.js
+
+Data Analysis Related Skills
+
+Logistic Regression
+Datasets
+Statistical Modeling
+Linear Regression
+Survey Design
+Statistical Consulting
+Questionnaire Design
+Predictive Modeling
+SAS programming
+Non-parametric
+Cluster Analysis
+Survey Research
+Descriptive
+Quantitative Research
+Factor Analysis
+Stata
+Multivariate Analysis
+Categorical Data Analysis
+Statistical Packages
+Multivariate Statistics
+
+FLASH Related Skills
+
+Papervision3D
+Flash Websites
+Web Games
+Away3D
+Flash Video
+Flash Animation
+Swift 3D
+ActionScript
+JSFL
+Flash Lite
+PureMVC
+Flash Media Server
+ImageReady
+FlashDevelop
+Scaleform
+Flash Builder
+Swish
+Adobe AIR
+Adobe Fireworks
+GIF
+Photoshop Related Skills
+
+Adobe Bridge
+Illustrator
+Lightroom
+Dreamweaver
+Vector Illustration
+After Effects
+Digital Illustration
+ImageReady
+Image Editing
+Adobe Design Programs
+Corel Painter
+Flash Animation
+QuarkXPress
+InDesign
+Adobe Fireworks
+Adobe Freehand
+Mudbox
+Adobe Creative Suite
+Soundbooth
+Adobe Encore
+C# Related Skills
+
+ADO.NET
+Entity Framework
+WinForms
+WCF
+ASP.NET MVC
+ASP.NET AJAX
+NUnit
+WPF
+C#
+WCF Services
+XAML
+ReSharper
+MVVM
+NHibernate
+Telerik
+Enterprise Library
+Silverlight
+TFS
+Telerik Controls
+User Controls
+LINQ Related Skills
+
+Lambda Expressions
+Entity Framework
+PLINQ
+ReSharper
+AutoMapper
+Ninject
+Enterprise Library
+EF4
+Autofac
+Moq
+Castle Windsor
+NLog
+Telerik
+Elmah
+NUnit
+Telerik Controls
+MVVM
+NHibernate
+CodeSmith
+PostSharp
+
+WPF Related Skills
+
+MVVM
+XAML
+XBAP
+ClickOnce
+WPF Development
+PostSharp
+PLINQ
+ReSharper
+WinForms
+MEF
+SCSF
+Enterprise Library
+Silverlight
+TPL
+Microsoft Sync Framework
+Syncfusion
+Infragistics
+Microsoft Patterns & Practices
+MSTest
+EF4
+Microsoft SQL Server Related Skills
+
+ASP.NET AJAX
+ADO.NET
+LINQ
+Microsoft SQL Server
+Entity Framework
+SSAS 2008
+T-SQL Stored Procedures
+WCF
+WCF Services
+SSRS
+ASP.NET MVC
+SSIS
+TFS
+Telerik
+WinForms
+Enterprise Library
+Stored Procedures
+COM+
+Log Shipping
+RedGate
+
+PHP Related Skills
+
+CodeIgniter
+Zend Framework
+phpMyAdmin
+PHPUnit
+PHP
+CakePHP
+Smarty
+Yii
+Zend Studio
+Symfony
+WAMP
+Kohana
+Xdebug
+Zend Certified Engineer
+Mootools
+LAMP
+Kohana Framework
+ExpressionEngine
+XAMPP
+Memcached
+
+PYTHON Related Skills
+
+NumPy
+Django
+SciPy
+SQLAlchemy
+PyQt
+Matplotlib
+wxPython
+Celery
+NLTK
+WSGI
+Flask
+CherryPy
+Web2py
+TurboGears
+Pygame
+Pylons
+PyGTK
+SCons
+Zope
+PyUnit
+
+JAVA Related Skills
+
+JDBC
+Eclipse
+Maven
+Servlets
+Java Web Start
+IntelliJ IDEA
+JSP
+Ant
+Tomcat
+Hibernate
+JAXB
+NetBeans
+Mockito
+JPA
+EJB
+Java
+Maven2
+JAX-WS
+JMS
+J2EE Application Development
+
+
+
+
+RUBY Related Skills
+
+RSpec
+Capybara
+RubyMine
+JRuby
+HAML
+Sinatra
+Mongrel
+Phusion Passenger
+Shoulda
+Capistrano
+Merb
+Cucumber
+Rake
+Heroku
+CoffeeScript
+Watir
+Webrat
+ActiveRecord
+Webrick
+RVM
+
+Node.js Related Skills
+
+Socket.io
+WebSockets
+Stylus
+Real-time Web
+Backbone.js
+CoffeeScript
+CouchDB
+Redis
+d3.js
+JSLint
+Heroku
+Google Closure
+Riak
+SproutCore
+Jade
+ZeroMQ
+WebGL
+Merb
+MongoDB
+ElasticSearch
+
+NoSQL Related Skills
+
+Riak
+Voldemort
+Graph Databases
+Neo4j
+CouchDB
+Membase
+Cassandra
+HBase
+Mahout
+Flume
+Sqoop
+BigTable
+ElasticSearch
+Redis
+Oozie
+Amazon SimpleDB (SDB)
+Akka
+Amazon Elastic MapReduce
+Hazelcast
+ZeroMQ
+
+MongoDB Related Skills
+
+Redis
+Socket.io
+RabbitMQ
+ElasticSearch
+Neo4j
+CouchDB
+NoSQL
+Riak
+Celery
+Gearman
+ZeroMQ
+Capistrano
+Heroku
+Akka
+Flask
+Node.js
+Memcached
+Shoulda
+CoffeeScript
+RSpec
+
+Amazon web services Related Skills
+
+Amazon CloudFront
+Elastic Load Balancing
+Amazon SQS
+RightScale
+Amazon EC2
+Amazon VPC
+Amazon SimpleDB (SDB)
+Rackspace Cloud
+Amazon Elastic MapReduce
+Amazon Route 53
+Amazon S3
+Amazon SES
+Amazon SNS
+Heroku
+Amazon RDS
+Rackspace
+Eucalyptus
+GoGrid
+DevOps
+Capistrano
+
+Oracle Related Skills
+
+SQL Navigator
+WinSCP
+Toad 9.0
+Toad Data Modeler
+Cursors
+SQL Loader
+Materialized Views
+User Defined Functions
+DBVisualizer
+Oracle Report Builder
+Data Pump
+Explain Plan
+SQLLDR
+SQL Tools
+DDL
+Putty
+JDeveloper
+WinMerge
+RedGate
+Query Tuning
+
+Relational Databases Related Skills
+
+Relational Data Modeling
+User Defined Functions
+Snowflake
+Schemas
+Log Shipping
+DDL
+Migration Projects
+Star Schema
+Datatrieve
+ER/Studio
+OLTP
+Litespeed
+RedGate
+ROLAP
+Kimball
+Normalization
+Kimball Methodology
+Inmon
+Database Consulting
+Database Engine Tuning Advisor
+
+
+Data Warehousing Related Skills
+
+Dimensional Modeling
+Data Warehousing
+Star Schema
+EDW
+Kimball
+Data Marts
+Snowflake
+Kimball Methodology
+Inmon
+OLAP
+ODS
+Kimball Methodologies
+BTEQ
+DWH
+Oracle Warehouse Builder
+OLTP
+ETL
+Data Vault
+ETL Tools
+MLOAD
+
+Business Intelligence Related Skills
+
+Data Warehouse Architecture
+Dimensional Modeling
+Business Intelligence Projects
+OLAP
+Kimball
+EDW
+Kimball Methodology
+Star Schema
+Data Marts
+Mobile BI
+Inmon
+Performance Point
+Dollar Universe
+Webi
+Microsoft BI Suite
+DWH
+Syncsort Backup Express
+SSAS 2008
+Query Studio
+Web Intelligence
+
+SAP Related Skills
+
+IDOC
+SAP
+SAPScript
+SAP Solutions
+MM modules
+SAP Applications
+SAP Configuration
+SAP Netweaver
+SAP Portal
+SAP Consulting
+APO
+SAP IS
+BAPI
+SolMan
+SAP SRM
+SAP ERP
+SAP Implementation
+SAP Project Management
+ECC6.0
+Blueprinting
+
+Unix Related Skills
+
+Unix Shell Scripting
+Solaris Zones
+Jumpstart
+Solaris Volume Manager
+Veritas Volume Manager
+Sun Enterprise
+VxFS
+Tru64
+Ksh
+SunOS
+Shell Scripting
+IRIX
+Sunfire
+HP-UX
+Sun Cluster
+Solaris
+LDOM
+Unix Security
+M5000
+E25K
+
+jQuery Related Skills
+
+jQuery
+jQuery Mobile
+Backbone.js
+JSON
+CodeIgniter
+Mootools
+Bootstrap
+MVC
+Zend Framework
+Zend
+Advanced CSS
+Prototype.js
+SASS
+JSONP
+HAML
+Unobtrusive Javascript
+JavaScript Libraries
+Smarty
+Cross-browser Compatibility
+Scriptaculous
+
+
+
+
+Phonegap Related Skills
+
+jQTouch
+Sencha
+Appcelerator
+Titanium Mobile
+jQuery Mobile
+Socket.io
+JSONP
+Corona SDK
+XUI
+JSLint
+WebSockets
+Stylus
+WURFL
+Mobile Architecture
+Backbone.js
+Blackberry applications
+Twilio
+WebKit
+
+
+
+R Related Skills
+
+Bioconductor
+WinBUGS
+Bayesian
+Non-parametric
+Bayesian statistics
+S-Plus
+Mixed Model
+Statistical Computing
+GLM
+Linear Models
+Statistical Consulting
+Missing Data
+Markov Chain Monte Carlo
+PLINK
+Logistic Regression
+Bayesian methods
+Categorical Data Analysis
+Model Selection
+GWAS
+Causal Inference
+ 
+
+Perl Related Skills
+
+Mod_perl
+Object Oriented Perl
+Template Toolkit
+CGI/Perl
+CPAN
+DBI
+BioPerl
+Perl Automation
+Clearmake
+Awk
+Bourne
+Tcsh
+Csh
+Ksh
+GNU Make
+Cfengine
+CGI scripts
+TCL
+Synopsys Primetime
+Perl Script
+
+
+Algorithm Related Skills
+
+Algorithm Design
+Algorithm Development
+Motion Estimation
+Pattern Recognition
+Object Detection
+Channel Estimation
+Parallel Algorithms
+Image Segmentation
+Distributed Algorithms
+Computational Complexity
+Statistical Signal Processing
+Approximation Algorithms
+Computational Geometry
+Classifiers
+Feature Selection
+Machine Learning
+Feature Extraction
+Graph Theory
+Combinatorial Optimization
+Path Planning
+
+Swing Related Skills
+
+AWT
+Java AWT
+Java2D
+JGoodies
+SWT
+Applets
+RMI
+JFreeChart
+JFC
+JFace
+XDoclet
+JDOM
+HSQLDB
+JavaMail
+JNI
+JNDI
+JAXP
+JBuilder
+
+Spring Related Skills
+
+Acegi
+CXF
+Spring Webflow
+Spring Batch
+Spring Integration
+Mockito
+iBatis
+Ehcache
+Spring Roo
+Maven
+JAXB
+JPA
+MyBatis
+Apache Tiles
+JAX-WS
+Hibernate 3.1
+Sitemesh
+Maven2
+DBUnit
+JSTL
+
+Unit testing Related Skills
+
+Moq
+MSTest
+Dependency Injection
+CppUnit
+NUnit
+TypeMock
+ReSharper
+MbUnit
+EasyMock
+NCover
+xUnit
+NMock
+Ninject
+FxCop
+SOLID principles
+AutoMapper
+Autofac
+Castle Windsor
+Pair Programming
+MSBuild
