@@ -12,15 +12,15 @@ class DocxConversion{
         $lines = explode(chr(0x0D),$line);
         $outtext = "";
         foreach($lines as $thisline)
-          {
+        {
             $pos = strpos($thisline, chr(0x00));
             if (($pos !== FALSE)||(strlen($thisline)==0))
-              {
-              } else {
+            {
+            } else {
                 $outtext .= $thisline." ";
-              }
-          }
-         $outtext = preg_replace("/[^a-zA-Z0-9\s\,\.\-\n\r\t@\/\_\(\)]/","",$outtext);
+            }
+        }
+        $outtext = preg_replace("/[^a-zA-Z0-9\s\,\.\-\n\r\t@\/\_\(\)]/","",$outtext);
         return $outtext;
     }
 
@@ -53,9 +53,9 @@ class DocxConversion{
         return $striped_content;
     }
 
- /************************excel sheet************************************/
+    /************************excel sheet************************************/
 
-function xlsx_to_text($input_file){
+    function xlsx_to_text($input_file){
     $xml_filename = "xl/sharedStrings.xml"; //content file name
     $zip_handle = new ZipArchive;
     $output_text = "";
@@ -69,7 +69,7 @@ function xlsx_to_text($input_file){
         }
         $zip_handle->close();
     }else{
-    $output_text .="";
+        $output_text .="";
     }
     return $output_text;
 }
@@ -91,19 +91,22 @@ function pptx_to_text($input_file){
         }
         $zip_handle->close();
     }else{
-    $output_text .="";
+        $output_text .="";
     }
     return $output_text;
 }
 
 
-    public function convertToText() {
+public function convertToText() {
 
-        if(isset($this->filename) && !file_exists($this->filename)) {
-            return "File Not exists";
-        }
-
-        $fileArray = pathinfo($this->filename);
+    if(isset($this->filename) && !file_exists($this->filename)) {
+        return "File Not exists";
+    }
+    echo " Inside convertToText";
+    $fileArray = pathinfo($this->filename);
+    echo " fileArray:" . $fileArray;
+    try
+    {
         $file_ext  = $fileArray['extension'];
         if($file_ext == "doc" || $file_ext == "docx" || $file_ext == "xlsx" || $file_ext == "pptx")
         {
@@ -116,9 +119,14 @@ function pptx_to_text($input_file){
             }elseif($file_ext == "pptx") {
                 return $this->pptx_to_text();
             }
-        } else {
+        } else 
+        {
             return "Invalid File Type";
         }
+    } catch (Exception $e) 
+    {
+        echo 'File read failed: ' . $e->getMessage();
     }
+}
 
 }
