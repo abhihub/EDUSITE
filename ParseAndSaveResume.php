@@ -14,12 +14,14 @@ $userid = $_SESSION['user']['id'];
 
 $ds = DIRECTORY_SEPARATOR;
 $storeFolder = 'uploads';
-
+echo " 1. We are starting file upload";
 if (!empty($_FILES)) 
 {   
   $tempFile = $_FILES['file']['tmp_name'][0];
   $targetPath = dirname( __FILE__ ) . $ds. $storeFolder . $ds; 
+  echo " 2. Target Path: " . $targetPath;
   $targetFile =  $targetPath. $userid . "_" . $_FILES['file']['name'][0];
+  echo " 2. Target File: " . $targetFile;
   $fileType = $_FILES['file']['type'][0];
   $finfo = finfo_open(FILEINFO_MIME_TYPE);
   $mime = finfo_file($finfo, $targetFile);
