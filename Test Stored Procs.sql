@@ -23,3 +23,5 @@ CALL get_topjobs_skillsets;
 CALL get_missingskills_skillset(3,8);
 
 CALL get_skillsetid_byname('java development');
+
+CALL insert_resume_for_user('java development', 1);

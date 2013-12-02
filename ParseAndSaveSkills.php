@@ -1,5 +1,7 @@
 <?php
-require("common.php");
+require 'ProceduresToJson.php';
+$widgetJobs = new ProcedureToJson();
+$widgetJobs->init();
 
 try{
 	
@@ -12,8 +14,8 @@ try{
 
 	echo $splitresults;
 
- 	$TruncateSkills="DELETE FROM usersskills WHERE userid =" . $userid;
- 	echo $TruncateSkills;
+	$TruncateSkills="DELETE FROM usersskills WHERE userid =" . $userid . " AND sourceid = 1";
+	echo $TruncateSkills;
 	$numRows=$DBH->exec($TruncateSkills); 
 	echo($numRows);
 
@@ -21,7 +23,7 @@ try{
 	$STHGetSkillIdFromSkills->bindParam(':skillname', $skillname);
 	
 
-	$STHInsertUserSkillRelation = $DBH->prepare("INSERT INTO usersskills (userid, skillid) values (:userid, :skillid)"); 
+	$STHInsertUserSkillRelation = $DBH->prepare("INSERT INTO usersskills (userid, skillid, sourceid) values (:userid, :skillid, 1)"); 
 	$STHInsertUserSkillRelation->bindParam(':userid', $userid);
 	$STHInsertUserSkillRelation->bindParam(':skillid', $skillid);
 	
@@ -35,9 +37,14 @@ try{
 		$STHGetSkillIdFromSkills->execute();
 		$resultsGetSkillId = $STHGetSkillIdFromSkills->fetch();
 		$skillid = $resultsGetSkillId[0];
-		// echo $skillid;
-		
-		$STHInsertUserSkillRelation->execute();	
+		if(isset($skillid))
+		{
+			$STHInsertUserSkillRelation->execute();	
+		}
+		else
+		{
+			$widgetJobs->insert_skillsnotfound($skillname, $userid);
+		}
 	}
 	
 }

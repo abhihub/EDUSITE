@@ -125,8 +125,14 @@ UserVoice.push(['showTab', 'classic_widget', {
 					</div>
 					<div class="courses-block"><h2>Resume</h2></div>
 					<div class="text-holder">
-						<p>If the user enters their resume, this is where the users resume will be shown. </p>
-						<p>Inside the resume, the skills will be highlighted. Users can click on a skill to unhighlight or rehighlight them. The highlighted skills will be used as the basis to run our algorithms.  </p>
+						<?php
+								
+								$resultsusersskills = $widgetJobs->get_users_skills_resume($userid);
+								foreach($resultsusersskills as $result)
+								{
+									echo '<a href="#" class="button">' . $result[skillname] . '</a>';
+								}
+								?>
 					</div>
 				</div>
 			</article>

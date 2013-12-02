@@ -23,37 +23,36 @@ if(empty($_SESSION['user']))
 	<script type="text/javascript" src="js/jquery.a-tools-1.4.1.js"></script>
 	<script type="text/javascript" src="js/jquery.asuggest.js"></script>
 	<script type="text/javascript" src="js/dropzone.min.js"></script>
-	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-	<!-- Optional theme -->
-<!-- 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"> -->
-	<!-- Latest compiled and minified JavaScript -->
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<!-- <link media="all" rel="stylesheet" href="css/twittermaks.css"> -->
 	<link media="all" rel="stylesheet" href="css/all.css">
-	<!-- UserVoice JavaScript SDK (only needed once on a page) -->
-<script>(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/nyMJniTehAhgN1jvDkD44g.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})()</script>
+	<link media="all" rel="stylesheet" href="css/dz-basic.css">
+	<link media="all" rel="stylesheet" href="css/dropzone.css">
 
-<!-- A tab to launch the Classic Widget -->
-<script>
-UserVoice = window.UserVoice || [];
-UserVoice.push(['showTab', 'classic_widget', {
-  mode: 'feedback',
-  primary_color: '#cc6d00',
-  link_color: '#007dbf',
-  forum_id: 226405,
-  tab_label: 'Feedback',
-  tab_color: '#cc6d00',
-  tab_position: 'middle-right',
-  tab_inverted: false
-}]);
-</script>
+	<!-- <script>(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/nyMJniTehAhgN1jvDkD44g.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})()</script>
+	<script>
+	UserVoice = window.UserVoice || [];
+	UserVoice.push(['showTab', 'classic_widget', {
+		mode: 'feedback',
+		primary_color: '#cc6d00',
+		link_color: '#007dbf',
+		forum_id: 226405,
+		tab_label: 'Feedback',
+		tab_color: '#cc6d00',
+		tab_position: 'middle-right',
+		tab_inverted: false
+	}]);
+	</script> -->
 	<!-- <script type="text/javascript" src="js/jquery.main.js"></script> -->
 	<!--[if IE]><script type="text/javascript" src="js/ie.js"></script><![endif]-->
 	<!-- <script type="text/javascript">
 	var heap=heap||[];heap.load=function(a){window._heapid=a;var b=document.createElement("script");b.type="text/javascript",b.async=!0,b.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.heapanalytics.com/js/heap.js";var c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c);var d=function(a){return function(){heap.push([a].concat(Array.prototype.slice.call(arguments,0)))}},e=["identify","track"];for(var f=0;f<e.length;f++)heap[e[f]]=d(e[f])};
 	heap.load("812388706");
 </script> -->
+<script type="text/javascript">
+
+
+</script>
 </head>
 <body>
 	
@@ -64,10 +63,10 @@ UserVoice.push(['showTab', 'classic_widget', {
 					<strong class="logo"><a href="#">FillSkills: Helping you land your dream job</a></strong>
 					<nav id="nav">
 						<a class="home active" href="#">Home</a>
-						<a class="results" href="#">Results</a>
+						<!-- <a class="results" href="#">Results</a>
 						<a class="courses" href="#">Courses</a>
 						<a class="skills" href="#">Skills</a>
-						<a class="contact" href="#">Contact</a>
+						<a class="contact" href="#">Contact</a> -->
 						<a class="logout" href="logout.php">Logout</a>
 					</nav>
 				</div>
@@ -75,15 +74,18 @@ UserVoice.push(['showTab', 'classic_widget', {
 		</header>
 		<div id="main">
 			<div class="upload-block">
-				<p>Upload your resume or enter skills and we will guide you to <br />the right course for you to target your dream job!</p>
+				<p></p>
 				<div class="block">
 					<h1>Drop your resume here</h1>
-					<form class="drag-box" action=""><img src="images/img01.gif" width="527" height="243" alt="image description" /></form>
+					<form class="drag-box dropzone" id="uiDZResume" action="ParseAndSaveResume.php">
+						<div class="dropzone-previews"></div>
+						<!-- <img src="images/img01.gif" width="527" height="243" alt="image description" /> -->
+					</form>
 				</div>
 				<div class="block">
 					<h1>Add your skills here</h1>
 					<div class="drag-box">
-						<textarea id="txtskill" style="margin: 2px; min-height: 235px; min-width: 517px; resize: none;"></textarea>
+						<textarea id="txtskill" placeholder="and/or enter your skills here" style="margin: 2px; min-height: 235px; min-width: 517px; resize: none;"></textarea>
 					</div>
 				</div>
 				
@@ -101,7 +103,7 @@ UserVoice.push(['showTab', 'classic_widget', {
 					</div>
 				</article>
 			</section>
-			<section class="section blue">
+			<!-- <section class="section blue">
 				<div class="holder">
 					<div class="frame">
 						<h1>How FillSkills <strong>Works</strong></h1>
@@ -127,7 +129,7 @@ UserVoice.push(['showTab', 'classic_widget', {
 						</div>
 					</div>
 				</div>
-			</section>
+			</section> -->
 			<section class="section gray">
 				<article class="holder">
 					<img src="images/img03.png" width="478" height="271" alt="image description">
@@ -198,13 +200,15 @@ UserVoice.push(['showTab', 'classic_widget', {
 	$( document ).ready(function() {
 		//humane.log("Hey there, welcome. <br> Start by entering your skills.<br", {timeout:1500});
 
-	$("#txtskill").asuggest(suggests, {
-		'endingSymbols': ', '
+		
+		$("#txtskill").asuggest(suggests, {
+			'endingSymbols': ', '
+		});
 	});
-});
 
 
 	$('#btnupload').click(function () {
+		//alert(uiDZResume.getAcceptedFiles().count);
 		//console.log($('#txtskill').val());
 		$.ajax({ url: 'ParseAndSaveSkills.php',
          // data: {action: 'get_missingskills_job'},
@@ -219,7 +223,23 @@ UserVoice.push(['showTab', 'classic_widget', {
               });
 	});
 
-
+	$(function() {
+		Dropzone.options.uiDZResume = {
+			autoProcessQueue: true,
+			uploadMultiple: true,
+			parallelUploads: 100,
+			maxFiles: 1,
+			acceptedFiles: ".pdf,.doc,.docx"
+			, init: function() {
+				this.on("addedfile", function(file) { 
+					//alert("Added file."); 
+				});
+			},
+			success: function(file, response){
+				//alert(response);
+			}
+		};
+	});
 	</script>
 </body>
 </html>

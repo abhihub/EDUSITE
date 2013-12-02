@@ -14,7 +14,7 @@ class ProcedureToJson{
 
 	function get_bestmatch_jobs( $userID_bestmatch) {
 		try{
-			$sql = "call fillskils.get_bestmatch_jobs (:userID_bestmatch)";
+			$sql = "call get_bestmatch_jobs (:userID_bestmatch)";
 			$stmt_bestmatch = $this->DBH->prepare($sql);
 			$stmt_bestmatch->bindParam(':userID_bestmatch', $userID_bestmatch, PDO::PARAM_INT);
 			$stmt_bestmatch->execute();
@@ -95,6 +95,19 @@ class ProcedureToJson{
 
 	function get_users_skills($userID_userskills) {
 		$sql = "call fillskils.get_users_skills (:userID_userskills)";
+		$stmt_usersskills = $this->DBH->prepare($sql);
+		$stmt_usersskills->bindParam(':userID_userskills', $userID_userskills, PDO::PARAM_INT);
+		$stmt_usersskills->execute();
+		$results_userskills = $stmt_usersskills->fetchAll();
+		//print_r($results_userskills);echo "\n"; // all record sets
+		//print_r(json_encode($results_userskills)); echo "\n";
+		$stmt_usersskills->closeCursor();
+		unset($stmt_usersskills);	
+		return $results_userskills;
+	}
+
+	function get_users_skills_resume($userID_userskills) {
+		$sql = "call get_users_skills_resume (:userID_userskills)";
 		$stmt_usersskills = $this->DBH->prepare($sql);
 		$stmt_usersskills->bindParam(':userID_userskills', $userID_userskills, PDO::PARAM_INT);
 		$stmt_usersskills->execute();
@@ -263,62 +276,123 @@ class ProcedureToJson{
 			echo $e->getMessage();
 		}
 	}
+
+	function insert_resume_for_user($resumetext, $userid) {
+		try{
+			$sql = "CALL insert_resume_for_user(:resumetext, :userid)";
+			$stmt_insertresumeforuser = $this->DBH->prepare($sql);
+			$stmt_insertresumeforuser->bindParam(':resumetext', $resumetext, PDO::PARAM_STR);
+			$stmt_insertresumeforuser->bindParam(':userid', $userid, PDO::PARAM_INT);
+			$stmt_insertresumeforuser->execute();
+			$stmt_insertresumeforuser->closeCursor();
+			unset($stmt_insertresumeforuser);	
+			return $results_insertresumeforuser;
+		}
+		catch(PDOException $e) {
+			echo $e->getMessage();
+		}
+	}
+
+	function insert_skillsnotfound($skillname, $userid) {
+		try{
+			$sql = "CALL insert_skillsnotfound(:skillname, :userid); ";
+			$stmt_insert_skillsnotfound = $this->DBH->prepare($sql);
+			$stmt_insert_skillsnotfound->bindParam(':skillname', $skillname, PDO::PARAM_STR);
+			$stmt_insert_skillsnotfound->bindParam(':userid', $userid, PDO::PARAM_INT);
+			$stmt_insert_skillsnotfound->execute();
+			$stmt_insert_skillsnotfound->closeCursor();
+			unset($stmt_insert_skillsnotfound);	
+			//return $results_insert_skillsnotfound;
+		}
+		catch(PDOException $e) {
+			echo $e->getMessage();
+		}
+	}
+
+	function insert_jobsskill_from_skillname_jobid($skillname, $jobid)
+	{
+		try{
+			$sql = "CALL insert_jobsskill_from_skillname_jobid(:skillname, :jobid); ";
+			$stmt_insert_jobsskill_from_skillname_jobid = $this->DBH->prepare($sql);
+			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':skillname', $skillname, PDO::PARAM_STR);
+			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':jobid', $jobid, PDO::PARAM_INT);
+			$stmt_insert_jobsskill_from_skillname_jobid->execute();
+			$stmt_insert_jobsskill_from_skillname_jobid->closeCursor();
+			unset($stmt_insert_jobsskill_from_skillname_jobid);	
+			//return $results_insert_skillsnotfound;
+		}
+		catch(PDOException $e) {
+			echo $e->getMessage();
+		}
+	}
+
+	function delete_job($jobid)
+	{
+		try{
+			$sql = "delete from jobs where id = :jobid; ";
+			$stmt_delete_job = $this->DBH->prepare($sql);
+			$stmt_delete_job->bindParam(':jobid', $jobid, PDO::PARAM_INT);
+			$stmt_delete_job->execute();
+			$stmt_delete_job->closeCursor();
+			unset($stmt_delete_job);	
+		}
+		catch(PDOException $e) {
+			echo $e->getMessage();
+		}
+	}
+
+	function insert_deleted_jobs($row)
+	{
+		try{
+			$jobid = $row[id];
+			$jobtitle = $row[jobtitle];
+			$company = $row[company];
+			$city = $row[city];
+			$state = $row[state];
+			$country = $row[country];
+			$formattedLocation = $row[formattedLocation];
+			$source = $row[source];
+			$enddate = $row[enddate];
+			$snippet = $row[snippet];
+			$url = $row[url];
+			$onmousedown = $row[onmousedown];
+			$jobkey = $row[jobkey];
+			$sponsored = $row[sponsored];
+			$expired = $row[expired];
+			$formattedLocationFull = $row[formattedLocationFull];
+			$formattedRelativeTime = $row[formattedRelativeTime];
+
+			$sql = "CALL insert_deleted_jobs(:old_jobidl,:jobtitlel,:companyl,:cityl,:statel,:countryl,:formattedLocationl,
+				:sourcel,:enddatel,:snippetl,:urll,:onmousedownl,:jobkeyl,:sponsoredl,:expiredl,:formattedLocationFulll,:formattedRelativeTimel); ";
+			$stmt_insert_jobsskill_from_skillname_jobid = $this->DBH->prepare($sql);
+
+			$stmt_insert_jobsskill_from_skillname_jobid->bindParam('old_jobidl', $jobid);
+			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':jobtitlel', $jobtitle);
+			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':companyl', $company);
+			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':cityl', $city);
+			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':statel', $state);
+			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':countryl', $country);
+			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':formattedLocationl', $formattedLocation);
+			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':sourcel', $source);
+			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':enddatel', $enddate);
+			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':snippetl', $snippet);
+			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':urll', $url);
+			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':onmousedownl', $onmousedown);
+			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':jobkeyl', $jobkey);
+			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':sponsoredl', $sponsored);
+			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':expiredl', $expired);
+			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':formattedLocationFulll', $formattedLocationFull);
+			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':formattedRelativeTimel', $formattedRelativeTime);
+
+			$stmt_insert_jobsskill_from_skillname_jobid->execute();
+			$stmt_insert_jobsskill_from_skillname_jobid->closeCursor();
+			unset($stmt_insert_jobsskill_from_skillname_jobid);	
+		}
+		catch(PDOException $e) {
+			echo $e->getMessage();
+		}
+	}
+
 }
 
-
-
-
-
-
-
-// try {
-
-
-// 	//BEST MATCH JOBS
-// 	$userID_bestmatch = 1;
-// 	$sql = "call fillskils.get_bestmatch_jobs (:userID_bestmatch)";
-// 	$stmt_bestmatch = $DBH->prepare($sql);
-// 	$stmt_bestmatch->bindParam(':userID_bestmatch', $userID_bestmatch, PDO::PARAM_INT);
-// 	$stmt_bestmatch->execute();
-// 	$results_bestmatch = $stmt_bestmatch->fetchAll();
-// 	//print_r($results_bestmatch);echo "\n"; // all record sets
-// 	print_r(json_encode($results_bestmatch)); echo "\n";
-// 	$stmt_bestmatch->closeCursor();
-// 	unset($stmt_bestmatch);	
-
-// 	//TOP MISSING SKILLS
-// 	$userID_missingskills = 1;
-// 	$sql = "call fillskils.get_top_missing_skills (:userID_missingskills)";
-// 	$stmt_missingskills = $DBH->prepare($sql);
-// 	$stmt_missingskills->bindParam(':userID_missingskills', $userID_missingskills, PDO::PARAM_INT);
-// 	$stmt_missingskills->execute();
-// 	$results_missingskills = $stmt_missingskills->fetchAll();
-// 	//print_r($results_missingskills);echo "\n"; // all record sets
-// 	print_r(json_encode($results_missingskills)); echo "\n";
-// 	$stmt_missingskills->closeCursor();
-// 	unset($stmt_missingskills);	
-
-// 	echo '<hr/><br>MISSING SKILLS FOR EACH JOB';
-// 	foreach ($results_bestmatch as $selectedjob) {
-// 		echo '<br>';
-// 		echo($selectedjob[jobid]);
-// 		$jobID_missingskills_perjob = $selectedjob[jobid];
-// 		$userID_missingskills_perjob = 1;
-// 		$sql = "call fillskils.get_missingskills_job (:userID_missingskills_perjob, :jobID_missingskills_perjob)";
-// 		$stmt_missingskills_perjob = $DBH->prepare($sql);
-// 		$stmt_missingskills_perjob->bindParam(':userID_missingskills_perjob', $userID_missingskills_perjob, PDO::PARAM_INT);
-// 		$stmt_missingskills_perjob->bindParam(':jobID_missingskills_perjob', $jobID_missingskills_perjob, PDO::PARAM_INT);
-// 		$stmt_missingskills_perjob->execute();
-// 		$results_missingskills_perjob = $stmt_missingskills_perjob->fetchAll();
-// 		//print_r($results_missingskills_perjob);echo "\n"; // all record sets
-// 		print_r(json_encode($results_missingskills_perjob)); echo "\n";
-// 		$stmt_missingskills_perjob->closeCursor();
-// 		unset($stmt_missingskills_perjob);	
-// 	}
-
-// }
-// catch(PDOException $e) {
-// 	echo '<br><b>ah an ERROR: </b>';
-// 	echo $e->getMessage();
-// }
 ?>

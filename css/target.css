@@ -61,21 +61,21 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	}
 	#header>.holder>.frame{
 		overflow:hidden;
-		-- width:1170px;
-		padding:20px 86px 32px 98px;
-		border-bottom:1px solid #44cab8;
-		-webkit-box-shadow:inset 0 -1px 0 #026445;
-		box-shadow:inset 0 -1px 0 #026445;
-		margin:0 auto 0 40px;
+	-- width:1170px;
+	padding:22px 116px 12px 98px;
+	border-bottom:1px solid #44cab8;
+	-webkit-box-shadow:inset 0 -1px 0 #026445;
+	box-shadow:inset 0 -1px 0 #026445;
+	margin:0 auto 0 40px;	
 	}
 	#header .logo{
 		overflow:hidden;
-		float:left;
-		background:url(../images/logo.gif) no-repeat;
-		width:201px;
-		height:45px;
-		text-indent:-9999px;
-		margin:54px 10px 0 0;
+	float:left;
+	background:url(../images/logo.gif) no-repeat;
+	width:201px;
+	height:45px;
+	text-indent:-9999px;
+	margin:0 0 0 0;
 	}
 	.logo a{
 		display:block;
@@ -89,18 +89,18 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	}
 	#nav a{
 		float:left;
-		color:#363636;
-		width:105px;
-		padding:66px 5px 9px;
-		text-decoration:none;
-		margin:0 0 0 8px;
+	color:#363636;
+	width:105px;
+	padding:6px 6px 6px;
+	text-decoration:none;
+	margin:0 0 0 4px;
 	}
-	#nav .home{background:url(../images/sprite.png) no-repeat 36px 16px;}
+	/*#nav .home{background:url(../images/sprite.png) no-repeat 36px 16px;}
 	#nav .logout{background:url(../images/sprite.png) no-repeat 36px 16px;}
 	#nav .results{background:url(../images/sprite.png) no-repeat -91px 16px;}
 	#nav .courses{background:url(../images/sprite.png) no-repeat -224px 16px;}
 	#nav .skills{background:url(../images/sprite.png) no-repeat -327px 16px;}
-	#nav .contact{background:url(../images/sprite.png) no-repeat -459px 16px;}
+	#nav .contact{background:url(../images/sprite.png) no-repeat -459px 16px;}*/
 	#nav .active,
 	#nav a:hover{
 		background-color:#bdbfbf;
@@ -427,6 +427,7 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	.info-columns{
 		width:1200px;
 		margin:0 auto 51px;
+		padding-top: 35px;
 	}
 	.info-columns .col:first-child{margin:0;}
 	.info-columns .col{
@@ -443,9 +444,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 		-- width:100%;
 	}
 	.info-columns .title{
-		padding:0 10px 9px 47px;
-		background:url(../images/sprite.png) no-repeat -9999px 0;
-		text-transform:capitalize;
+		-- padding:0 10px 9px 47px;
+		-- background:url(../images/sprite.png) no-repeat -9999px 0;
+		-- text-transform:capitalize;
 	}
 	.info-columns .col.personal{
 		-- width:250px;
@@ -455,26 +456,26 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	.info-columns .available .title{
 	/*
 background-position:-927px -79px;
-*/
+
 padding-left:59px;
-background:url(../images/ico05.png) no-repeat 14px 0;
+background:url(../images/ico05.png) no-repeat 14px 0;*/
 }
 .info-columns h1{
 	position:relative;
-	font:16px/18px Arial, Helvetica, sans-serif;
-	padding:3px 0 12px;
-	margin:0;
-	color:#094836;
+	font:25px/27px Arial, Helvetica, sans-serif;
+	margin:0 0 29px;
+	color:#fff;
 	text-shadow:0 1px 0 #3baf99;
 }
 .info-columns h1:after{
-	position:absolute;
-	content:'';
-	left:-1px;
-	bottom:-3px;
-	width:29px;
-	height:11px;
-	background:url(../images/sprite.png) no-repeat -100px -210px;
+	position: absolute;
+content: '';
+width: 33px;
+height: 14px;
+left: -1px;
+bottom: -21px;
+	background:url(../images/sprite.png) no-repeat 0 -210px;
+
 }
 .info-columns .box{
 	padding:28px 21px 28px;
@@ -693,7 +694,7 @@ background:url(../images/ico05.png) no-repeat 14px 0;
 .info-columns .jobs-list .progress-in{
 	float:left;
 	height:38px;
-	background:#b0444d;
+	background:#449ce3;
 }
 .info-columns .jobs-list .details,
 .info-columns .jobs-list .delete{
@@ -1033,6 +1034,10 @@ background:url(../images/ico05.png) no-repeat 14px 0;
 
 .targetSelected{
 	background: #16A085 !important;
+}
+
+.targetSelected:after{
+	content:  "\2713 ";
 }
 
 .target-alljobs p{

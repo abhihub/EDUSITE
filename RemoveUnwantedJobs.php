@@ -11,7 +11,7 @@ try{
 	//If count < 4, sort and show them in a list
 
 	$query = " 
-	select jj.id, jj.jobtitle, jj.snippet,  group_concat(ss.name separator ',' ), count(1) as count
+	select jj.id as jjid, jj.jobtitle, jj.`snippet`,  group_concat(ss.name separator ',' ), count(1) as count
 	from jobs jj 
 	inner join jobsskills js on jj.id = js.jobid
 	inner join skills ss on js.skillid = ss.id
@@ -25,13 +25,16 @@ try{
 
 	$stmt = $DBH->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
 	$stmt->execute();
-// array_push($cart, 13);
+
 	$jobswithlowcount = array();
 	
 	while ($row = $stmt->fetch(PDO::FETCH_ORI_NEXT)) {
-		
+		$matchedskills = "";
 		$skillmatchcount = $row[count];	
-		// Check if title matches common titles
+
+		//echo("<br><br> ". print_r($row));
+
+		// Check if title contains common job title keywords
 		if($skillmatchcount < 3)
 		{
 			$titlesplit = preg_split('/((^\p{P}+)|(\p{P}*\s+\p{P}*)|(\p{P}+$))/', $row[jobtitle], -1, PREG_SPLIT_NO_EMPTY);
@@ -47,7 +50,7 @@ try{
 					$skillmatchcount = $skillmatchcount+1;
 				}
 			}
-			// If still low count, check if snippet has title
+			// If still low count, check if snippet has common job title keywords
 			if($skillmatchcount < 3)
 			{
 				$snippetsplit = preg_split('/((^\p{P}+)|(\p{P}*\s+\p{P}*)|(\p{P}+$))/', $row[snippet], -1, PREG_SPLIT_NO_EMPTY);
@@ -61,26 +64,7 @@ try{
 					if($hastitle > 0)
 					{
 						$skillmatchcount = $skillmatchcount+1;
-					}
-
-					
-				}
-			}
-			// If still low count, check if snippet has skills
-			if($skillmatchcount < 3)
-			{
-				$snippetsplit = preg_split('/((^\p{P}+)|(\p{P}*\s+\p{P}*)|(\p{P}+$))/', $row[snippet], -1, PREG_SPLIT_NO_EMPTY);
-				$snippetsplit = array_unique($snippetsplit);
-				foreach ($snippetsplit as $snippetskillname) {
-					$stmt_snippetmatch->bindParam(':skillinsnippetname', $snippetskillname, PDO::PARAM_STR);
-					$snippetskillname = trim(strtolower($snippetskillname));
-					$stmt_snippetmatch->execute();
-					$hassnippetinskills = $stmt_snippetmatch->fetchColumn(0);
-					echo "<br>hassnippetinskills:'" . $snippetskillname . "'" . $hassnippetinskills;
-					if($hassnippetinskills > 0)
-					{
-						$skillmatchcount = $skillmatchcount+1;
-					}
+					}					
 				}
 			}
 		}
@@ -88,13 +72,18 @@ try{
 		{
 			array_push($jobswithlowcount, $row);
 		}
+		echo "<br>Jobid:" . $row[jjid] . " Count:" . $skillmatchcount . " " . $matchedskills;
 		
 	}
 	foreach ($jobswithlowcount as $descardedjob) {
-		print_r($descardedjob);
-		echo "<br><br>";
+		 //Insert into deleted jobs table
+		 $widgetJobs->insert_deleted_jobs($descardedjob);
+		 //Delete job from jobs table
+		 //$widgetJobs->delete_job($descardedjob[jjid]);
+		 //echo(print_r($descardedjob[id] . " " . $descardedjob[jobtitle] . " " . $descardedjob[snippet]));
+		 echo "<br>";
 	} 
-	echo count($jobswithlowcount);
+	echo count("<br>" .$jobswithlowcount);
 	$stmt = null;
 	$stmt_titlematch = null;
 }

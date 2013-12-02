@@ -43,20 +43,16 @@ else
 					<strong class="logo"><a href="#">FillSkills Helping you get your dream job</a></strong>
 					<nav id="nav">
 						<a class="home" href="index2.php">Home</a>
-						<a class="results active" href="#">Results</a>
-						<a class="courses" href="#">Courses</a>
+						<a class="results active" href="#">Target</a>
+						<!-- <a class="courses" href="#">Courses</a>
 						<a class="skills" href="#">Skills</a>
-						<a class="contact" href="#">Contact</a>
+						<a class="contact" href="#">Contact</a> -->
 						<a class="logout" href="logout.php">Logout</a>
 					</nav>
 				</div>
 			</div>
 		</header>
 		<div id="main">
-			<div class="upload-block">
-				<p>Set your goal</p>
-			</div>
-
 			<section class="section info-columns columns-holder">
 				<article class="col missing">
 					<header class="title">
@@ -76,7 +72,7 @@ else
 				<article class="col personal">
 					<div>
 						<header class="title">
-							<h1>Continue on your current path</h1>
+							<h1>or continue on your current path</h1>
 						</header>
 						<div class="box column">
 							<div class="courses-block"><h2>We think you know these fields:</h2></div>
@@ -115,7 +111,7 @@ else
 				<article class="col available">
 					<div>
 						<header class="title">
-							<h1>Or learn new software fields</h1>
+							<h1>or learn new software fields</h1>
 						</header>
 						<div class="box column missing">
 							<div class="courses-block"><h2>Here are the ones with the most jobs: </h2></div>

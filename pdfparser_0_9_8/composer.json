@@ -1,0 +1,8 @@
+{
+    "require-dev": {
+        "smalot/pdfparser": "0.9.8",
+        "tecnick.com/tcpdf": "dev-master",
+        "atoum/atoum": "dev-master"
+    }
+}
+

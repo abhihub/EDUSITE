@@ -62,7 +62,7 @@ figure{
 #header>.holder>.frame{
 	overflow:hidden;
 	-- width:1170px;
-	padding:20px 86px 32px 98px;
+	padding:22px 116px 12px 98px;
 	border-bottom:1px solid #44cab8;
 	-webkit-box-shadow:inset 0 -1px 0 #026445;
 	box-shadow:inset 0 -1px 0 #026445;
@@ -75,7 +75,7 @@ figure{
 	width:201px;
 	height:45px;
 	text-indent:-9999px;
-	margin:54px 10px 0 0;
+	margin:0 0 0 0;
 }
 .logo a{
 	display:block;
@@ -91,16 +91,16 @@ figure{
 	float:left;
 	color:#363636;
 	width:105px;
-	padding:66px 5px 9px;
+	padding:6px 6px 6px;
 	text-decoration:none;
-	margin:0 0 0 8px;
+	margin:0 0 0 4px;
 }
-#nav .home{background:url(../images/sprite.png) no-repeat 36px 16px;}
+/*#nav .home{background:url(../images/sprite.png) no-repeat 36px 16px;}
 #nav .logout{background:url(../images/sprite.png) no-repeat 36px 16px;}
 #nav .results{background:url(../images/sprite.png) no-repeat -91px 16px;}
 #nav .courses{background:url(../images/sprite.png) no-repeat -224px 16px;}
 #nav .skills{background:url(../images/sprite.png) no-repeat -327px 16px;}
-#nav .contact{background:url(../images/sprite.png) no-repeat -459px 16px;}
+#nav .contact{background:url(../images/sprite.png) no-repeat -459px 16px;}*/
 #nav .active,
 #nav a:hover{
 	background-color:#bdbfbf;
@@ -128,7 +128,7 @@ figure{
 	font-size:36px;
 	line-height:48px;
 }
-.upload-block p{margin:0 0 79px;}
+.upload-block p{margin:0 0 19px;}
 .upload-block .block{
 	float:right;
 	width:535px;
