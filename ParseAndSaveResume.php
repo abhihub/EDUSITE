@@ -34,6 +34,7 @@ if (!empty($_FILES))
         echo " Moved files";
         $widgetDocConversion = new DocxConversion($targetFile);
         $text = $widgetDocConversion->convertToText();
+        echo " Text:" . $text;
         unlink($targetFile);
     } 
     catch (Exception $e) 
@@ -48,7 +49,7 @@ else if($mime == "application/pdf" || $fileType == "application/pdf")
     {
         $content = '';
         $content = file_get_contents($_FILES['file']['tmp_name'][0]);
-
+        echo " Inside get contents";
         if ($content) {
             $parser = new \Smalot\PdfParser\Parser();
             $pdf    = $parser->parseContent($content);
@@ -57,6 +58,7 @@ else if($mime == "application/pdf" || $fileType == "application/pdf")
             foreach ($pages as $page) {
                 $text = $text . $page->getText();
             }
+            echo " Text:" . $text;
         } 
         else 
         {
