@@ -47,7 +47,7 @@ class ProcedureToJson{
 
 	function get_is_valid_skill($skillname){
 		try{
-			$sql = "CALL DB1.check_if_is_skill(:skillname)";
+			$sql = "CALL check_if_is_skill(:skillname)";
 			$stmt_isvalidskill  = $this->DBH->prepare($sql);
 			$stmt_isvalidskill->bindParam(':skillname', $skillname, PDO::PARAM_STR);
 			$stmt_isvalidskill->execute();
