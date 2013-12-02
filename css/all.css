@@ -1025,6 +1025,7 @@ height: auto;
    }
 
    .flip-container .front {
+   	padding: 20px;
    	float: none;
    	position: absolute;
    	z-index: 900;
