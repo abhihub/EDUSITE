@@ -232,11 +232,11 @@ if(empty($_SESSION['user']))
 			acceptedFiles: ".pdf,.doc,.docx"
 			, init: function() {
 				this.on("addedfile", function(file) { 
-					alert("Added file."); 
+					//alert("Added file."); 
 				});
 			},
 			success: function(file, response){
-				alert(response);
+				//alert(response);
 			}
 		};
 	});
