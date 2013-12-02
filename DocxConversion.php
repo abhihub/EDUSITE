@@ -2,11 +2,13 @@
 class DocxConversion{
     private $filename;
 
-    public function __construct($filePath) {
+    public function __construct($filePath) 
+    {
         $this->filename = $filePath;
     }
 
-    private function read_doc() {
+    private function read_doc() 
+    {
         $fileHandle = fopen($this->filename, "r");
         $line = @fread($fileHandle, filesize($this->filename));   
         $lines = explode(chr(0x0D),$line);
@@ -24,16 +26,20 @@ class DocxConversion{
         return $outtext;
     }
 
-    private function read_docx(){
-
+    private function read_docx()
+    {
+        echo " Reading Docx file";
         $striped_content = '';
         $content = '';
 
         $zip = zip_open($this->filename);
 
+        echo " Finished Zip Open";
+
         if (!$zip || is_numeric($zip)) return false;
 
-        while ($zip_entry = zip_read($zip)) {
+        while ($zip_entry = zip_read($zip)) 
+        {
 
             if (zip_entry_open($zip, $zip_entry) == FALSE) continue;
 
@@ -46,16 +52,20 @@ class DocxConversion{
 
         zip_close($zip);
 
+        echo " Finished Zip Closed";
+
         $content = str_replace('</w:r></w:p></w:tc><w:tc>', " ", $content);
         $content = str_replace('</w:r></w:p>', "\r\n", $content);
         $striped_content = strip_tags($content);
 
+        echo " Striped content:" . $striped_content;
         return $striped_content;
     }
 
     /************************excel sheet************************************/
 
-    function xlsx_to_text($input_file){
+    function xlsx_to_text($input_file)
+    {
     $xml_filename = "xl/sharedStrings.xml"; //content file name
     $zip_handle = new ZipArchive;
     $output_text = "";
@@ -68,7 +78,9 @@ class DocxConversion{
             $output_text .="";
         }
         $zip_handle->close();
-    }else{
+    }
+    else
+    {
         $output_text .="";
     }
     return $output_text;
