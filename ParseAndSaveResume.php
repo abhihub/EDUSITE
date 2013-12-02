@@ -31,6 +31,7 @@ if (!empty($_FILES))
     try
     {
         move_uploaded_file($tempFile,$targetFile); 
+        echo " Moved files";
         $widgetDocConversion = new DocxConversion($targetFile);
         $text = $widgetDocConversion->convertToText();
         unlink($targetFile);
