@@ -4,3 +4,4 @@ web1:
   php_extensions:
     - pdo_mysql
     - curl
+  shared_writable_dirs: [uploads]
