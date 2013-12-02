@@ -33,6 +33,7 @@ if (!empty($_FILES))
         move_uploaded_file($tempFile,$targetFile); 
         echo " Moved files";
         $widgetDocConversion = new DocxConversion($targetFile);
+        echo " Got Target File:" . $targetFile;
         $text = $widgetDocConversion->convertToText();
         echo " Text:" . $text;
         unlink($targetFile);
@@ -44,6 +45,7 @@ if (!empty($_FILES))
 }
 else if($mime == "application/pdf" || $fileType == "application/pdf")
 {
+  echo " Inside PDF file reader";
     $message = '';
     try 
     {
