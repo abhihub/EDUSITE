@@ -123,7 +123,7 @@ UserVoice.push(['showTab', 'classic_widget', {
 							<a href="#" class="button">JDOM</a> -->
 						</div>
 					</div>
-					<div class="courses-block"><h2>Resume</h2></div>
+					<div class="courses-block"><h2>Resume Skills</h2></div>
 					<div class="text-holder">
 						<?php
 								
@@ -159,7 +159,7 @@ UserVoice.push(['showTab', 'classic_widget', {
 							<a href="#" class="button">TableKit</a> -->
 						</div>
 					</div>
-					<div class="courses-block"><h2>Top missing skills</h2></div>
+					<div class="courses-block"><h2>My top missing skills</h2></div>
 					<div class="btn-holder">
 						<div class="holder">
 							<?php
@@ -192,20 +192,12 @@ UserVoice.push(['showTab', 'classic_widget', {
 							<a href="#" class="button">TableKit</a> -->
 						</div>
 					</div>
-					<div class="courses-block"><h2>Best match jobs</h2></div>
+					<!-- <div class="courses-block"><h2>Best match jobs</h2></div>
 					<ul class="jobs-list">
-						<?php
+						
 						$results = $widgetJobs->get_bestmatch_jobs($userid);
 						foreach($results as $result)
 						{
-							//$resultsSkillsPerJob = $widgetJobs->get_missingskills_job('1', $result[jobid]);
-							//echo '<script type="text/javascript"> var missingskillsforjob=' . json_encode($resultsSkillsPerJob) . ';</script>';
-							// foreach($resultsSkillsPerJob as $resultSkill)
-							// {
-							// 	echo '<a href="#" class="button">' . $resultSkill[name] . '</a>';	
-							// };
-
-							
 							echo '
 							<li style="position:relative;">
 							<div style="z-index: 5; position: relative; background-color: #EBEBEB; ">
@@ -229,14 +221,10 @@ UserVoice.push(['showTab', 'classic_widget', {
 							</li>
 							';
 						}
-						?>
+						
 
-					<!-- 
-					<a href="#" class="button">IOS</a>
-							<a href="#" class="button">RUBY</a>
-							<a href="#" class="button">Dojo</a>
-							<a href="#" class="button">Yahoo</a>
-							<a href="#" class="button">Prototype</a>
+					
+					
 							<a href="#" class="button">Adobe</a>
 					<li class="green">
 						<p>Javascript Developer </p>
@@ -248,9 +236,9 @@ UserVoice.push(['showTab', 'classic_widget', {
 						</div>
 						<a href="#" class="details">Details</a>
 						<a href="#" class="delete">Delete</a>
-					</li> -->
+					</li> 
 				</ul>
-			</div>	
+			</div>	-->
 		</article>
 		<article class="col missing">
 			<header class="title">
@@ -270,11 +258,11 @@ UserVoice.push(['showTab', 'classic_widget', {
 								echo '
 								<li>
 								<div class="holder column">
-								<h3>' . $results_top3Course[coursename] . '</h3>
+								<h3>' . $results_top3Course[name] . '</h3>
+								<label class="companyname"> By '. $results_top3Course[provider] .'</label>
 								<p>' . $results_top3Course[description] . '</p>
 								<div class="btn-row">
-								<a href="' . $results_top3Course[url] . '" class="details">Details</a>
-								<a href="#" class="delete">Learn</a>
+								<a href="' . $results_top3Course[url] . '" class="delete">Learn</a>
 								</div>
 								</li>
 								';

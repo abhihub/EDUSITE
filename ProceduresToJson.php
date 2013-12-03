@@ -146,7 +146,7 @@ class ProcedureToJson{
 
 	function get_top3_courses_skill($skillName_top3Courses) {
 		try{
-			$sql = "call DB1.get_top3_courses_skill (:skillName_top3Courses)";
+			$sql = "call get_top3_courses_skill (:skillName_top3Courses)";
 			$stmt_top3CoursesSkillName = $this->DBH->prepare($sql);
 			$stmt_top3CoursesSkillName->bindParam(':skillName_top3Courses', $skillName_top3Courses, PDO::PARAM_INT);
 			$stmt_top3CoursesSkillName->execute();

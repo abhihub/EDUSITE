@@ -603,7 +603,7 @@ background:url(../images/ico05.png) no-repeat 14px 0;
 }
 .courses-block .list h3{
 	margin:0 0 1px;
-	font:bold 12px/14px Arial, Helvetica, sans-serif;
+	font:bold 14px/16px Arial, Helvetica, sans-serif;
 	color:#2b2b2b;
 }
 .courses-block .list p{
@@ -621,12 +621,12 @@ background:url(../images/ico05.png) no-repeat 14px 0;
 .courses-block .list .details,
 .courses-block .list .delete{
 	float:right;
-	font:10px/13px Arial, Helvetica, sans-serif;
+	font:14px/16px Arial, Helvetica, sans-serif;
 	text-transform:capitalize;
 	color:#fff;
 	border-bottom:1px solid #095d53;
-	width:35px;
-	padding:1px 5px 0;
+	-- width:35px;
+	padding:1px 8px;
 	-webkit-border-radius:1px;
 	border-radius:1px;
 	background-clip:padding-box;
@@ -651,6 +651,10 @@ background:url(../images/ico05.png) no-repeat 14px 0;
 	background:-ms-linear-gradient(top, #e1606d 1%,#d84b55 100%);
 	background:linear-gradient(to bottom, #e1606d 1%,#d84b55 100%);
 	margin:0 4px 0 0;
+}
+.courses-block .list .companyname{
+	font:14px/20px Arial, Helvetica, sans-serif;
+	margin:2px;
 }
 .info-columns .jobs-list{
 	padding:0;
