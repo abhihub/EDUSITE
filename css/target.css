@@ -549,7 +549,7 @@ bottom: -21px;
 	padding:0 0 4px 9px;
 	font:16px/18px Arial, Helvetica, sans-serif;
 	color:#818181;
-	text-transform:capitalize;
+	-- text-transform:capitalize;
 }
 .courses-block h2:before,
 .courses-block h2:after{

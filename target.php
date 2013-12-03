@@ -72,7 +72,7 @@ else
 				<article class="col personal">
 					<div>
 						<header class="title">
-							<h1>or continue on your current path</h1>
+							<h1>OR continue on your current paths</h1>
 						</header>
 						<div class="box column">
 							<div class="courses-block"><h2>We think you know these fields:</h2></div>
@@ -111,10 +111,10 @@ else
 				<article class="col available">
 					<div>
 						<header class="title">
-							<h1>or learn new software fields</h1>
+							<h1>OR learn new software fields</h1>
 						</header>
 						<div class="box column missing">
-							<div class="courses-block"><h2>Here are the ones with the most jobs: </h2></div>
+							<div class="courses-block"><h2>Software fields with the most jobs: </h2></div>
 							<ul class="jobs-list target-list-current">
 								<?php
 								$results_skillsetmatches = $widgetJobs->get_topjobs_skillsets($userid);
