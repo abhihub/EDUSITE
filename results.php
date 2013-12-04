@@ -262,7 +262,7 @@ UserVoice.push(['showTab', 'classic_widget', {
 								<label class="companyname"> By '. $results_top3Course[provider] .'</label>
 								<p>' . $results_top3Course[description] . '</p>
 								<div class="btn-row">
-								<p> class="courseprice"' . $results_top3Course[price] . '</p>
+								<p class="courseprice">' . $results_top3Course[price] . '</p>
 								<a href="' . $results_top3Course[url] . '" class="delete">Learn</a>
 								</div>
 								</li>
