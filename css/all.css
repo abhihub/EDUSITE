@@ -656,6 +656,11 @@ background:url(../images/ico05.png) no-repeat 14px 0;
 	font:14px/20px Arial, Helvetica, sans-serif;
 	margin:2px;
 }
+.courses-block .list .courseprice{
+	font:14px/20px Arial, Helvetica, sans-serif;
+	margin:2px;
+	float: left;
+}
 .info-columns .jobs-list{
 	padding:0;
 	margin:0;

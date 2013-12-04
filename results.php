@@ -59,9 +59,9 @@ UserVoice.push(['showTab', 'classic_widget', {
 					<strong class="logo"><a href="#">FillSkills Helping you for the perfect job</a></strong>
 					<nav id="nav">
 						<a class="home" href="index2.php">Home</a>
+						<a class="courses" href="target.php">Target</a>
 						<a class="results active" href="#">Results</a>
-						<!-- <a class="courses" href="#">Courses</a>
-						<a class="skills" href="#">Skills</a>
+						<!--<a class="skills" href="#">Skills</a>
 						<a class="contact" href="#">Contact</a> -->
 						<a class="logout" href="logout.php">Logout</a>
 					</nav>
@@ -262,6 +262,7 @@ UserVoice.push(['showTab', 'classic_widget', {
 								<label class="companyname"> By '. $results_top3Course[provider] .'</label>
 								<p>' . $results_top3Course[description] . '</p>
 								<div class="btn-row">
+								<p> class="courseprice"' . $results_top3Course[price] . '</p>
 								<a href="' . $results_top3Course[url] . '" class="delete">Learn</a>
 								</div>
 								</li>
