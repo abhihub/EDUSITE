@@ -659,6 +659,7 @@ background:url(../images/ico05.png) no-repeat 14px 0;
 .courses-block .list .courseprice{
 	font:14px/20px Arial, Helvetica, sans-serif;
 	margin:2px;
+	margin-left: 20px;
 	float: left;
 }
 .info-columns .jobs-list{
