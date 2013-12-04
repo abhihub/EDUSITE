@@ -660,7 +660,7 @@ background:url(../images/ico05.png) no-repeat 14px 0;
 	font:14px/20px Arial, Helvetica, sans-serif;
 	margin:2px;
 	margin-left: 20px;
-	float: left;
+	-- float: left;
 }
 .info-columns .jobs-list{
 	padding:0;

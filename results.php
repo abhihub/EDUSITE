@@ -260,9 +260,9 @@ UserVoice.push(['showTab', 'classic_widget', {
 								<div class="holder column">
 								<h3>' . $results_top3Course[name] . '</h3>
 								<label class="companyname"> By '. $results_top3Course[provider] .'</label>
+								<label class="courseprice">$' . $results_top3Course[price] . '</label>
 								<p>' . $results_top3Course[description] . '</p>
 								<div class="btn-row">
-								<label class="courseprice">$' . $results_top3Course[price] . '</label>
 								<a href="' . $results_top3Course[url] . '" class="delete">Learn</a>
 								</div>
 								</li>
