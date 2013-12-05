@@ -90,8 +90,8 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	#nav a{
 		float:left;
 	color:#363636;
-	width:105px;
-	padding:6px 6px 6px;
+	-- width:105px;
+	padding:6px 10px;
 	text-decoration:none;
 	margin:0 0 0 4px;
 	}
