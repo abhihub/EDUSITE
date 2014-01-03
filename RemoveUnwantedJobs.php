@@ -10,8 +10,10 @@ try{
 	//Check count of split items in CommonJobTitles table
 	//If count < 2, sort and show them in a list
 
-	$query_all_jobsskills = " 
-	select jj.id as jjid, jj.jobtitle, jj.`snippet`,  group_concat(ss.name separator ',' ), count(1) as count
+
+
+    $query_all_jobsskills = " 
+	select jj.id as jjid, jj.jobtitle, jj.`snippet`, jj.company, jj.city, jj.state, jj.country, jj.formattedLocation, jj.source, jj.enddate, jj.url, jj.onmousedown, jj.jobkey, jj.sponsored, jj.expired, jj.formattedLocationFull, jj.formattedRelativeTime, group_concat(ss.name separator ',' ), count(1) as count
 	from jobs jj 
 	inner join jobsskills js on jj.id = js.jobid
 	inner join skills ss on js.skillid = ss.id
