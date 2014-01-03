@@ -81,7 +81,7 @@ try{
 		 //Insert into deleted jobs table
 		 $widgetJobs->insert_deleted_jobs($descardedjob);
 		 //Delete job from jobs table
-		 //$widgetJobs->delete_job($descardedjob[jjid]);
+		 $widgetJobs->delete_job($descardedjob[jjid]);
 		 //echo(print_r($descardedjob[id] . " " . $descardedjob[jobtitle] . " " . $descardedjob[snippet]));
 		 echo "<br>";
 	} 
