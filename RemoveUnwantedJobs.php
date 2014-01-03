@@ -5,12 +5,12 @@ $widgetJobs->init();
 try{
 	$DBH = common::getInstance()->getDatabase();
 	//Foreach job
-	//Get the related skill
-	//Get and split Job title and description
-	//Check count of Split items in Skills Table or JobTitles table
-	//If count < 4, sort and show them in a list
+	//Get the skill count
+	//If count < 3, Get and split Job title and Snippet
+	//Check count of split items in CommonJobTitles table
+	//If count < 2, sort and show them in a list
 
-	$query = " 
+	$query_all_jobsskills = " 
 	select jj.id as jjid, jj.jobtitle, jj.`snippet`,  group_concat(ss.name separator ',' ), count(1) as count
 	from jobs jj 
 	inner join jobsskills js on jj.id = js.jobid
@@ -23,12 +23,12 @@ try{
 	$queryhassnippetinskill= "select count(*) from skills ss where ss.name = :skillinsnippetname";
 	$stmt_snippetmatch = $DBH->prepare($queryhassnippetinskill);
 
-	$stmt = $DBH->prepare($query, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
-	$stmt->execute();
+	$stmt_all_jobsskills = $DBH->prepare($query_all_jobsskills, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
+	$stmt_all_jobsskills->execute();
 
 	$jobswithlowcount = array();
 	
-	while ($row = $stmt->fetch(PDO::FETCH_ORI_NEXT)) {
+	while ($row = $stmt_all_jobsskills->fetch(PDO::FETCH_ORI_NEXT)) {
 		$matchedskills = "";
 		$skillmatchcount = $row[count];	
 

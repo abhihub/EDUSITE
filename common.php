@@ -34,11 +34,6 @@ class Databasesetup {
 
 	private function setupdatabase(){
 
-		// $host = '127.0.0.1';
-		// $dbname = 'DB1';
-		// $user = 'tambra';
-		// $pass = 'bg4oBEMO';
-		// $port = '3307';
 
 		$host = 'tunnel.pagodabox.com';
 		$dbname = 'DB1';
