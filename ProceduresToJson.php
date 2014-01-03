@@ -361,6 +361,24 @@ class ProcedureToJson{
 			$formattedLocationFull = $row[formattedLocationFull];
 			$formattedRelativeTime = $row[formattedRelativeTime];
 
+			echo("<br> jobid :" . $jobid);
+			echo("<br> jobtitle :" . $jobtitle);
+			echo("<br> company :" . $company);
+			echo("<br> city :" . $city);
+			echo("<br> state :" . $state);
+			echo("<br> country :" . $country);
+			echo("<br> formattedLocation :" . $formattedLocation);
+			echo("<br> source :" . $source);
+			echo("<br> enddate :" . $enddate);
+			echo("<br> snippet :" . $snippet);
+			echo("<br> url :" . $url);
+			echo("<br> onmousedown :" . $onmousedown);
+			echo("<br> jobkey :" . $jobkey);
+			echo("<br> sponsored :" . $sponsored);
+			echo("<br> expired :" . $expired);
+			echo("<br> formattedLocationFull :" . $formattedLocationFull);
+			echo("<br> formattedRelativeTime :" . $formattedRelativeTime);
+
 			$sql = "CALL insert_deleted_jobs(:old_jobidl,:jobtitlel,:companyl,:cityl,:statel,:countryl,:formattedLocationl,
 				:sourcel,:enddatel,:snippetl,:urll,:onmousedownl,:jobkeyl,:sponsoredl,:expiredl,:formattedLocationFulll,:formattedRelativeTimel); ";
 			$stmt_insert_jobsskill_from_skillname_jobid = $this->DBH->prepare($sql);
