@@ -325,6 +325,24 @@ class ProcedureToJson{
 		}
 	}
 
+	function insert_coursesskill_ifnotexists($skillname, $courseid)
+	{
+		try{
+			$sql = "CALL insert_coursesskill_ifnotexists(:skillname, :courseid); ";
+			$stmt_insert_coursesskill_ifnotexists = $this->DBH->prepare($sql);
+			$stmt_insert_coursesskill_ifnotexists->bindParam(':skillname', $skillname, PDO::PARAM_STR);
+			$stmt_insert_coursesskill_ifnotexists->bindParam(':courseid', $courseid, PDO::PARAM_INT);
+			$stmt_insert_coursesskill_ifnotexists->execute();
+			$stmt_insert_coursesskill_ifnotexists->closeCursor();
+			unset($stmt_insert_coursesskill_ifnotexists);	
+			//return $results_insert_skillsnotfound;
+		}
+		catch(PDOException $e) {
+			echo $e->getMessage();
+		}
+	}
+	
+
 	function delete_job($jobid)
 	{
 		try{
