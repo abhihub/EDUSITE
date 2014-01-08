@@ -120,8 +120,8 @@ else
 								foreach($results_skillsetmatches as $result)
 								{
 									echo '
-									<li class="green">
-									<p>' . $result[name] . ' (' .$result[jobcount] . ' jobs)' . '</p>
+									<li class="green" style="overflow:hidden;">
+									<p style="float:left;">' . $result[name] . '</p><p style="float:left">' . ' (' .$result[jobcount] . ' jobs)'  . '</p>
 									</li>
 									';
 								}
@@ -258,7 +258,7 @@ else
 			$('#CheckMarkAllJobs').removeClass('CheckAllJobs');	
 			$('#CheckMarkAllJobs').addClass('UnCheckAllJobs');	
 			$(this).toggleClass('targetSelected');
-			$('#targetstring').val($('li.targetSelected p').text());
+			$('#targetstring').val($('li.targetSelected p:first-of-type').text());
 		}
 	});
 	$('.target-list-top > li').click(function () {
@@ -275,12 +275,12 @@ else
 			$('#CheckMarkAllJobs').removeClass('CheckAllJobs');	
 			$('#CheckMarkAllJobs').addClass('UnCheckAllJobs');	
 			$(this).toggleClass('targetSelected');
-			$('#targetstring').val($('li.targetSelected p').text());
+			$('#targetstring').val($('li.targetSelected p:first-of-type').text());
 		}	
 	});
 	$('.target-alljobs').click(function () {
 		$('#targetstring').val('');
-		
+
 		if($('#CheckMarkAllJobs').hasClass('CheckAllJobs'))
 		{
 			$('#CheckMarkAllJobs').removeClass('CheckAllJobs');	
