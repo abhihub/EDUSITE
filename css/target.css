@@ -426,13 +426,13 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	}
 	.info-columns{
 		width: 1200px;
-		margin: 0px 0px 0px 55px;
+		margin: 0px 0px 0px 145px;
 		-- padding-top: 35px;
 	}
 	.info-columns .col:first-child{margin:0;}
 	.info-columns .col{
 		float:left;
-		width:387px;
+		width:320px;
 		margin:0 0 0 18px;
 	}
 	.info-columns .col.available{

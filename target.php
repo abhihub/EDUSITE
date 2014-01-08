@@ -59,10 +59,12 @@ else
 			<section class="section info-columns columns-holder">
 				<article class="col missing">
 					<header class="title">
-						<h1>(default) Target all skillsets<br></br></h1>
+						<h1>Target all skillsets<br></br></h1>
 					</header>
 					<div class="box column target-alljobs">
 						<div class="courses-block">
+							<h2>(Default)</h2>
+							<br/>
 							<h2>Analyse the entire software job market: </h2>
 							<br>
 							<p>7,000+ LA software jobs</p>
