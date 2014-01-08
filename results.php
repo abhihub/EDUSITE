@@ -56,11 +56,11 @@ UserVoice.push(['showTab', 'classic_widget', {
 		<header id="header">
 			<div class="holder">
 				<div class="frame">
-					<strong class="logo"><a href="#">FillSkills Helping you for the perfect job</a></strong>
+					<strong class="logo"><a href="index2.php">FillSkills Helping you for the perfect job</a></strong>
 					<nav id="nav">
-						<a class="home" href="index2.php">Home</a>
-						<a class="courses" href="target.php">Target</a>
-						<a class="results active" href="#">Results</a>
+						<a class="home" href="index2.php">1.Enter skills</a>
+						<a class="courses" href="target.php">2.Set Goal</a>
+						<a class="results active" href="#">3.Results</a>
 						<!--<a class="skills" href="#">Skills</a>
 						<a class="contact" href="#">Contact</a> -->
 						<a class="logout" href="logout.php">Logout</a>
@@ -146,7 +146,7 @@ UserVoice.push(['showTab', 'classic_widget', {
 						<div class="holder">
 							<?php
 							
-							echo '<a href="#" class="button">' . $target . '</a>';
+							echo '<a href="target.php" class="button">' . $target . '</a>';
 							
 							?>
 							<!-- <a href="#" class="button">IOS</a>
@@ -394,8 +394,7 @@ $('.missing a').click(function () {
          		'<h3>' + itemq.name + '</h3>' +
          		'<p>' + itemq.description + '</p>' +
          		'<div class="btn-row">' +
-         		'<a href="' + itemq.url + '" class="details">Details</a>' +
-         		'<a href="#" class="delete">Learn</a>' +
+         		'<a href="' + itemq.url + '" class="delete">Learn</a>' +
          		'</div>' +
          		'</li>';
          	});

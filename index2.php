@@ -62,7 +62,7 @@ if(empty($_SESSION['user']))
 				<div class="frame">
 					<strong class="logo"><a href="#">FillSkills: Helping you land your dream job</a></strong>
 					<nav id="nav">
-						<a class="home active" href="#">Home</a>
+						<a class="home active" href="#">Enter skills</a>
 						<!-- <a class="results" href="#">Results</a>
 						<a class="courses" href="#">Courses</a>
 						<a class="skills" href="#">Skills</a>
@@ -99,7 +99,7 @@ if(empty($_SESSION['user']))
 			<section class="section gray greenbg">
 				<article class="holder">
 					<div class="text-holder">
-						<a href="#" id="btnupload" class="btn">STEP 2 ></a>
+						<a href="#" id="btnupload" class="btn">SET GOAL ></a>
 					</div>
 				</article>
 			</section>

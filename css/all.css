@@ -83,7 +83,7 @@ figure{
 }
 #nav{
 	float:right;
-	font:26px/30px Arial, Helvetica, sans-serif;
+	font:24px/28px Arial, Helvetica, sans-serif;
 	text-align:center;
 	padding:0 0 0 0;
 }
@@ -93,7 +93,7 @@ figure{
 	-- width:105px;
 	padding:6px 10px;
 	text-decoration:none;
-	margin:0 0 0 4px;
+	margin:0 0 0 7px;
 }
 /*#nav .home{background:url(../images/sprite.png) no-repeat 36px 16px;}
 #nav .logout{background:url(../images/sprite.png) no-repeat 36px 16px;}

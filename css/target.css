@@ -61,21 +61,21 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	}
 	#header>.holder>.frame{
 		overflow:hidden;
-	-- width:1170px;
-	padding:22px 116px 12px 98px;
-	border-bottom:1px solid #44cab8;
-	-webkit-box-shadow:inset 0 -1px 0 #026445;
-	box-shadow:inset 0 -1px 0 #026445;
-	margin:0 auto 0 40px;	
+		-- width:1170px;
+		padding:22px 116px 12px 98px;
+		border-bottom:1px solid #44cab8;
+		-webkit-box-shadow:inset 0 -1px 0 #026445;
+		box-shadow:inset 0 -1px 0 #026445;
+		margin:0 auto 0 40px;	
 	}
 	#header .logo{
 		overflow:hidden;
-	float:left;
-	background:url(../images/logo.gif) no-repeat;
-	width:201px;
-	height:45px;
-	text-indent:-9999px;
-	margin:0 0 0 0;
+		float:left;
+		background:url(../images/logo.gif) no-repeat;
+		width:201px;
+		height:45px;
+		text-indent:-9999px;
+		margin:0 0 0 0;
 	}
 	.logo a{
 		display:block;
@@ -83,17 +83,17 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	}
 	#nav{
 		float:right;
-		font:26px/30px Arial, Helvetica, sans-serif;
+		font:24px/28px Arial, Helvetica, sans-serif;
 		text-align:center;
 		padding:0 0 0 0;
 	}
 	#nav a{
 		float:left;
-	color:#363636;
-	-- width:105px;
-	padding:6px 10px;
-	text-decoration:none;
-	margin:0 0 0 4px;
+		color:#363636;
+		-- width:105px;
+		padding:6px 10px;
+		text-decoration:none;
+		margin:0 0 0 7px;
 	}
 	/*#nav .home{background:url(../images/sprite.png) no-repeat 36px 16px;}
 	#nav .logout{background:url(../images/sprite.png) no-repeat 36px 16px;}
@@ -122,7 +122,7 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 	}
 	.upload-block{
 		width:1170px;
-		padding-left: 15px;
+		-- padding-left: 15px;
 		margin:20px auto 0;
 		color:#fff;
 		font-size:36px;
@@ -425,9 +425,9 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 		clear:both;
 	}
 	.info-columns{
-		width:1200px;
-		margin:0 auto 51px;
-		padding-top: 35px;
+		width: 1200px;
+		margin: 0px 0px 0px 55px;
+		-- padding-top: 35px;
 	}
 	.info-columns .col:first-child{margin:0;}
 	.info-columns .col{
@@ -469,19 +469,19 @@ background:url(../images/ico05.png) no-repeat 14px 0;*/
 }
 .info-columns h1:after{
 	position: absolute;
-content: '';
-width: 33px;
-height: 14px;
-left: -1px;
-bottom: -21px;
+	content: '';
+	width: 33px;
+	height: 14px;
+	left: -1px;
+	bottom: -21px;
 	background:url(../images/sprite.png) no-repeat 0 -210px;
 
 }
 .info-columns .box{
 	padding:28px 21px 28px;
 	background:url(../images/bg-gray.png);
-	-webkit-box-shadow:0 0 8px 2px rgba(23, 23, 23, 0.75);
-	box-shadow:0 0 8px 2px rgba(23, 23, 23, 0.75);
+	-- -webkit-box-shadow:0 0 8px 2px rgba(23, 23, 23, 0.75);
+	-- box-shadow:0 0 8px 2px rgba(23, 23, 23, 0.75);
 }
 .info-columns .text-holder{
 	padding:0 0 0 3px;
@@ -668,18 +668,20 @@ bottom: -21px;
 .info-columns .jobs-list li{
 	overflow:hidden;
 	background:url(../images/bg-gray.png);
-	padding:12px 10px 12px;
+	padding:0px 10px 0px;
 	-- margin:10px 0 0;
 	-- -webkit-box-shadow:0 0 6px 3px rgba(23, 23, 23, 0.47);
 	-- box-shadow:0 0 6px 3px rgba(23, 23, 23, 0.47);
 }
 .info-columns .jobs-list p:first-child{
-	margin-top: 8px;
-	font-size: 18px;
+	-- margin-top: 8px;
+	-- font-size: 18px;
 }
 .info-columns .jobs-list p{
-	margin:0 0 6px;
-	text-indent:6px;
+	font: 14px/1.714em/*24px*/ Arial, Helvetica, sans-serif;
+	text-transform: capitalize;
+	margin:4px 2px;
+	-- text-indent:6px;
 }
 .info-columns .jobs-list .progress{
 	overflow:hidden;
@@ -693,7 +695,7 @@ bottom: -21px;
 }
 .info-columns .jobs-list .progress-in{
 	float:left;
-	height:38px;
+	-- height:38px;
 	background:#449ce3;
 }
 .info-columns .jobs-list .details,
@@ -1028,7 +1030,7 @@ bottom: -21px;
 }
 
 .targetHover{
-	background: #83B6A3 !important;
+	background: #b1bfb4 !important;
 	cursor: pointer;
 }
 
@@ -1036,17 +1038,24 @@ bottom: -21px;
 	background: #16A085 !important;
 }
 
-.targetSelected:after{
-	content:  "\2713 ";
-}
-
 .target-alljobs p{
 	color: #818181;
 	position: relative;
 	margin: 0 0 0 0;
-	padding: 0 0 4px 9px;
+	padding: 0px 0px 0px 9px;
 	color: #818181;
 	text-transform: capitalize;
+}
+
+.CheckAllJobs{
+	margin-top: 50px !important;
+	font-size: 80px;
+	text-align: center;
+	color: #16A085 !important;
+}
+
+.UnCheckAllJobs{
+	font-size: 0px;
 }
 
 /* ==========================================================================

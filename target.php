@@ -40,10 +40,10 @@ else
 		<header id="header">
 			<div class="holder">
 				<div class="frame">
-					<strong class="logo"><a href="#">FillSkills Helping you get your dream job</a></strong>
+					<strong class="logo"><a href="index2.php">FillSkills Helping you get your dream job</a></strong>
 					<nav id="nav">
-						<a class="home" href="index2.php">Home</a>
-						<a class="results active" href="#">Target</a>
+						<a class="home" href="index2.php">1.Enter skills</a>
+						<a class="results active" href="#">2.Set Goal</a>
 						<!-- <a class="courses" href="#">Courses</a>
 						<a class="skills" href="#">Skills</a>
 						<a class="contact" href="#">Contact</a> -->
@@ -53,29 +53,34 @@ else
 			</div>
 		</header>
 		<div id="main">
+			<div class="upload-block">
+				<p></p>
+			</div>
 			<section class="section info-columns columns-holder">
 				<article class="col missing">
 					<header class="title">
-						<h1>Target all jobs (Default)</h1>
+						<h1>(default) Target all skillsets<br></br></h1>
 					</header>
 					<div class="box column target-alljobs">
 						<div class="courses-block">
 							<h2>Analyse the entire software job market: </h2>
 							<br>
-							<p>90,000 software jobs </p>
-							<p>Across 50 states </p>
-							<p>50+ fields </p>
-							<p>Hundreds of skills</p>
+							<p>7,000+ LA software jobs</p>
+							<p>350+ skills </p>
+							<p>50+ SkillSets </p>
+						</div>
+						<div>
+							<p id="CheckMarkAllJobs" class="CheckAllJobs">&#x2713</p>
 						</div>
 					</div>
 				</article>
 				<article class="col personal">
 					<div>
 						<header class="title">
-							<h1>OR continue on your current paths</h1>
+							<h1>...or continue on one of your current paths</h1>
 						</header>
 						<div class="box column">
-							<div class="courses-block"><h2>We think you know these fields:</h2></div>
+							<div class="courses-block"><h2>We picked up these skillsets from your resume: </h2></div>
 							<ul class="jobs-list target-list-current">
 								<?php
 								$results_skillsetmatches = $widgetJobs->get_skillset_matches($userid);
@@ -83,13 +88,7 @@ else
 								{
 									echo '
 									<li class="green">
-									<div class="progress">
-									<span class="progress-bar">
-									<span class="progress-in" style="width:100%;">
 									<p>' . $result[name] . '</p>
-									</span>
-									</span>
-									</div>
 									</li>
 									';
 								}
@@ -111,10 +110,10 @@ else
 				<article class="col available">
 					<div>
 						<header class="title">
-							<h1>OR learn new software fields</h1>
+							<h1>...or learn something new<br></br></h1>
 						</header>
 						<div class="box column missing">
-							<div class="courses-block"><h2>Software fields with the most jobs: </h2></div>
+							<div class="courses-block"><h2>Software skillsets with the most jobs: </h2></div>
 							<ul class="jobs-list target-list-current">
 								<?php
 								$results_skillsetmatches = $widgetJobs->get_topjobs_skillsets($userid);
@@ -122,13 +121,7 @@ else
 								{
 									echo '
 									<li class="green">
-									<div class="progress">
-									<span class="progress-bar">
-									<span class="progress-in" style="width:100%;">
-									<p>' . $result[name] . '</p>
-									</span>
-									</span>
-									</div>
+									<p>' . $result[name] . ' (' .$result[jobcount] . ' jobs)' . '</p>
 									</li>
 									';
 								}
@@ -199,7 +192,7 @@ else
 					<div class="text-holder">
 						<form id="PostResults" name="PostResults" method="POST" action="results.php">
 							<input type="hidden" id="targetstring" name="targetstring" />
-							<input type="submit" id="btnupload" class="btn" value="SUBMIT >"></input>
+							<input type="submit" id="btnupload" class="btn" value="RESULTS >"></input>
 						</form>
 					</div>
 				</article>
@@ -252,25 +245,56 @@ else
 	});
 
 	$('.target-list-current > li').click(function () {
-		$('.target-list-current > li').removeClass('targetSelected');
-		$('.target-list-top > li').removeClass('targetSelected');
-		$('.target-alljobs').removeClass('targetSelected');
-		$(this).addClass('targetSelected');
-		$('#targetstring').val($('li.targetSelected p').text());
+		if($(this).hasClass('targetSelected'))
+		{
+			$(this).toggleClass('targetSelected');
+			$('#targetstring').val('');	
+		}
+		else
+		{
+			$('.target-list-current > li').removeClass('targetSelected');
+			$('.target-list-top > li').removeClass('targetSelected');
+			$('.target-alljobs').removeClass('targetSelected');
+			$('#CheckMarkAllJobs').removeClass('CheckAllJobs');	
+			$('#CheckMarkAllJobs').addClass('UnCheckAllJobs');	
+			$(this).toggleClass('targetSelected');
+			$('#targetstring').val($('li.targetSelected p').text());
+		}
 	});
 	$('.target-list-top > li').click(function () {
-		$('.target-list-current > li').removeClass('targetSelected');
-		$('.target-list-top > li').removeClass('targetSelected');
-		$('.target-alljobs').removeClass('targetSelected');
-		$(this).addClass('targetSelected');
-		$('#targetstring').val($('li.targetSelected p').text());
+		if($(this).hasClass('targetSelected'))
+		{
+			$(this).toggleClass('targetSelected');	
+			$('#targetstring').val('');
+		}
+		else
+		{
+			$('.target-list-current > li').removeClass('targetSelected');
+			$('.target-list-top > li').removeClass('targetSelected');
+			$('.target-alljobs').removeClass('targetSelected');
+			$('#CheckMarkAllJobs').removeClass('CheckAllJobs');	
+			$('#CheckMarkAllJobs').addClass('UnCheckAllJobs');	
+			$(this).toggleClass('targetSelected');
+			$('#targetstring').val($('li.targetSelected p').text());
+		}	
 	});
 	$('.target-alljobs').click(function () {
-		$('.target-list-current > li').removeClass('targetSelected');
-		$('.target-list-top > li').removeClass('targetSelected');
-		$('.target-alljobs').removeClass('targetSelected');
-		$(this).addClass('targetSelected');
-		$('#targetstring').val($('li.targetSelected p').text());
+		$('#targetstring').val('');
+		
+		if($('#CheckMarkAllJobs').hasClass('CheckAllJobs'))
+		{
+			$('#CheckMarkAllJobs').removeClass('CheckAllJobs');	
+			$('#CheckMarkAllJobs').addClass('UnCheckAllJobs');	
+			$('#targetstring').val('');
+		}
+		else if($('#CheckMarkAllJobs').hasClass('UnCheckAllJobs'))
+		{
+			$('.target-list-current > li').removeClass('targetSelected');
+			$('.target-list-top > li').removeClass('targetSelected');
+			$('.target-alljobs').removeClass('targetSelected');
+			$('#CheckMarkAllJobs').removeClass('UnCheckAllJobs');
+			$('#CheckMarkAllJobs').addClass('CheckAllJobs');
+		}
 	});
 
 	</script>
