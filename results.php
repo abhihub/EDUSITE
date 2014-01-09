@@ -82,7 +82,7 @@ UserVoice.push(['showTab', 'classic_widget', {
 								$resultsusersskills = $widgetJobs->get_users_skills($userid);
 								foreach($resultsusersskills as $result)
 								{
-									echo '<p href="#" class="button">' . $result[skillname] . '</p>';
+									echo '<a href="#" class="button">' . $result[skillname] . '</a>';
 								}
 								?>
 
@@ -95,7 +95,7 @@ UserVoice.push(['showTab', 'classic_widget', {
 							$resultsusersskills = $widgetJobs->get_users_skills_resume($userid);
 							foreach($resultsusersskills as $result)
 							{
-								echo '<p href="#" class="button">' . $result[skillname] . '</p>';
+								echo '<a href="#" class="button">' . $result[skillname] . '</a>';
 							}
 							?>
 						</div>
