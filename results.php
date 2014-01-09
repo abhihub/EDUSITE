@@ -149,7 +149,7 @@ UserVoice.push(['showTab', 'classic_widget', {
 					</header>
 					<div class="box column">
 						<div class="courses-block">
-							<h2>All courses</h2>
+							<div style="overflow:hidden;"><h2 id="CoursesContext" style="float:left;">All courses</h2><a id="AllCoursesLink" href="results.php" class="changeGoal" style="float:right; margin-right:10px;"></a></div>
 							<ul class="list">
 								<?php
 								foreach($resultsallmissingskills as $result)
@@ -222,6 +222,8 @@ UserVoice.push(['showTab', 'classic_widget', {
 		);
 
 	$('.missing a').click(function () {
+		$('#CoursesContext').text($(this).text() + ' courses');
+		$('#AllCoursesLink').text('(show all)');
 		$.ajax({ url: 'GetCoursesBySkills.php',
          // data: {action: 'get_missingskills_job'},
          data: { skillstring: $(this).text() },
