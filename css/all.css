@@ -93,7 +93,7 @@ figure{
 	-- width:105px;
 	padding:6px 10px;
 	text-decoration:none;
-	margin:0 0 0 7px;
+	margin:0 0 0 4px;
 }
 /*#nav .home{background:url(../images/sprite.png) no-repeat 36px 16px;}
 #nav .logout{background:url(../images/sprite.png) no-repeat 36px 16px;}
@@ -429,17 +429,19 @@ figure{
 	width:1200px;
 	margin:0 auto 51px;
 }
-.info-columns .col:first-child{margin:0;}
+.info-columns .col:first-child{}
 .info-columns .col{
 	float:left;
 	width:387px;
 	margin:0 0 0 28px;
 }
-.info-columns .col.available{width:250px;}
-.info-columns .col.missing{
+.info-columns .col.available{
 	min-width: 550px;
-	max-width: 620px;
+	max-width: 550px;
 	width:100%;
+}
+.info-columns .col.missing{
+	width:250px;
 }
 .info-columns .title{
 	padding:0 10px 9px 47px;
@@ -475,12 +477,14 @@ background:url(../images/ico05.png) no-repeat 14px 0;
 	height:11px;
 	background:url(../images/sprite.png) no-repeat -100px -210px;
 }
+
 .info-columns .box{
 	padding:28px 21px 28px;
 	background:url(../images/bg-gray.png);
 	-webkit-box-shadow:0 0 8px 2px rgba(23, 23, 23, 0.75);
 	box-shadow:0 0 8px 2px rgba(23, 23, 23, 0.75);
 }
+
 .info-columns .text-holder{
 	padding:0 0 0 3px;
 	font:12px/18px Arial, Helvetica, sans-serif;
@@ -488,9 +492,9 @@ background:url(../images/ico05.png) no-repeat 14px 0;
 }
 .info-columns .text-holder p{margin:0 0 18px;}
 .info-columns .btn-holder{
-	border-bottom:1px solid #f5f5f5;
-	-webkit-box-shadow:inset 0 -2px 0 0 rgba(217, 217, 217, 1);
-	box-shadow:inset 0 -2px 0 0 rgba(217, 217, 217, 1);
+	-- border-bottom:1px solid #f5f5f5;
+	-- -webkit-box-shadow:inset 0 -2px 0 0 rgba(217, 217, 217, 1);
+	-- box-shadow:inset 0 -2px 0 0 rgba(217, 217, 217, 1);
 	font-size:0;
 	letter-spacing:-4px;
 	padding:0 0 11px;
@@ -550,6 +554,14 @@ background:url(../images/ico05.png) no-repeat 14px 0;
 	color:#818181;
 	text-transform:capitalize;
 }
+.courses-block h3{
+	position:relative;
+	margin:0 0 0 0;
+	padding:0 0 4px 9px;
+	font:12px/16px Arial, Helvetica, sans-serif;
+	color:#818181;
+	text-transform:capitalize;
+}
 .courses-block h2:before,
 .courses-block h2:after{
 	position:absolute;
@@ -574,7 +586,7 @@ background:url(../images/ico05.png) no-repeat 14px 0;
 	margin:0 0 0 0;
 	padding:0 0 4px 4px;
 	font:14px/18px Arial, Helvetica, sans-serif;
-	color:#595959;
+	color:#818181;
 	
 }
 .learnCourse{

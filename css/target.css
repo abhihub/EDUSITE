@@ -93,7 +93,7 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 		-- width:105px;
 		padding:6px 10px;
 		text-decoration:none;
-		margin:0 0 0 7px;
+		margin:0 0 0 4px;
 	}
 	/*#nav .home{background:url(../images/sprite.png) no-repeat 36px 16px;}
 	#nav .logout{background:url(../images/sprite.png) no-repeat 36px 16px;}

@@ -58,8 +58,8 @@ UserVoice.push(['showTab', 'classic_widget', {
 				<div class="frame">
 					<strong class="logo"><a href="index2.php">FillSkills Helping you for the perfect job</a></strong>
 					<nav id="nav">
-						<a class="home" href="index2.php">Enter skills</a>
-						<a class="courses" href="target.php">Set Goal</a>
+						<a class="home" href="index2.php">Skills</a>
+						<a class="courses" href="target.php">Goal</a>
 						<a class="results active" href="#">Results</a>
 						<a class="logout" href="logout.php">Logout</a>
 					</nav>
@@ -71,10 +71,19 @@ UserVoice.push(['showTab', 'classic_widget', {
 			<section class="info-columns columns-holder">
 				<article class="col personal">
 					<header class="title">
-						<h1>Current Skills</h1>
+						<h1>Current Me</h1>
 					</header>
 					<div class="box column">
-						<div class="courses-block"><h2>Manually entered Skills</h2></div>
+						<div class="courses-block" style="overflow:hidden;"><h2 style="float:left;">My Goal</h2><a href="target.php" class="changeGoal" style="float:left;">(edit)</a></div>
+						<div class="btn-holder">
+							<div class="holder">
+								<?php
+								echo '<p class="button">' . $target . '</p>';
+								?>
+							</div>
+						</div>
+						<div class="courses-block"style="overflow:hidden;"><h2 style="float:left;">My Skills</h2><a href="index2.php" class="changeGoal" style="float:left;">(edit)</a></div>
+						<div class="courses-block"><h3>Manually entered</h3></div>
 						<div class="btn-holder">
 							<div class="holder">
 								<?php
@@ -88,7 +97,7 @@ UserVoice.push(['showTab', 'classic_widget', {
 
 							</div>
 						</div>
-						<div class="courses-block"><h2>Resume Skills</h2></div>
+						<div class="courses-block"><h3>From Resume</h3></div>
 						<div class="text-holder">
 							<?php
 
@@ -103,9 +112,9 @@ UserVoice.push(['showTab', 'classic_widget', {
 				</article>
 				<article class="col missing">
 					<header class="title">
-						<h1>MISSING (Using Job Market analysis)</h1>
+						<h1>Missing</h1>
 					</header>
-					<div class="box column">
+					<div class="box column ">
 						<div class="courses-block"><h2>My top missing skills</h2></div>
 						<div class="btn-holder">
 							<div class="holder">
@@ -132,8 +141,15 @@ UserVoice.push(['showTab', 'classic_widget', {
 
 							</div>
 						</div>
+					</div>
+				</article>
+				<article class="col available">
+					<header class="title">
+						<h1>Recommended Courses</h1>
+					</header>
+					<div class="box column">
 						<div class="courses-block">
-							<h2>Recommended Courses</h2>
+							<h2>All courses</h2>
 							<ul class="list">
 								<?php
 								foreach($resultsallmissingskills as $result)
@@ -162,21 +178,7 @@ UserVoice.push(['showTab', 'classic_widget', {
 						</div>
 					</div>
 				</article>
-				<article class="col available">
-					<header class="title">
-						<h1>Goal</h1>
-					</header>
-					<div class="box column ">
-						<div class="courses-block" style="overflow:hidden;"><h2 style="float:left;">My Goal</h2><a href="target.php" class="changeGoal" style="float:left;">(change)</a></div>
-						<div class="btn-holder">
-							<div class="holder">
-								<?php
-								echo '<p class="button">' . $target . '</p>';
-								?>
-							</div>
-						</div>
-					</div>
-				</article>
+				
 
 			</section>
 		</div>
@@ -241,24 +243,24 @@ UserVoice.push(['showTab', 'classic_widget', {
          	$('.courses-block ul').html(listItems);
          }
      });
-	
-});
-</script>
+
+	});
+	</script>
 </body>
 </html>
 
 // console.log($(this).find('.jobid').text());
-	// $('.jobs-list li').removeClass( "green" );
-	// $(this).addClass( "green" );
-        // $.ajax({ url: 'get_missingskills_job.php',
-        //  // data: {action: 'get_missingskills_job'},
-        //  data: { jobID_missingskills_perjob: $(this).find('.jobid').text() },
-        //  type: 'POST',
-        //  success: function(output) {
-        //               //alert(output);
-        //               $('#naslov b').html(output);
-        //           }
-        // });
+// $('.jobs-list li').removeClass( "green" );
+// $(this).addClass( "green" );
+// $.ajax({ url: 'get_missingskills_job.php',
+//  // data: {action: 'get_missingskills_job'},
+//  data: { jobID_missingskills_perjob: $(this).find('.jobid').text() },
+//  type: 'POST',
+//  success: function(output) {
+//               //alert(output);
+//               $('#naslov b').html(output);
+//           }
+// });
 
 <!-- <form action="#" class="search-form">
 				<fieldset>
