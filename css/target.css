@@ -128,7 +128,10 @@ input[type=text], input[type=password], input[type=file], input[type=submit], te
 		font-size:36px;
 		-- line-height:48px;
 	}
-	.upload-block p{margin:0 0 40px;}
+	.upload-block p{
+		margin:0 0 40px;
+		text-align: center;
+	}
 	.upload-block .block{
 		float:right;
 		width:535px;

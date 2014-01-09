@@ -58,9 +58,9 @@ UserVoice.push(['showTab', 'classic_widget', {
 				<div class="frame">
 					<strong class="logo"><a href="index2.php">FillSkills Helping you for the perfect job</a></strong>
 					<nav id="nav">
-						<a class="home" href="index2.php">1.Enter skills</a>
-						<a class="courses" href="target.php">2.Set Goal</a>
-						<a class="results active" href="#">3.Results</a>
+						<a class="home" href="index2.php">Enter skills</a>
+						<a class="courses" href="target.php">Set Goal</a>
+						<a class="results active" href="#">Results</a>
 						<a class="logout" href="logout.php">Logout</a>
 					</nav>
 				</div>

@@ -42,8 +42,8 @@ else
 				<div class="frame">
 					<strong class="logo"><a href="index2.php">FillSkills Helping you get your dream job</a></strong>
 					<nav id="nav">
-						<a class="home" href="index2.php">1.Enter skills</a>
-						<a class="results active" href="#">2.Set Goal</a>
+						<a class="home" href="index2.php">Enter skills</a>
+						<a class="results active" href="#">Set Goal</a>
 						<!-- <a class="courses" href="#">Courses</a>
 						<a class="skills" href="#">Skills</a>
 						<a class="contact" href="#">Contact</a> -->
@@ -54,12 +54,12 @@ else
 		</header>
 		<div id="main">
 			<div class="upload-block">
-				<p></p>
+				<p>2. Set your goal</p>
 			</div>
 			<section class="section info-columns columns-holder">
 				<article class="col missing">
 					<header class="title">
-						<h1>Target all skillsets<br></br></h1>
+						<!-- <h1>Target all skillsets<br></br></h1> -->
 					</header>
 					<div class="box column target-alljobs">
 						<div class="courses-block">
@@ -79,7 +79,7 @@ else
 				<article class="col personal">
 					<div>
 						<header class="title">
-							<h1>...or continue on one of your current paths</h1>
+							<!-- <h1>...or continue on one of your current paths</h1> -->
 						</header>
 						<div class="box column">
 							<div class="courses-block"><h2>We picked up these skillsets from your resume: </h2></div>
@@ -112,7 +112,7 @@ else
 				<article class="col available">
 					<div>
 						<header class="title">
-							<h1>...or learn something new<br></br></h1>
+							<!-- <h1>...or learn something new<br></br></h1> -->
 						</header>
 						<div class="box column missing">
 							<div class="courses-block"><h2>Software skillsets with the most jobs: </h2></div>

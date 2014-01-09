@@ -62,7 +62,7 @@ if(empty($_SESSION['user']))
 				<div class="frame">
 					<strong class="logo"><a href="#">FillSkills: Helping you land your dream job</a></strong>
 					<nav id="nav">
-						<a class="home active" href="#">1.Enter skills</a>
+						<!-- <a class="home active" href="#">Enter skills</a> -->
 						<!-- <a class="results" href="#">Results</a>
 						<a class="courses" href="#">Courses</a>
 						<a class="skills" href="#">Skills</a>
@@ -74,7 +74,7 @@ if(empty($_SESSION['user']))
 		</header>
 		<div id="main">
 			<div class="upload-block">
-				<p></p>
+				<p>Start by entering your Skills</p>
 				<div class="block">
 					<h1>Drop your resume here</h1>
 					<form class="drag-box dropzone" id="uiDZResume" action="ParseAndSaveResume.php">
