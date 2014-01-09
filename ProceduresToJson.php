@@ -180,7 +180,7 @@ class ProcedureToJson{
 
 	function get_isbetalinkvalid($beta_loginid){
 		try{
-			$sql = "SELECT count(*) from betatestuniquekeys where unique_key = :beta_loginid and num_uses < 1";
+			$sql = "SELECT count(*) from betatestuniquekeys where unique_key = :beta_loginid and num_uses < max_num_uses";
 			$stmt_isValidBetaLink  = $this->DBH->prepare($sql);
 			$stmt_isValidBetaLink->bindParam(':beta_loginid', $beta_loginid, PDO::PARAM_STR);
 			$stmt_isValidBetaLink->execute();
