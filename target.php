@@ -194,7 +194,7 @@ else
 					<div class="text-holder">
 						<form id="PostResults" name="PostResults" method="POST" action="results.php">
 							<input type="hidden" id="targetstring" name="targetstring" />
-							<input type="submit" id="btnupload" class="btn" value="RESULTS >"></input>
+							<input type="submit" id="btnupload" class="btn" value="NEXT >"></input>
 						</form>
 					</div>
 				</article>

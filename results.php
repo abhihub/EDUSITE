@@ -167,7 +167,7 @@ UserVoice.push(['showTab', 'classic_widget', {
 						<h1>Goal</h1>
 					</header>
 					<div class="box column ">
-						<div class="courses-block" style="overflow:hidden;"><h2 style="float:left;">My Target</h2><a href="target.php" class="changeGoal" style="float:left;">(change)</a></div>
+						<div class="courses-block" style="overflow:hidden;"><h2 style="float:left;">My Goal</h2><a href="target.php" class="changeGoal" style="float:left;">(change)</a></div>
 						<div class="btn-holder">
 							<div class="holder">
 								<?php

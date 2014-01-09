@@ -99,7 +99,7 @@ if(empty($_SESSION['user']))
 			<section class="section gray greenbg">
 				<article class="holder">
 					<div class="text-holder">
-						<a href="#" id="btnupload" class="btn">SET GOAL ></a>
+						<a href="#" id="btnupload" class="btn">NEXT ></a>
 					</div>
 				</article>
 			</section>
