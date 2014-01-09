@@ -430,12 +430,12 @@ figure{
 .info-columns .col{
 	float:left;
 	width:387px;
-	margin:0 0 0 18px;
+	margin:0 0 0 28px;
 }
-.info-columns .col.available{width:320px;}
+.info-columns .col.available{width:250px;}
 .info-columns .col.missing{
 	min-width: 550px;
-	max-width: 550px;
+	max-width: 620px;
 	width:100%;
 }
 .info-columns .title{
@@ -564,6 +564,21 @@ background:url(../images/ico05.png) no-repeat 14px 0;
 	top:auto;
 	bottom:0;
 	background-position:-180px -211px;
+}
+.courses-block .changeGoal{
+	position:relative;
+	margin:0 0 0 0;
+	padding:0 0 4px 4px;
+	font:14px/18px Arial, Helvetica, sans-serif;
+	color:#595959;
+	
+}
+.learnCourse{
+	position:relative;
+	margin:0 0 0 0;
+	padding:0 0 4px 4px;
+	font:18px/18px Arial, Helvetica, sans-serif;
+	color:#818181;
 }
 .courses-block .list:after{
 	content:'';

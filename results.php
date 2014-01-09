@@ -40,14 +40,14 @@ heap.load("812388706");
 <script>
 UserVoice = window.UserVoice || [];
 UserVoice.push(['showTab', 'classic_widget', {
-  mode: 'feedback',
-  primary_color: '#cc6d00',
-  link_color: '#007dbf',
-  forum_id: 226405,
-  tab_label: 'Feedback',
-  tab_color: '#cc6d00',
-  tab_position: 'middle-right',
-  tab_inverted: false
+	mode: 'feedback',
+	primary_color: '#cc6d00',
+	link_color: '#007dbf',
+	forum_id: 226405,
+	tab_label: 'Feedback',
+	tab_color: '#cc6d00',
+	tab_position: 'middle-right',
+	tab_inverted: false
 }]);
 </script>
 </head>
@@ -61,15 +61,206 @@ UserVoice.push(['showTab', 'classic_widget', {
 						<a class="home" href="index2.php">1.Enter skills</a>
 						<a class="courses" href="target.php">2.Set Goal</a>
 						<a class="results active" href="#">3.Results</a>
-						<!--<a class="skills" href="#">Skills</a>
-						<a class="contact" href="#">Contact</a> -->
 						<a class="logout" href="logout.php">Logout</a>
 					</nav>
 				</div>
 			</div>
 		</header>
 		<div id="main">
-			<!-- <form action="#" class="search-form">
+			
+			<section class="info-columns columns-holder">
+				<article class="col personal">
+					<header class="title">
+						<h1>Current Skills</h1>
+					</header>
+					<div class="box column">
+						<div class="courses-block"><h2>Manually entered Skills</h2></div>
+						<div class="btn-holder">
+							<div class="holder">
+								<?php
+								
+								$resultsusersskills = $widgetJobs->get_users_skills($userid);
+								foreach($resultsusersskills as $result)
+								{
+									echo '<a href="#" class="button">' . $result[skillname] . '</a>';
+								}
+								?>
+
+							</div>
+						</div>
+						<div class="courses-block"><h2>Resume Skills</h2></div>
+						<div class="text-holder">
+							<?php
+
+							$resultsusersskills = $widgetJobs->get_users_skills_resume($userid);
+							foreach($resultsusersskills as $result)
+							{
+								echo '<a href="#" class="button">' . $result[skillname] . '</a>';
+							}
+							?>
+						</div>
+					</div>
+				</article>
+				<article class="col missing">
+					<header class="title">
+						<h1>MISSING (Using Job Market analysis)</h1>
+					</header>
+					<div class="box column">
+						<div class="courses-block"><h2>My top missing skills</h2></div>
+						<div class="btn-holder">
+							<div class="holder">
+								<?php
+								if($target == "")
+								{
+									$resultsallmissingskills = $widgetJobs->get_top_missing_skills($userid);
+									foreach($resultsallmissingskills as $result)
+									{
+										echo '<a href="#" class="button skillbtn">' . $result[skillname] . '</a>';
+									}
+								}
+								else
+								{
+									$targetid = $widgetJobs->get_skillsetid_byname($target);
+								//echo 'targetid = ' . $targetid;
+									$resultsallmissingskills = $widgetJobs->get_missingskills_skillset($userid, $targetid);
+									foreach($resultsallmissingskills as $result)
+									{
+										echo '<a href="#" class="button skillbtn">' . $result[skillname] . '</a>';
+									}
+								}
+								?>
+
+							</div>
+						</div>
+						<div class="courses-block">
+							<h2>Recommended Courses</h2>
+							<ul class="list">
+								<?php
+								foreach($resultsallmissingskills as $result)
+								{
+									$results_top3Courses = $widgetJobs->get_top3_courses_skill($result[skillname]);
+									foreach($results_top3Courses as $results_top3Course)
+									{
+										echo '
+										<li>
+										<div class="holder">
+										<h3>' . $results_top3Course[name] . '</h3>
+										<label class="companyname"> By '. $results_top3Course[provider] .'</label>
+										<label class="courseprice">$' . $results_top3Course[price] . '</label>
+										<p>' . $results_top3Course[description] . '</p>
+										<div class="btn-row">
+										<a href="' . $results_top3Course[url] . '" class="changeGoal">Learn</a>
+										</div>
+										</li>
+										';
+									}
+								}
+								?>
+
+
+							</ul>
+						</div>
+					</div>
+				</article>
+				<article class="col available">
+					<header class="title">
+						<h1>Goal</h1>
+					</header>
+					<div class="box column ">
+						<div class="courses-block" style="overflow:hidden;"><h2 style="float:left;">My Target</h2><a href="target.php" class="changeGoal" style="float:left;">(change)</a></div>
+						<div class="btn-holder">
+							<div class="holder">
+								<?php
+								echo '<p class="button">' . $target . '</p>';
+								?>
+							</div>
+						</div>
+					</div>
+				</article>
+
+			</section>
+		</div>
+		<footer id="footer">
+			<div class="holder">
+				<p class="copy">&copy; Copyright 2013 Fillskills</p>
+				<form action="#" class="subscribe-form">
+					<fieldset>
+						<label for="subscribe-field">Get our FillSkills Newslvetter</label>
+						<div class="input-row">
+							<input id="subscribe-field" type="text" placeholder="Your E-mail Address" />
+						</div>
+					</fieldset>
+				</form>
+				<ul class="footer-menu">
+					<li><a href="#">BLOG</a></li>
+					<li><a href="#">TERMS</a></li>
+					<li><a href="#">privacY</a></li>
+				</ul>
+			</div>
+		</footer>
+	</div>
+	<script type="text/javascript">
+	$('.btndetails').toggle( 
+		function() {
+			$(this).html("Close");
+			event.stopImmediatePropagation();
+			$(this).closest('li').find('.jobdetails').animate({ top: 126 }, 'slow', function() {
+			});
+			$(this).closest('li').animate({ height: 180 }, 'slow', function() {
+			});
+		}, 
+		function() {
+			$(this).html("Missing");
+			event.stopImmediatePropagation();
+			$(this).closest('li').find('.jobdetails').animate({ top: 26 }, 'slow', function() {
+			});
+			$(this).closest('li').animate({ height: 86 }, 'slow', function() {
+			});
+		}
+		);
+
+	$('.missing a').click(function () {
+		$.ajax({ url: 'GetCoursesBySkills.php',
+         // data: {action: 'get_missingskills_job'},
+         data: { skillstring: $(this).text() },
+         type: 'POST',
+         success: function(output) {                 
+         	data = $.parseJSON(output);
+         	var listItems= "";
+         	$.each(data, function(i, itemq) 
+         	{
+         		listItems+='<li>' +
+         		'<div class="holder column">' +
+         		'<h3>' + itemq.name + '</h3>' +
+         		'<p>' + itemq.description + '</p>' +
+         		'<div class="btn-row">' +
+         		'<a href="' + itemq.url + '" class="delete">Learn</a>' +
+         		'</div>' +
+         		'</li>';
+         	});
+         	$('.courses-block ul').html(listItems);
+         }
+     });
+	
+});
+</script>
+</body>
+</html>
+
+// console.log($(this).find('.jobid').text());
+	// $('.jobs-list li').removeClass( "green" );
+	// $(this).addClass( "green" );
+        // $.ajax({ url: 'get_missingskills_job.php',
+        //  // data: {action: 'get_missingskills_job'},
+        //  data: { jobID_missingskills_perjob: $(this).find('.jobid').text() },
+        //  type: 'POST',
+        //  success: function(output) {
+        //               //alert(output);
+        //               $('#naslov b').html(output);
+        //           }
+        // });
+
+<!-- <form action="#" class="search-form">
 				<fieldset>
 					<div class="input-box">
 						<input type="text" placeholder="Add a skill" />
@@ -91,24 +282,8 @@ UserVoice.push(['showTab', 'classic_widget', {
 					</div>
 				</fieldset>
 			</form> -->
-			<section class="info-columns columns-holder">
-				<article class="col personal">
-					<header class="title">
-						<h1>You</h1>
-					</header>
-					<div class="box column">
-						<div class="courses-block"><h2>My Skills</h2></div>
-						<div class="btn-holder">
-							<div class="holder">
-								<?php
-								
-								$resultsusersskills = $widgetJobs->get_users_skills($userid);
-								foreach($resultsusersskills as $result)
-								{
-									echo '<a href="#" class="button">' . $result[skillname] . '</a>';
-								}
-								?>
-							<!-- <a href="#" class="button">jQuery</a>
+
+			<!-- <a href="#" class="button">jQuery</a>
 							<a href="#" class="button">MVC</a>
 							<a href="#" class="button">PHPUnit</a>
 							<a href="#" class="button">jUnit</a>
@@ -121,34 +296,7 @@ UserVoice.push(['showTab', 'classic_widget', {
 							<a href="#" class="button">HTML/CSS</a>
 							<a href="#" class="button">JAXB</a>
 							<a href="#" class="button">JDOM</a> -->
-						</div>
-					</div>
-					<div class="courses-block"><h2>Resume Skills</h2></div>
-					<div class="text-holder">
-						<?php
-								
-								$resultsusersskills = $widgetJobs->get_users_skills_resume($userid);
-								foreach($resultsusersskills as $result)
-								{
-									echo '<a href="#" class="button">' . $result[skillname] . '</a>';
-								}
-								?>
-					</div>
-				</div>
-			</article>
-			<article class="col available">
-				<header class="title">
-					<h1>Market analysis results</h1>
-				</header>
-				<div class="box column missing">
-					<div class="courses-block"><h2>My Target</h2></div>
-					<div class="btn-holder">
-						<div class="holder">
-							<?php
-							
-							echo '<a href="target.php" class="button">' . $target . '</a>';
-							
-							?>
+
 							<!-- <a href="#" class="button">IOS</a>
 							<a href="#" class="button">RUBI</a>
 							<a href="#" class="button">Dojo</a>
@@ -157,31 +305,20 @@ UserVoice.push(['showTab', 'classic_widget', {
 							<a href="#" class="button">Adobe</a>
 							<a href="#" class="button">Mootool</a>
 							<a href="#" class="button">TableKit</a> -->
-						</div>
-					</div>
-					<div class="courses-block"><h2>My top missing skills</h2></div>
-					<div class="btn-holder">
-						<div class="holder">
-							<?php
-							if($target == "")
-							{
-								$resultsallmissingskills = $widgetJobs->get_top_missing_skills($userid);
-								foreach($resultsallmissingskills as $result)
-								{
-									echo '<a href="#" class="button skillbtn">' . $result[skillname] . '</a>';
-								}
-							}
-							else
-							{
-								$targetid = $widgetJobs->get_skillsetid_byname($target);
-								//echo 'targetid = ' . $targetid;
-								$resultsallmissingskills = $widgetJobs->get_missingskills_skillset($userid, $targetid);
-								foreach($resultsallmissingskills as $result)
-								{
-									echo '<a href="#" class="button skillbtn">' . $result[skillname] . '</a>';
-								}
-							}
-							?>
+
+
+							<!-- 
+							<li>
+								<div class="holder column">
+									<h3>TableKit Class</h3>
+									<p>The civil Emperor, before the Mikado, the spiritual Emperor, absorbed his office in his own.  The Carnatic anchored att the quay near the custom-house, in the midst of a crowd of ships</p>
+									<div class="btn-row">
+										<a href="#" class="details">Details</a>
+										<a href="#" class="delete">Delete</a>
+									</div>
+								</div>
+							</li> -->
+
 							<!-- <a href="#" class="button">IOS</a>
 							<a href="#" class="button">RUBI</a>
 							<a href="#" class="button">Dojo</a>
@@ -190,9 +327,8 @@ UserVoice.push(['showTab', 'classic_widget', {
 							<a href="#" class="button">Adobe</a>
 							<a href="#" class="button">Mootool</a>
 							<a href="#" class="button">TableKit</a> -->
-						</div>
-					</div>
-					<!-- <div class="courses-block"><h2>Best match jobs</h2></div>
+
+							<!-- <div class="courses-block"><h2>Best match jobs</h2></div>
 					<ul class="jobs-list">
 						
 						$results = $widgetJobs->get_bestmatch_jobs($userid);
@@ -239,55 +375,8 @@ UserVoice.push(['showTab', 'classic_widget', {
 					</li> 
 				</ul>
 			</div>	-->
-		</article>
-		<article class="col missing">
-			<header class="title">
-				<h1>Suggestions</h1>
-			</header>
-			<div class="box column">
 
-				<div class="courses-block">
-					<h2>Recommended Courses</h2>
-					<ul class="list columns-holder">
-						<?php
-						foreach($resultsallmissingskills as $result)
-						{
-							$results_top3Courses = $widgetJobs->get_top3_courses_skill($result[skillname]);
-							foreach($results_top3Courses as $results_top3Course)
-							{
-								echo '
-								<li>
-								<div class="holder column">
-								<h3>' . $results_top3Course[name] . '</h3>
-								<label class="companyname"> By '. $results_top3Course[provider] .'</label>
-								<label class="courseprice">$' . $results_top3Course[price] . '</label>
-								<p>' . $results_top3Course[description] . '</p>
-								<div class="btn-row">
-								<a href="' . $results_top3Course[url] . '" class="delete">Learn</a>
-								</div>
-								</li>
-								';
-							}
-						}
-						?>
-
-							<!-- 
-							<li>
-								<div class="holder column">
-									<h3>TableKit Class</h3>
-									<p>The civil Emperor, before the Mikado, the spiritual Emperor, absorbed his office in his own.  The Carnatic anchored att the quay near the custom-house, in the midst of a crowd of ships</p>
-									<div class="btn-row">
-										<a href="#" class="details">Details</a>
-										<a href="#" class="delete">Delete</a>
-									</div>
-								</div>
-							</li> -->
-						</ul>
-					</div>
-				</div>
-			</article>
-		</section>
-		<!-- <section class="section blue">
+			<!-- <section class="section blue">
 			<div class="items-block columns-holder">
 
 				<div class="holder">
@@ -339,81 +428,6 @@ UserVoice.push(['showTab', 'classic_widget', {
 				</div>
 			</div>
 		</section> -->
-	</div>
-	<footer id="footer">
-		<div class="holder">
-			<p class="copy">&copy; Copyright 2013 Fillskills</p>
-			<form action="#" class="subscribe-form">
-				<fieldset>
-					<label for="subscribe-field">Get our FillSkills Newslvetter</label>
-					<div class="input-row">
-						<input id="subscribe-field" type="text" placeholder="Your E-mail Address" />
-					</div>
-				</fieldset>
-			</form>
-			<ul class="footer-menu">
-				<li><a href="#">BLOG</a></li>
-				<li><a href="#">TERMS</a></li>
-				<li><a href="#">privacY</a></li>
-			</ul>
-		</div>
-	</footer>
-</div>
-<script type="text/javascript">
-$('.btndetails').toggle( 
-	function() {
-		$(this).html("Close");
-		event.stopImmediatePropagation();
-		$(this).closest('li').find('.jobdetails').animate({ top: 126 }, 'slow', function() {
-		});
-		$(this).closest('li').animate({ height: 180 }, 'slow', function() {
-		});
-	}, 
-	function() {
-		$(this).html("Missing");
-		event.stopImmediatePropagation();
-		$(this).closest('li').find('.jobdetails').animate({ top: 26 }, 'slow', function() {
-		});
-		$(this).closest('li').animate({ height: 86 }, 'slow', function() {
-		});
-	}
-	);
 
-$('.missing a').click(function () {
-	$.ajax({ url: 'GetCoursesBySkills.php',
-         // data: {action: 'get_missingskills_job'},
-         data: { skillstring: $(this).text() },
-         type: 'POST',
-         success: function(output) {                 
-         	data = $.parseJSON(output);
-         	var listItems= "";
-         	$.each(data, function(i, itemq) 
-         	{
-         		listItems+='<li>' +
-         		'<div class="holder column">' +
-         		'<h3>' + itemq.name + '</h3>' +
-         		'<p>' + itemq.description + '</p>' +
-         		'<div class="btn-row">' +
-         		'<a href="' + itemq.url + '" class="delete">Learn</a>' +
-         		'</div>' +
-         		'</li>';
-         	});
-         	$('.courses-block ul').html(listItems);
-         }
-     });
-	// console.log($(this).find('.jobid').text());
-	// $('.jobs-list li').removeClass( "green" );
-	// $(this).addClass( "green" );
-        // $.ajax({ url: 'get_missingskills_job.php',
-        //  // data: {action: 'get_missingskills_job'},
-        //  data: { jobID_missingskills_perjob: $(this).find('.jobid').text() },
-        //  type: 'POST',
-        //  success: function(output) {
-        //               //alert(output);
-        //               $('#naslov b').html(output);
-        //           }
-        // });
-});
-</script>
-</body>
-</html>
+
+
