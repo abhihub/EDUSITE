@@ -162,8 +162,8 @@ UserVoice.push(['showTab', 'classic_widget', {
 										<div class="holder">
 										<h3>' . $results_top3Course[name] . '</h3>
 										<label class="companyname"> By '. $results_top3Course[provider] .'</label>
-										<label class="courseprice">$' . $results_top3Course[price] . '</label>
-										<p>' . $results_top3Course[description] . '</p>
+										<label class="courseprice">$' . $results_top3Course[price] . (($results_top3Course[ismonthly]=='1')?'/month':''). '</label>
+										<p>' . $results_top3Course[description].'</p>
 										<div class="btn-row">
 										<a href="' . $results_top3Course[url] . '" class="changeGoal">Learn</a>
 										</div>
