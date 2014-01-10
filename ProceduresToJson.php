@@ -358,6 +358,25 @@ class ProcedureToJson{
 		}
 	}
 
+	function get_user_goal($userid)
+	{
+		try
+		{
+			$Stmt_Select_User_Goal = $this->DBH->prepare("SELECT * FROM users_goals where userid = :userid LIMIT 1");
+			$Stmt_Select_User_Goal->bindParam(':userid', $userid);
+			$Stmt_Select_User_Goal->execute();
+			$row = $Stmt_Select_User_Goal->fetch();
+			$Stmt_Select_User_Goal->closeCursor();
+			unset($Stmt_Select_User_Goal);
+			return $row;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();
+		}
+
+	}
+
 	function insert_deleted_jobs($row)
 	{
 		try{
@@ -399,34 +418,34 @@ class ProcedureToJson{
 
 			$sql = "CALL insert_deleted_jobs(:old_jobidl,:jobtitlel,:companyl,:cityl,:statel,:countryl,:formattedLocationl,
 				:sourcel,:enddatel,:snippetl,:urll,:onmousedownl,:jobkeyl,:sponsoredl,:expiredl,:formattedLocationFulll,:formattedRelativeTimel); ";
-			$stmt_insert_jobsskill_from_skillname_jobid = $this->DBH->prepare($sql);
+$stmt_insert_jobsskill_from_skillname_jobid = $this->DBH->prepare($sql);
 
-			$stmt_insert_jobsskill_from_skillname_jobid->bindParam('old_jobidl', $jobid);
-			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':jobtitlel', $jobtitle);
-			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':companyl', $company);
-			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':cityl', $city);
-			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':statel', $state);
-			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':countryl', $country);
-			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':formattedLocationl', $formattedLocation);
-			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':sourcel', $source);
-			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':enddatel', $enddate);
-			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':snippetl', $snippet);
-			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':urll', $url);
-			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':onmousedownl', $onmousedown);
-			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':jobkeyl', $jobkey);
-			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':sponsoredl', $sponsored);
-			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':expiredl', $expired);
-			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':formattedLocationFulll', $formattedLocationFull);
-			$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':formattedRelativeTimel', $formattedRelativeTime);
+$stmt_insert_jobsskill_from_skillname_jobid->bindParam('old_jobidl', $jobid);
+$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':jobtitlel', $jobtitle);
+$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':companyl', $company);
+$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':cityl', $city);
+$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':statel', $state);
+$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':countryl', $country);
+$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':formattedLocationl', $formattedLocation);
+$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':sourcel', $source);
+$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':enddatel', $enddate);
+$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':snippetl', $snippet);
+$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':urll', $url);
+$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':onmousedownl', $onmousedown);
+$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':jobkeyl', $jobkey);
+$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':sponsoredl', $sponsored);
+$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':expiredl', $expired);
+$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':formattedLocationFulll', $formattedLocationFull);
+$stmt_insert_jobsskill_from_skillname_jobid->bindParam(':formattedRelativeTimel', $formattedRelativeTime);
 
-			$stmt_insert_jobsskill_from_skillname_jobid->execute();
-			$stmt_insert_jobsskill_from_skillname_jobid->closeCursor();
-			unset($stmt_insert_jobsskill_from_skillname_jobid);	
-		}
-		catch(PDOException $e) {
-			echo $e->getMessage();
-		}
-	}
+$stmt_insert_jobsskill_from_skillname_jobid->execute();
+$stmt_insert_jobsskill_from_skillname_jobid->closeCursor();
+unset($stmt_insert_jobsskill_from_skillname_jobid);	
+}
+catch(PDOException $e) {
+	echo $e->getMessage();
+}
+}
 
 }
 

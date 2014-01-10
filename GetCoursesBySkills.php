@@ -4,7 +4,7 @@ try{
 	
 	$DBH = common::getInstance()->getDatabase();
 	$skillname = $_POST['skillstring'];
-	//echo "Skillstring: " . $skillname;
+	
 	$STHGetCoursesBySkillName = $DBH->prepare('select cc.* from courses cc inner join coursesskills csk on cc.id = csk.courseid
 		inner join skills sk on csk.skillid = sk.id
 		where sk.name = :skillname');

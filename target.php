@@ -11,6 +11,8 @@ else
 {
 	$userid = $_SESSION['user']['id'];
 }
+$targetarray = $widgetJobs->get_user_goal($userid);
+$target = $targetarray['goal'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -192,10 +194,10 @@ else
 			<section class="section gray greenbg">
 				<article class="holder">
 					<div class="text-holder">
-						<form id="PostResults" name="PostResults" method="POST" action="results.php">
-							<input type="hidden" id="targetstring" name="targetstring" />
+						<!-- <form id="PostResults" name="PostResults" method="POST" action="results.php">-->
+							<input type="hidden" id="targetstring" name="targetstring" /> 
 							<input type="submit" id="btnupload" class="btn" value="NEXT >"></input>
-						</form>
+						<!-- </form> -->
 					</div>
 				</article>
 			</section>
@@ -297,6 +299,17 @@ else
 			$('#CheckMarkAllJobs').removeClass('UnCheckAllJobs');
 			$('#CheckMarkAllJobs').addClass('CheckAllJobs');
 		}
+	});
+	
+	$('#btnupload').click(function () {
+		$.ajax({ url: 'SaveSelectedGoal.php',
+         data: { targetstring: $('#targetstring').val() },
+         type: 'POST',
+         success: function(output) {
+                      //alert(output);
+                      window.location.replace("results.php");
+                  }
+              });
 	});
 
 	</script>

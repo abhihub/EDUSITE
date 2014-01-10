@@ -12,7 +12,8 @@ else
 	$userid = $_SESSION['user']['id'];
 }
 
-$target = $_POST['targetstring'];
+$targetarray = $widgetJobs->get_user_goal($userid);
+$target = $targetarray['goal'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
