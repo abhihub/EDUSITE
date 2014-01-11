@@ -83,7 +83,7 @@ UserVoice.push(['showTab', 'classic_widget', {
 								?>
 							</div>
 						</div>
-						<div class="courses-block"style="overflow:hidden;"><h2 style="float:left;">My Skills</h2><a href="index2.php" class="changeGoal" style="float:left;">(edit)</a></div>
+						<div class="courses-block" style="overflow:hidden;"><h2 style="float:left;">My Skills</h2><a href="index2.php" class="changeGoal" style="float:left;">(edit)</a></div>
 						<div class="courses-block"><h3>Manually entered</h3></div>
 						<div class="btn-holder">
 							<div class="holder">

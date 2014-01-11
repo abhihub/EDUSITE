@@ -42,9 +42,9 @@ if(empty($_SESSION['user']))
 		tab_position: 'middle-right',
 		tab_inverted: false
 	}]);
-	</script> -->
-	<!-- <script type="text/javascript" src="js/jquery.main.js"></script> -->
-	<!--[if IE]><script type="text/javascript" src="js/ie.js"></script><![endif]-->
+</script> -->
+<!-- <script type="text/javascript" src="js/jquery.main.js"></script> -->
+<!--[if IE]><script type="text/javascript" src="js/ie.js"></script><![endif]-->
 	<!-- <script type="text/javascript">
 	var heap=heap||[];heap.load=function(a){window._heapid=a;var b=document.createElement("script");b.type="text/javascript",b.async=!0,b.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.heapanalytics.com/js/heap.js";var c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c);var d=function(a){return function(){heap.push([a].concat(Array.prototype.slice.call(arguments,0)))}},e=["identify","track"];for(var f=0;f<e.length;f++)heap[e[f]]=d(e[f])};
 	heap.load("812388706");
@@ -130,33 +130,47 @@ if(empty($_SESSION['user']))
 					</div>
 				</div>
 			</section> -->
-			<section class="section gray">
-				<article class="holder">
-					<img src="images/img03.png" width="478" height="271" alt="image description">
+
+			<section class="section gray" >
+				<article class="holder" style="margin: 40px auto 50px">
+					<h2 >How does it work</h2>
+					<div class="info-columns columns-holder">
+						<div class="col  text-holder"> 
+							<h2>1. Enter your skills</h2>
+							<p class="intro">Start by entering your current skills. You can provide your resume and/or enter skills manually</p>
+
+						</div>
+						<div class="col  text-holder">
+							<h2>2. Set goal</h2>
+							<p class="intro">Set the goal you want to achieve. Pick from skill-groups with most number of jobs or something you are already working in or choose 'entire market'.</p>
+
+						</div>
+						<div class="col  text-holder">
+							<h2>3. Find what to learn next</h2>
+							<p class="intro">See whats missing between you and your goal. See courses for those skills.</p>
+
+						</div>
+					</div>
+					<!-- <img src="images/img03.png" width="478" height="271" alt="image description">
 					<div class="text-holder">
 						<h1>About Us</h1>
 						<p class="intro">Find which skills are in demand in the market <br>and then quickly take the best courses that help you catch up. </p>
 						<p>As the American economy tumbled in 2008, we saw a disconnect between growing numbers of unemployed and a large pool of jobs available. The missing link was skills required to apply for these jobs. Our concerns led us to create FillSkills - a bridge leading people to their dream jobs. </p>
 						<a href="#" class="btn">Click here to find out more about us</a>
-					</div>
+					</div> -->
 				</article>
 			</section>
+
 			<section class="section contact">
 				<div class="holder">
 					<div class="address-box">
-						<address>
-							<span>1134 Somewhere Street<br />Chino Hills, CA 91709</span>
-							<span>
-								Phone: 999-999-9999
-							</span>
-						</address>
 						<ul class="sociable">
-							<li><a class="twitter" href="#"></a></li>
+							<li><a class="twitter" href="https://twitter.com/hadipainc"></a></li>
 							<li><a class="facebook" href="#"></a></li>
-							<li><a class="google-plus" href="#"></a></li>
+							<!-- <li><a class="google-plus" href="#"></a></li> -->
 						</ul>
 					</div>
-					<form action="#" class="contact-form">
+					<!-- <form action="#" class="contact-form">
 						<fieldset>
 							<div class="textarea-holder">
 								<textarea cols="30" rows="10" placeholder="Message"></textarea>
@@ -171,13 +185,13 @@ if(empty($_SESSION['user']))
 								<input type="submit" value="Send Message" />
 							</div>
 						</fieldset>
-					</form>
+					</form> -->
 				</div>
 			</section>
 		</div>
-		<footer id="footer">
+		<!--<footer id="footer">
 			<div class="holder">
-				<p class="copy">&copy; Copyright 2013 Fillskills</p>
+				 <p class="copy">&copy; Copyright 2013 Fillskills</p>
 				<form action="#" class="subscribe-form">
 					<fieldset>
 						<label for="subscribe-field">Get our FillSkills Newslvetter</label>
@@ -185,15 +199,13 @@ if(empty($_SESSION['user']))
 							<input id="subscribe-field" type="text" placeholder="Your E-mail Address" />
 						</div>
 					</fieldset>
-				</form>
+				</form> 
 				<ul class="footer-menu">
-					<li><a href="#">BLOG</a></li>
-					<li><a href="#">TERMS</a></li>
-					<li><a href="#">privacY</a></li>
+					<li><a href="#">ABOUT</a></li>
 				</ul>
 			</div>
 			
-		</footer>
+		</footer>-->
 	</div>
 
 	<script type="text/javascript">
